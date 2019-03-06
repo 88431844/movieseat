@@ -1,4 +1,4 @@
-package controller;
+package controller.front;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,10 +8,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Controller
-public class TestController {
+@RequestMapping("/movie")
+public class movieController {
 
+    @RequestMapping("/wall")
+    public ModelAndView wall(){
+        ModelAndView modelAndView = new ModelAndView();
+        System.out.println("----- movie wall loading .....");
+        modelAndView.setViewName("front/movie/movieWall");
+        return modelAndView;
+    }
 
-    @RequestMapping("/movie/seat")
+    @RequestMapping("/seat")
     public ModelAndView test(){
         System.out.println("-------- movie seat !");
         ModelAndView modelAndView = new ModelAndView();
@@ -21,11 +29,10 @@ public class TestController {
         movie.put("movieDate","2019年03月06日");
         movie.put("moviePrice","88");
 
-        modelAndView.setViewName("test");
+        modelAndView.setViewName("front/movie/selectSeat");
 
         modelAndView.addObject("movie",movie);
 
         return modelAndView;
     }
-
 }

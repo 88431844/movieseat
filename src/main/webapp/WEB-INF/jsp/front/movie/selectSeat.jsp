@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://"
@@ -45,11 +44,10 @@
 
 <body>
 <div id="header">
-    <div id="logo"><h1><a href="#" title="返回helloweba首页">返回首页</a></h1></div>
+    <div id="logo"><h1><a href="#" title="返回首页">返回首页</a></h1></div>
 </div>
 
 <div id="main">
-    <%--<h2 class="top_title"><a href="http://www.helloweba.net/javascript/278.html">在线选座</a></h2>--%>
     <div class="demo">
         <div id="seat-map">
             <div class="front">屏幕</div>
