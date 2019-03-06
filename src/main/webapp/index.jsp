@@ -5,15 +5,16 @@
 %>
 <!DOCTYPE HTML>
 <head>
+    <base href="<%=basePath%>">
     <title>Home</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href="<%=basePath%>static/css/style.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="<%=basePath%>static/css/slider.css" rel="stylesheet" type="text/css" media="all"/>
-    <script type="text/javascript" src="<%=basePath%>static/js/jquery-1.9.0.min.js"></script>
-    <script type="text/javascript" src="<%=basePath%>static/js/move-top.js"></script>
-    <script type="text/javascript" src="<%=basePath%>static/js/easing.js"></script>
-    <script type="text/javascript" src="<%=basePath%>static/js/jquery.nivo.slider.js"></script>
+    <link href="static/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="static/css/slider.css" rel="stylesheet" type="text/css" media="all"/>
+    <script type="text/javascript" src="static/js/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="static/js/move-top.js"></script>
+    <script type="text/javascript" src="static/js/easing.js"></script>
+    <script type="text/javascript" src="static/js/jquery.nivo.slider.js"></script>
     <script type="text/javascript">
         $(window).load(function() {
             $('#slider').nivoSlider();
@@ -26,7 +27,7 @@
         <div class="wrap">
             <div class="nav_list">
                 <ul>
-                    <li><a href="<%=basePath%>/test">Home-test</a></li>
+                    <li><a href="movie/seat">Home-test</a></li>
                     <%--<li><a href="contact.html">Sitemap</a></li>--%>
                     <%--<li><a href="contact.html">Contact</a></li>--%>
                 </ul>
@@ -46,7 +47,7 @@
     <div class="wrap">
         <div class="header_top">
             <div class="logo">
-                <a href="<%=basePath%>test"><img src="<%=basePath%>static/images/logo.png" alt="" /></a>
+                <a href="movie/seat"><img src="static/images/logo.png" alt="" /></a>
             </div>
             <div class="header_top_right">
                 <%--<div class="cart">--%>
@@ -116,11 +117,11 @@
                 <%--<div class="slider">--%>
                     <%--<div class="slider-wrapper theme-default">--%>
                         <%--<div id="slider" class="nivoSlider">--%>
-                            <%--<img src="<%=basePath%>static/images/1.jpg" data-thumb="<%=basePath%>static/images/1.jpg" alt="" />--%>
-                            <%--<img src="<%=basePath%>static/images/2.jpg" data-thumb="<%=basePath%>static/images/2.jpg" alt="" />--%>
-                            <%--<img src="<%=basePath%>static/images/3.jpg" data-thumb="<%=basePath%>static/images/3.jpg" alt="" />--%>
-                            <%--<img src="<%=basePath%>static/images/4.jpg" data-thumb="<%=basePath%>static/images/4.jpg" alt="" />--%>
-                            <%--<img src="<%=basePath%>static/images/5.jpg" data-thumb="<%=basePath%>static/images/5.jpg" alt="" />--%>
+                            <%--<img src="static/images/1.jpg" data-thumb="static/images/1.jpg" alt="" />--%>
+                            <%--<img src="static/images/2.jpg" data-thumb="static/images/2.jpg" alt="" />--%>
+                            <%--<img src="static/images/3.jpg" data-thumb="static/images/3.jpg" alt="" />--%>
+                            <%--<img src="static/images/4.jpg" data-thumb="static/images/4.jpg" alt="" />--%>
+                            <%--<img src="static/images/5.jpg" data-thumb="static/images/5.jpg" alt="" />--%>
                         <%--</div>--%>
                     <%--</div>--%>
                 <%--</div>--%>
@@ -141,7 +142,7 @@
             </div>
             <div class="section group">
                 <div class="grid_1_of_5 images_1_of_5">
-                    <a href="preview.html"><img src="<%=basePath%>static/images/end-game.jpg" alt="" /></a>
+                    <a href="preview.html"><img src="static/images/end-game.jpg" alt="" /></a>
                     <h2><a href="preview.html">End Game</a></h2>
                     <div class="price-details">
                         <div class="price-number">
@@ -154,7 +155,7 @@
                     </div>
                 </div>
                 <div class="grid_1_of_5 images_1_of_5">
-                    <a href="preview.html"><img src="<%=basePath%>static/images/Sorority_Wars.jpg" alt="" /></a>
+                    <a href="preview.html"><img src="static/images/Sorority_Wars.jpg" alt="" /></a>
                     <h2><a href="preview.html">Sorority Wars</a></h2>
                     <div class="price-details">
                         <div class="price-number">
@@ -168,7 +169,7 @@
 
                 </div>
                 <div class="grid_1_of_5 images_1_of_5">
-                    <a href="preview.html"><img src="<%=basePath%>static/images/New-Moon-The-Score-cover-twilight.jpg" alt="" /></a>
+                    <a href="preview.html"><img src="static/images/New-Moon-The-Score-cover-twilight.jpg" alt="" /></a>
                     <h2><a href="preview.html">Twilight New Moon</a></h2>
                     <div class="price-details">
                         <div class="price-number">
@@ -182,7 +183,7 @@
 
                 </div>
                 <div class="grid_1_of_5 images_1_of_5">
-                    <a href="preview.html"><img src="<%=basePath%>static/images/avatar_movie.jpg" alt="" /></a>
+                    <a href="preview.html"><img src="static/images/avatar_movie.jpg" alt="" /></a>
                     <h2><a href="preview.html">Avatar</a></h2>
                     <div class="price-details">
                         <div class="price-number">
@@ -195,7 +196,7 @@
                     </div>
                 </div>
                 <div class="grid_1_of_5 images_1_of_5">
-                    <a href="preview.html"><img src="<%=basePath%>static/images/black-swan.jpg" alt="" /></a>
+                    <a href="preview.html"><img src="static/images/black-swan.jpg" alt="" /></a>
                     <h2><a href="preview.html">Black Swan</a></h2>
                     <div class="price-details">
                         <div class="price-number">
@@ -215,7 +216,7 @@
             </div>
             <div class="section group">
                 <div class="grid_1_of_5 images_1_of_5">
-                    <a href="preview.html"><img src="<%=basePath%>static/images/beauty_and_the_beast.jpg" alt="" /></a>
+                    <a href="preview.html"><img src="static/images/beauty_and_the_beast.jpg" alt="" /></a>
                     <h2><a href="preview.html">Beauty and the beast</a></h2>
                     <div class="price-details">
                         <div class="price-number">
@@ -229,7 +230,7 @@
 
                 </div>
                 <div class="grid_1_of_5 images_1_of_5">
-                    <a href="preview.html"><img src="<%=basePath%>static/images/Eclipse.jpg" alt="" /></a>
+                    <a href="preview.html"><img src="static/images/Eclipse.jpg" alt="" /></a>
                     <h2><a href="preview.html">Eclipse</a></h2>
                     <div class="price-details">
                         <div class="price-number">
@@ -243,7 +244,7 @@
 
                 </div>
                 <div class="grid_1_of_5 images_1_of_5">
-                    <a href="preview.html"><img src="<%=basePath%>static/images/Coraline.jpg" alt="" /></a>
+                    <a href="preview.html"><img src="static/images/Coraline.jpg" alt="" /></a>
                     <h2><a href="preview.html">Coraline</a></h2>
                     <div class="price-details">
                         <div class="price-number">
@@ -257,7 +258,7 @@
 
                 </div>
                 <div class="grid_1_of_5 images_1_of_5">
-                    <a href="preview.html"><img src="<%=basePath%>static/images/Unstoppable.jpg" alt="" /></a>
+                    <a href="preview.html"><img src="static/images/Unstoppable.jpg" alt="" /></a>
                     <h2><a href="preview.html">Unstoppable</a></h2>
                     <div class="price-details">
                         <div class="price-number">
@@ -270,7 +271,7 @@
                     </div>
                 </div>
                 <div class="grid_1_of_5 images_1_of_5">
-                    <a href="preview.html"><img src="<%=basePath%>static/images/Priest.jpg" alt="" /></a>
+                    <a href="preview.html"><img src="static/images/Priest.jpg" alt="" /></a>
                     <h2><a href="preview.html">Priest 3D</a></h2>
                     <div class="price-details">
                         <div class="price-number">
@@ -328,10 +329,10 @@
                 <%--<div class="social-icons">--%>
                     <%--<h4>Follow Us</h4>--%>
                     <%--<ul>--%>
-                        <%--<li><a href="#" target="_blank"><img src="<%=basePath%>static/images/facebook.png" alt="" /></a></li>--%>
-                        <%--<li><a href="#" target="_blank"><img src="<%=basePath%>static/images/twitter.png" alt="" /></a></li>--%>
-                        <%--<li><a href="#" target="_blank"><img src="<%=basePath%>static/images/skype.png" alt="" /> </a></li>--%>
-                        <%--<li><a href="#" target="_blank"> <img src="<%=basePath%>static/images/linkedin.png" alt="" /></a></li>--%>
+                        <%--<li><a href="#" target="_blank"><img src="static/images/facebook.png" alt="" /></a></li>--%>
+                        <%--<li><a href="#" target="_blank"><img src="static/images/twitter.png" alt="" /></a></li>--%>
+                        <%--<li><a href="#" target="_blank"><img src="static/images/skype.png" alt="" /> </a></li>--%>
+                        <%--<li><a href="#" target="_blank"> <img src="static/images/linkedin.png" alt="" /></a></li>--%>
                         <%--<div class="clear"></div>--%>
                     <%--</ul>--%>
                 <%--</div>--%>
