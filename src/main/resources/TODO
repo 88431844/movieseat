@@ -1,5 +1,18 @@
-https://blog.csdn.net/zhshulin/article/details/37956105
+后台部分：
 
-mybatis 逆向生成dao entity mapper
+后台登录
+电影信息
+影院信息
+场次信息
 
-mysql 数据库
+
+前台部分：
+
+前台用户登录
+用户中心
+注册用户
+编辑用户信息
+
+首页电影墙加载
+电影详情页
+电影选座
