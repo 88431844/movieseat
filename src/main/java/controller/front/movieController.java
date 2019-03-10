@@ -25,6 +25,15 @@ public class movieController {
         return modelAndView;
     }
 
+    @RequestMapping("/detail")
+    public ModelAndView detail(){
+        ModelAndView modelAndView = new ModelAndView();
+        System.out.println("----- movie detail  .....");
+        modelAndView.setViewName("front/movie/movieDetail");
+
+        return modelAndView;
+    }
+
     @RequestMapping("/seat")
     public ModelAndView test(){
         System.out.println("-------- movie seat !");
