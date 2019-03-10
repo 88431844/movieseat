@@ -15,64 +15,7 @@
     <script type="text/javascript" src="static/js/easing.js"></script>
 </head>
 <body>
-<div class="header">
-    <div class="headertop_desc">
-        <div class="wrap">
-            <div class="account_desc">
-                <ul>
-                    <li><a href="#">注册</a></li>
-                    <li><a href="#">登录</a></li>
-                    <li><a href="#">用户中心</a></li>
-                    <li><a href="#">后台管理</a></li>
-                </ul>
-            </div>
-            <div class="clear"></div>
-        </div>
-    </div>
-    <div class="wrap">
-        <div class="header_top">
-            <div class="logo">
-                <a href="movie/wall"><img src="static/images/logo.png" alt="" /></a>
-            </div>
-            <div class="header_top_right">
-                <div class="search_box">
-                    <form>
-                        <input type="text" value="搜索电影" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}"><input type="submit" value="">
-                    </form>
-                </div>
-                <div class="clear"></div>
-            </div>
-            <script type="text/javascript">
-                function DropDown(el) {
-                    this.dd = el;
-                    this.initEvents();
-                }
-                DropDown.prototype = {
-                    initEvents : function() {
-                        var obj = this;
-
-                        obj.dd.on('click', function(event){
-                            $(this).toggleClass('active');
-                            event.stopPropagation();
-                        });
-                    }
-                }
-
-                $(function() {
-
-                    var dd = new DropDown( $('#dd') );
-
-                    $(document).click(function() {
-                        // all dropdowns
-                        $('.wrapper-dropdown-2').removeClass('active');
-                    });
-
-                });
-            </script>
-            <div class="clear"></div>
-        </div>
-    </div>
-</div>
+<%@include file="../head.jsp"%>
 <div class="main">
     <div class="wrap">
 
@@ -196,13 +139,7 @@
         </div>
     </div>
 </div>
-<div class="footer">
-    <div class="wrap">
-        <div class="copy_right">
-            <p>Copyright &copy; 2019.沈阳航空航天大学.</p>
-        </div>
-    </div>
-</div>
+<%@include file="../footer.jsp"%>
 <script type="text/javascript">
     $(document).ready(function() {
         $().UItoTop({ easingType: 'easeOutQuart' });

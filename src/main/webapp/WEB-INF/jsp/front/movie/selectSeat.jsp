@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=gb2312" %>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://"
@@ -12,7 +12,7 @@
     <base href="<%=basePath%>">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
-    <title>ç”µå½±é€‰åº§</title>
+    <title>µçÓ°Ñ¡×ù</title>
     <link rel="stylesheet" type="text/css" href="static/css/main.css" />
     <style type="text/css">
         .demo{width:700px; margin:40px auto 0 auto; min-height:450px;}
@@ -44,24 +44,24 @@
 
 <body>
 <div id="header">
-    <div id="logo"><h1><a href="#" title="è¿”å›é¦–é¡µ">è¿”å›é¦–é¡µ</a></h1></div>
+    <div id="logo"><h1><a href="#" title="·µ»ØÊ×Ò³">·µ»ØÊ×Ò³</a></h1></div>
 </div>
 
 <div id="main">
     <div class="demo">
         <div id="seat-map">
-            <div class="front">å±å¹•</div>
+            <div class="front">ÆÁÄ»</div>
         </div>
         <div class="booking-details">
-            <p>å½±ç‰‡ï¼š<span>${movie.movieName}</span></p>
-            <p>æ—¶é—´ï¼š<span>${movie.movieDate}</span></p>
-            <p>ç¥¨ä»·ï¼š<span>ï¿¥${movie.moviePrice}/å¼ </span></p>
-            <p>åº§ä½ï¼š</p>
+            <p>Ó°Æ¬£º<span>${movie.movieName}</span></p>
+            <p>Ê±¼ä£º<span>${movie.movieDate}</span></p>
+            <p>Æ±¼Û£º<span>£¤${movie.moviePrice}/ÕÅ</span></p>
+            <p>×ùÎ»£º</p>
             <ul id="selected-seats"></ul>
-            <p>ç¥¨æ•°ï¼š<span id="counter">0</span></p>
-            <p>æ€»è®¡ï¼š<b>ï¿¥<span id="total">0</span></b></p>
+            <p>Æ±Êı£º<span id="counter">0</span></p>
+            <p>×Ü¼Æ£º<b>£¤<span id="total">0</span></b></p>
 
-            <button class="checkout-button">ç¡®å®šè´­ä¹°</button>
+            <button class="checkout-button">È·¶¨¹ºÂò</button>
 
             <div id="legend"></div>
         </div>
@@ -74,14 +74,14 @@
 <script type='text/javascript' src="static/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="static/js/jquery.seat-charts.min.js"></script>
 <script type="text/javascript">
-    var price = 80; //ç¥¨ä»·
+    var price = 80; //Æ±¼Û
     $(document).ready(function() {
-        var $cart = $('#selected-seats'), //åº§ä½åŒº
-            $counter = $('#counter'), //ç¥¨æ•°
-            $total = $('#total'); //æ€»è®¡é‡‘é¢
+        var $cart = $('#selected-seats'), //×ùÎ»Çø
+            $counter = $('#counter'), //Æ±Êı
+            $total = $('#total'); //×Ü¼Æ½ğ¶î
 
         var sc = $('#seat-map').seatCharts({
-            map: [  //åº§ä½å›¾
+            map: [  //×ùÎ»Í¼
                 'aaaaaaaaaa',
                 'aaaaaaaaaa',
                 '__________',
@@ -96,16 +96,16 @@
             naming : {
                 top : false
             },
-            legend : { //å®šä¹‰å›¾ä¾‹
+            legend : { //¶¨ÒåÍ¼Àı
                 node : $('#legend'),
                 items : [
-                    [ 'a', 'available',   'å¯é€‰åº§' ],
-                    [ 'a', 'unavailable', 'å·²å”®å‡º']
+                    [ 'a', 'available',   '¿ÉÑ¡×ù' ],
+                    [ 'a', 'unavailable', 'ÒÑÊÛ³ö']
                 ]
             },
-            click: function () { //ç‚¹å‡»äº‹ä»¶
-                if (this.status() == 'available') { //å¯é€‰åº§
-                    $('<li>'+(this.settings.row+1)+'æ’'+this.settings.label+'åº§</li>')
+            click: function () { //µã»÷ÊÂ¼ş
+                if (this.status() == 'available') { //¿ÉÑ¡×ù
+                    $('<li>'+(this.settings.row+1)+'ÅÅ'+this.settings.label+'×ù</li>')
                         .attr('id', 'cart-item-'+this.settings.id)
                         .data('seatId', this.settings.id)
                         .appendTo($cart);
@@ -114,28 +114,28 @@
                     $total.text(recalculateTotal(sc)+price);
 
                     return 'selected';
-                } else if (this.status() == 'selected') { //å·²é€‰ä¸­
-                    //æ›´æ–°æ•°é‡
+                } else if (this.status() == 'selected') { //ÒÑÑ¡ÖĞ
+                    //¸üĞÂÊıÁ¿
                     $counter.text(sc.find('selected').length-1);
-                    //æ›´æ–°æ€»è®¡
+                    //¸üĞÂ×Ü¼Æ
                     $total.text(recalculateTotal(sc)-price);
 
-                    //åˆ é™¤å·²é¢„è®¢åº§ä½
+                    //É¾³ıÒÑÔ¤¶©×ùÎ»
                     $('#cart-item-'+this.settings.id).remove();
-                    //å¯é€‰åº§
+                    //¿ÉÑ¡×ù
                     return 'available';
-                } else if (this.status() == 'unavailable') { //å·²å”®å‡º
+                } else if (this.status() == 'unavailable') { //ÒÑÊÛ³ö
                     return 'unavailable';
                 } else {
                     return this.style();
                 }
             }
         });
-        //å·²å”®å‡ºçš„åº§ä½
+        //ÒÑÊÛ³öµÄ×ùÎ»
         sc.get(['1_2', '4_4','4_5','6_6','6_7','8_5','8_6','8_7','8_8', '10_1', '10_2']).status('unavailable');
 
     });
-    //è®¡ç®—æ€»é‡‘é¢
+    //¼ÆËã×Ü½ğ¶î
     function recalculateTotal(sc) {
         var total = 0;
         sc.find('selected').each(function () {
@@ -147,7 +147,7 @@
 </script>
 
 <div id="footer">
-    <p>footer</p>
+    <%@include file="../footer.jsp"%>
 </div>
 </body>
 </html>

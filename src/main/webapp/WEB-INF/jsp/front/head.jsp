@@ -4,7 +4,7 @@
         <div class="wrap">
             <div class="account_desc">
                 <ul>
-                    <li><a href="user/registerUser">注册</a></li>
+                    <li><a href="user/toRegisterUser">注册</a></li>
                     <li><a href="#">登录</a></li>
                     <li><a href="#">用户中心</a></li>
                     <li><a href="#">后台管理</a></li>
