@@ -20,8 +20,19 @@
             $('#slider').nivoSlider();
         });
     </script>
+    <script>
+        function myAlert() {
+            var message = "${message}";
+            var messageStr = message.toString();
+            if (null != messageStr && !"".endsWith(messageStr)) {
+                alert(messageStr);
+            }
+
+        }
+
+    </script>
 </head>
-<body>
+<body onload="myAlert()">
 <%@include file="../head.jsp"%>
 <!------------End Header ------------>
 <div class="main">
