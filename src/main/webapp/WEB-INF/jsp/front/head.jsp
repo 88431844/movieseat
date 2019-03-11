@@ -4,9 +4,19 @@
         <div class="wrap">
             <div class="account_desc">
                 <ul>
-                    <li><a href="user/toRegisterUser">注册</a></li>
-                    <li><a href="#">登录</a></li>
-                    <li><a href="#">用户中心</a></li>
+                    <%
+                        String nickName = (String)session.getAttribute("nickName");
+                        if (null == nickName || "".equals(nickName)){
+                            out.print("<li><a href=\"user/toLogin\">登录</a></li>");
+                            out.print("<li><a href=\"user/toRegisterUser\">注册</a></li>");
+                        }
+                        else {
+                            out.print("<li><a href=>欢迎:"+nickName+"</a></li>");
+                            out.print("<li><a href=\"user/userLogout\">登出</a></li>");
+                        }
+                    %>
+
+
                     <li><a href="#">后台管理</a></li>
                 </ul>
             </div>
