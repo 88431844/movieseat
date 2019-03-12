@@ -1,8 +1,8 @@
-<%@ page contentType="text/html; charset=gb2312" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="footer">
     <div class="wrap">
         <div class="copy_right">
-            <p>Copyright &copy; 2019.ÉòÑôº½¿Õº½Ìì´óÑ§.</p>
+            <p>Copyright &copy; 2019.æ²ˆé˜³èˆªç©ºèˆªå¤©å¤§å­¦.</p>
         </div>
     </div>
 </div>

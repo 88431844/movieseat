@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=gb2312"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -6,7 +6,7 @@
 <!DOCTYPE HTML>
 <head>
     <base href="<%=basePath%>">
-    <title>用户注册</title>
+    <title>鐢ㄦ埛娉ㄥ唽</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="static/css/style.css" rel="stylesheet" type="text/css" media="all"/>
@@ -22,22 +22,22 @@
             <div class="section group">
                 <div class="col span_2_of_3">
                     <div class="contact-form">
-                        <h2>用户注册</h2>
+                        <h2>鐢ㄦ埛娉ㄥ唽</h2>
                         <form method="post" action="user/registerUser">
                             <div>
-                                <span><label>账号</label></span>
+                                <span><label>璐﹀彿</label></span>
                                 <span><input name="userName" type="text" class="textbox" ></span>
                             </div>
                             <div>
-                                <span><label>密码</label></span>
+                                <span><label>瀵嗙爜</label></span>
                                 <span><input name="userEmail" type="text" class="textbox"></span>
                             </div>
                             <div>
-                                <span><label>昵称</label></span>
+                                <span><label>鏄电О</label></span>
                                 <span><input name="userPhone" type="text" class="textbox"></span>
                             </div>
                             <div>
-                                <span><label>电话</label></span>
+                                <span><label>鐢佃瘽</label></span>
                                 <span><input name="userPhone" type="text" class="textbox"></span>
                             </div>
                             <div>

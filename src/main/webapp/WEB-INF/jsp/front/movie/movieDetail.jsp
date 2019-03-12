@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=gb2312"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -6,8 +6,7 @@
 <!DOCTYPE HTML>
 <head>
     <base href="<%=basePath%>">
-    <title>µçÓ°ÏêÇé</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ç”µå½±è¯¦æƒ…</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="static/css/style.css" rel="stylesheet" type="text/css" media="all"/>
     <script type="text/javascript" src="static/js/jquery-1.9.0.min.js"></script>
@@ -23,48 +22,48 @@
             <div class="cont-desc span_1_of_2">
                 <div class="product-details">
                     <div class="grid static/images_3_of_2">
-                        <img src="static/images/1.jpg" alt="µçÓ°º£±¨" />
+                        <img src="static/images/1.jpg" alt="ç”µå½±æµ·æŠ¥" />
                     </div>
                     <div class="desc span_3_of_2">
-                        <h2>µçÓ°Ãû³Æ £º ¾ªÆæ¶Ó³¤ Captain Marvel </h2>
+                        <h2>ç”µå½±åç§° ï¼š æƒŠå¥‡é˜Ÿé•¿ Captain Marvel </h2>
                         <%--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>--%>
                         <div class="price">
-                            <p>Æ±¼Û: <span>50 Ôª/ÕÅ</span></p>
+                            <p>ç¥¨ä»·: <span>50 å…ƒ/å¼ </span></p>
                         </div>
                         <div class="available">
                             <ul>
-                                <li><span>µ¼ÑÝ:</span> &nbsp; °²ÄÈ?²¨¶Ù / Èð°²?¸¥À×¿Ë</li>
-                                <li><span>±à¾ç:</span>&nbsp;  °²ÄÈ?²¨¶Ù / Èð°²?¸¥À×¿Ë / ¼ªÄÚÍß?µÂÎÖÀ³ÌØ-ÂÞ±öÉ­ / Äá¿Æ¶û?ÅÁ¶ûÂü / Ã·¸ñ?ÀÕ¸£·ò</li>
-                                <li><span>Ö÷ÑÝ:</span>&nbsp;  ²¼Àö?À­¶ûÉ­ / ôÃµÂ?Âå / ÈûçÑ¶û?½Ü¿ËÑ· / ±¾?ÃÅµÂ¶ûÉ­ / °²ÄÝÌØ?±´Äþ</li>
-                                <li><span>ÀàÐÍ:</span>&nbsp; ¶¯×÷ / ¿Æ»Ã / Ã°ÏÕ</li>
-                                <li><span>ÓïÑÔ:</span>&nbsp; Ó¢Óï</li>
-                                <li><span>ÉÏÓ³ÈÕÆÚ:</span>&nbsp; 2019-03-08(ÃÀ¹ú/ÖÐ¹ú´óÂ½)</li>
-                                <li><span>Æ¬³¤:</span>&nbsp; 124·ÖÖÓ</li>
+                                <li><span>å¯¼æ¼”:</span> &nbsp; å®‰å¨œ?æ³¢é¡¿ / ç‘žå®‰?å¼—é›·å…‹</li>
+                                <li><span>ç¼–å‰§:</span>&nbsp;  å®‰å¨œ?æ³¢é¡¿ / ç‘žå®‰?å¼—é›·å…‹ / å‰å†…ç“¦?å¾·æ²ƒèŽ±ç‰¹-ç½—å®¾æ£® / å°¼ç§‘å°”?å¸•å°”æ›¼ / æ¢…æ ¼?å‹’ç¦å¤«</li>
+                                <li><span>ä¸»æ¼”:</span>&nbsp;  å¸ƒä¸½?æ‹‰å°”æ£® / è£˜å¾·?æ´› / å¡žç¼ªå°”?æ°å…‹é€Š / æœ¬?é—¨å¾·å°”æ£® / å®‰å¦®ç‰¹?è´å®</li>
+                                <li><span>ç±»åž‹:</span>&nbsp; åŠ¨ä½œ / ç§‘å¹» / å†’é™©</li>
+                                <li><span>è¯­è¨€:</span>&nbsp; è‹±è¯­</li>
+                                <li><span>ä¸Šæ˜ æ—¥æœŸ:</span>&nbsp; 2019-03-08(ç¾Žå›½/ä¸­å›½å¤§é™†)</li>
+                                <li><span>ç‰‡é•¿:</span>&nbsp; 124åˆ†é’Ÿ</li>
                                 <li>
-                                        <p>ÈÕÆÚÑ¡Ôñ :</p>
+                                        <p>æ—¥æœŸé€‰æ‹© :</p>
                                         <select>
-                                            <option>3ÔÂ10ÈÕ</option>
-                                            <option>3ÔÂ11ÈÕ</option>
-                                            <option>3ÔÂ12ÈÕ</option>
-                                            <option>3ÔÂ13ÈÕ</option>
-                                            <option>3ÔÂ14ÈÕ</option>
-                                            <option>3ÔÂ15ÈÕ</option>
+                                            <option>3æœˆ10æ—¥</option>
+                                            <option>3æœˆ11æ—¥</option>
+                                            <option>3æœˆ12æ—¥</option>
+                                            <option>3æœˆ13æ—¥</option>
+                                            <option>3æœˆ14æ—¥</option>
+                                            <option>3æœˆ15æ—¥</option>
                                         </select>
                                 </li>
 
                                 <li>
-                                        <p>Ó°ÔºÑ¡Ôñ :</p>
+                                        <p>å½±é™¢é€‰æ‹© :</p>
                                         <select>
-                                            <option>ÖÐ½Ö±È¸ßµçÓ°Ôº</option>
-                                            <option>3ÔÂ11ÈÕ</option>
-                                            <option>3ÔÂ12ÈÕ</option>
-                                            <option>3ÔÂ13ÈÕ</option>
-                                            <option>3ÔÂ14ÈÕ</option>
-                                            <option>3ÔÂ15ÈÕ</option>
+                                            <option>ä¸­è¡—æ¯”é«˜ç”µå½±é™¢</option>
+                                            <option>3æœˆ11æ—¥</option>
+                                            <option>3æœˆ12æ—¥</option>
+                                            <option>3æœˆ13æ—¥</option>
+                                            <option>3æœˆ14æ—¥</option>
+                                            <option>3æœˆ15æ—¥</option>
                                         </select>
                                 </li>
                                 <li>
-                                        <div class="button"><span><a href="movie/seat">µçÓ°Ñ¡×ù</a></span></div>
+                                        <div class="button"><span><a href="movie/seat">ç”µå½±é€‰åº§</a></span></div>
                                         <div class="clear"></div>
                                 </li>
 
@@ -74,12 +73,12 @@
                     <div class="clear"></div>
                 </div>
                 <div class="product_desc">
-                    <h2>¾çÇé¼ò½é :</h2>
-                    <p>Âþ»­ÖÐµÄ³õ´ú¡°¾ªÆæÅ®Ê¿¡±Ô­ÃûCarol Danvers£¬ËýÔø¾­ÊÇÒ»ÃûÃÀ¹ú¿Õ¾üÇé±¨¾ÖÌ½Ô±£¬°µÁµ¾ªÆæÏÈÉú¡£´ËºóËýµÃµ½ÁË³¬ÄÜÁ¦£¬³ÉÎª¡°¾ªÆæÅ®Ê¿¡±£¬ÔÚÂþ»­ÖÐÊÇ·Ç³£µäÐÍµÄÅ®ÐÔÓ¢ÐÛÈËÎï¡£Ëý¿ÉÒÔÎüÊÕ²¢¿ØÖÆÈÎÒâÐÎÌ¬µÄÄÜÁ¿£¬ÓµÓÐÖÚ¶à³¬ÄÜÁ¦¡£¡¶¾ªÆæ¶Ó³¤¡·½«ÊÇÂþÍþÊ×²¿ÒÔÅ®ÐÔ³¬¼¶Ó¢ÐÛÎªÖ÷½ÇµÄµçÓ°¡£</p>
+                    <h2>å‰§æƒ…ç®€ä»‹ :</h2>
+                    <p>æ¼«ç”»ä¸­çš„åˆä»£â€œæƒŠå¥‡å¥³å£«â€åŽŸåCarol Danversï¼Œå¥¹æ›¾ç»æ˜¯ä¸€åç¾Žå›½ç©ºå†›æƒ…æŠ¥å±€æŽ¢å‘˜ï¼Œæš—æ‹æƒŠå¥‡å…ˆç”Ÿã€‚æ­¤åŽå¥¹å¾—åˆ°äº†è¶…èƒ½åŠ›ï¼Œæˆä¸ºâ€œæƒŠå¥‡å¥³å£«â€ï¼Œåœ¨æ¼«ç”»ä¸­æ˜¯éžå¸¸å…¸åž‹çš„å¥³æ€§è‹±é›„äººç‰©ã€‚å¥¹å¯ä»¥å¸æ”¶å¹¶æŽ§åˆ¶ä»»æ„å½¢æ€çš„èƒ½é‡ï¼Œæ‹¥æœ‰ä¼—å¤šè¶…èƒ½åŠ›ã€‚ã€ŠæƒŠå¥‡é˜Ÿé•¿ã€‹å°†æ˜¯æ¼«å¨é¦–éƒ¨ä»¥å¥³æ€§è¶…çº§è‹±é›„ä¸ºä¸»è§’çš„ç”µå½±ã€‚</p>
                 </div>
             </div>
             <div class="rightsidebar span_3_of_1 sidebar">
-                <h2>×îÐÂµçÓ°</h2>
+                <h2>æœ€æ–°ç”µå½±</h2>
                 <div class="special_movies">
                     <div class="movie_poster">
                         <a href="movie/detail"><img src="static/images/end-game.jpg" alt="" /></a>
@@ -87,7 +86,7 @@
                     <div class="movie_desc">
                         <h3><a href="movie/detail">End Game</a></h3>
                         <p></p>
-                        <span><a href="movie/detail">µçÓ°ÏêÇé</a></span>
+                        <span><a href="movie/detail">ç”µå½±è¯¦æƒ…</a></span>
                     </div>
                     <div class="clear"></div>
                 </div>
@@ -98,7 +97,7 @@
                     <div class="movie_desc">
                         <h3><a href="movie/detail">Coraline</a></h3>
                         <p></p>
-                        <span><a href="movie/detail">µçÓ°ÏêÇé</a></span>
+                        <span><a href="movie/detail">ç”µå½±è¯¦æƒ…</a></span>
                     </div>
                     <div class="clear"></div>
                 </div>
@@ -109,7 +108,7 @@
                     <div class="movie_desc">
                         <h3><a href="movie/detail">Eclipse</a></h3>
                         <p></p>
-                        <span><a href="movie/detail">µçÓ°ÏêÇé</a></span>
+                        <span><a href="movie/detail">ç”µå½±è¯¦æƒ…</a></span>
                     </div>
                     <div class="clear"></div>
                 </div>
@@ -120,7 +119,7 @@
                     <div class="movie_desc">
                         <h3><a href="movie/detail">Priest 3D</a></h3>
                         <p></p>
-                        <span><a href="movie/detail">µçÓ°ÏêÇé</a></span>
+                        <span><a href="movie/detail">ç”µå½±è¯¦æƒ…</a></span>
                     </div>
                     <div class="clear"></div>
                 </div>
@@ -131,7 +130,7 @@
                     <div class="movie_desc">
                         <h3><a href="movie/detail">Sorority Wars</a></h3>
                         <p></p>
-                        <span><a href="movie/detail">µçÓ°ÏêÇé</a></span>
+                        <span><a href="movie/detail">ç”µå½±è¯¦æƒ…</a></span>
                     </div>
                     <div class="clear"></div>
                 </div>

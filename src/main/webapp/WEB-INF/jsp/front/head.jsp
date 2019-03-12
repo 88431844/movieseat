@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=gb2312" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="header">
     <div class="headertop_desc">
         <div class="wrap">
@@ -7,17 +7,17 @@
                     <%
                         String nickName = (String)session.getAttribute("nickName");
                         if (null == nickName || "".equals(nickName)){
-                            out.print("<li><a href=\"user/toLogin\">登录</a></li>");
-                            out.print("<li><a href=\"user/toRegisterUser\">注册</a></li>");
+                            out.print("<li><a href=\"user/toLogin\">鐧诲綍</a></li>");
+                            out.print("<li><a href=\"user/toRegisterUser\">娉ㄥ唽</a></li>");
                         }
                         else {
-                            out.print("<li><a href=>欢迎:"+nickName+"</a></li>");
-                            out.print("<li><a href=\"user/userLogout\">登出</a></li>");
+                            out.print("<li><a href=>娆㈣繋:"+nickName+"</a></li>");
+                            out.print("<li><a href=\"user/userLogout\">鐧诲嚭</a></li>");
                         }
                     %>
 
 
-                    <li><a href="#">后台管理</a></li>
+                    <li><a href="admin/toAdminLogin">鍚庡彴绠＄悊</a></li>
                 </ul>
             </div>
             <div class="clear"></div>
@@ -31,7 +31,7 @@
             <div class="header_top_right">
                 <div class="search_box">
                     <form>
-                        <input type="text" value="搜索电影" onfocus="this.value = '';"
+                        <input type="text" value="鎼滅储鐢靛奖" onfocus="this.value = '';"
                                onblur="if (this.value == '') {this.value = 'Search';}"><input type="submit" value="">
                     </form>
                 </div>

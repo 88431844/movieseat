@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=gb2312"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -6,8 +6,7 @@
 <!DOCTYPE HTML>
 <head>
     <base href="<%=basePath%>">
-    <title>用户登录</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>鐢ㄦ埛鐧诲綍</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="static/css/style.css" rel="stylesheet" type="text/css" media="all"/>
     <script type="text/javascript" src="static/js/jquery-1.9.0.min.js"></script>
@@ -22,14 +21,14 @@
             <div class="section group">
                 <div class="col span_2_of_3">
                     <div class="contact-form">
-                        <h2>用户登录</h2>
+                        <h2>鐢ㄦ埛鐧诲綍</h2>
                         <form method="post" action="user/userLogin">
                             <div>
-                                <span><label>账号</label></span>
+                                <span><label>璐﹀彿</label></span>
                                 <span><input name="userName" type="text" class="textbox" ></span>
                             </div>
                             <div>
-                                <span><label>密码</label></span>
+                                <span><label>瀵嗙爜</label></span>
                                 <span><input name="userEmail" type="password" class="textbox"></span>
                             </div>
                             <div>
