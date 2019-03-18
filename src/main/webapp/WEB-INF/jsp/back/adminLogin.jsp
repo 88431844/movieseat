@@ -46,9 +46,20 @@
             form.submit();
         }
     </script>
+    <script>
+        function myAlert() {
+            var message = "${message}";
+            var messageStr = message.toString();
+            if (null != messageStr && !"".endsWith(messageStr)) {
+                alert(messageStr);
+            }
+
+        }
+
+    </script>
 </head>
 
-<body class="login-layout">
+<body class="login-layout" onload="myAlert()">
 <div class="main-container">
     <div class="main-content">
         <div class="row">
