@@ -9,9 +9,16 @@ import org.springframework.web.servlet.ModelAndView;
 public class adminController {
 
     @RequestMapping("/toAdminLogin")
-    public ModelAndView adminLogin(){
+    public ModelAndView toAdminLogin(){
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("back/adminLogin");
+        return modelAndView;
+    }
+
+    @RequestMapping("/adminLogin")
+    public ModelAndView adminLogin(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("back/adminIndex");
         return modelAndView;
     }
 }
