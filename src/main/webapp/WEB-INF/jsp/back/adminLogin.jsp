@@ -79,14 +79,16 @@
                                         <fieldset>
                                             <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="text" class="form-control" placeholder="账号" />
+															<input type="text" name="adminUserName" class="form-control"
+                                                                   placeholder="账号"/>
 															<i class="ace-icon fa fa-user"></i>
 														</span>
                                             </label>
 
                                             <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control" placeholder="密码" />
+															<input type="password" name="adminPassword"
+                                                                   class="form-control" placeholder="密码"/>
 															<i class="ace-icon fa fa-lock"></i>
 														</span>
                                             </label>
@@ -96,9 +98,9 @@
                                             <div class="clearfix">
                                                 <label class="inline">
                                                     <span class="lbl"> 登录角色：</span>
-                                                    <select>
-                                                        <option>经理</option>
-                                                        <option>员工</option>
+                                                    <select name="role">
+                                                        <option value="0">经理</option>
+                                                        <option value="1">员工</option>
                                                     </select>
 
                                                 </label>

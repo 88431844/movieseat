@@ -8,7 +8,7 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/user")
-public class userController {
+public class MserController {
 
     @RequestMapping("/toRegisterUser")
     public String toRegisterUser(){

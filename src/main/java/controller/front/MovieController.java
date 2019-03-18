@@ -11,7 +11,7 @@ import java.util.Map;
 
 @Controller
 @RequestMapping("/movie")
-public class movieController {
+public class MovieController {
 
     @Autowired
     private TestService testService;
