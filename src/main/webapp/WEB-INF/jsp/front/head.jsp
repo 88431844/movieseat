@@ -32,7 +32,7 @@
                 <div class="search_box">
                     <form>
                         <input type="text" value="搜索电影" onfocus="this.value = '';"
-                               onblur="if (this.value == '') {this.value = 'Search';}"><input type="submit" value="">
+                               onblur="if (this.value == '') {this.value = '搜索电影';}"><input type="submit" value="">
                     </form>
                 </div>
                 <div class="clear"></div>
