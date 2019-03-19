@@ -2,10 +2,13 @@ package controller.back;
 
 import com.alibaba.fastjson.JSON;
 import dto.AdminLoginDto;
+import entity.Madmin;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import service.AdminService;
 
 import javax.servlet.http.HttpSession;
 
@@ -14,6 +17,9 @@ import javax.servlet.http.HttpSession;
 public class AdminController {
 
     private Logger log = Logger.getLogger(this.getClass());
+
+    @Autowired
+    private AdminService adminService;
 
     @RequestMapping("/toAdminLogin")
     public ModelAndView toAdminLogin(){
@@ -28,7 +34,16 @@ public class AdminController {
         log.info("--- AdminController adminLoginDto : " + JSON.toJSONString(adminLoginDto));
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("back/adminIndex");
-        session.setAttribute("adminUserName", "张经理");
+
+        Madmin admin = adminService.adminLogin(adminLoginDto);
+        if (null != admin && admin.getUsername() != null){
+            session.setAttribute("adminUserName", admin.getUsername());
+        }
+        else {
+            modelAndView.setViewName("back/adminLogin");
+            modelAndView.addObject("message","登录失败");
+        }
+
         return modelAndView;
     }
 

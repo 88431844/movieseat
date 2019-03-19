@@ -1,10 +1,8 @@
 package controller.front;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import service.TestService;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,9 +10,6 @@ import java.util.Map;
 @Controller
 @RequestMapping("/movie")
 public class MovieController {
-
-    @Autowired
-    private TestService testService;
 
     @RequestMapping("/wall")
     public ModelAndView wall(){
@@ -47,8 +42,6 @@ public class MovieController {
         modelAndView.setViewName("front/movie/selectSeat");
 
         modelAndView.addObject("movie",movie);
-
-        testService.testMysql();
 
         return modelAndView;
     }
