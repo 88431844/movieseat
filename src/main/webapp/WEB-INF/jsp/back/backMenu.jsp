@@ -9,6 +9,7 @@
     <ul class="nav nav-list">
         <li class="active">
             <a href="admin/adminLogin">
+                <i class="menu-icon fa fa-tachometer"></i>
                 <span class="menu-text"> 主页 </span>
             </a>
 
@@ -19,7 +20,6 @@
             <a href="#" class="dropdown-toggle">
                 <i class="menu-icon fa fa-desktop"></i>
                 <span class="menu-text">电影管理 </span>
-
                 <b class="arrow fa fa-angle-down"></b>
             </a>
 
@@ -27,12 +27,12 @@
 
             <ul class="submenu">
                 <li class="">
-                    <a href="#" class="dropdown-toggle">
-                        <i class="menu-icon fa fa-caret-right"></i>
+                    <%--<a href="#" class="dropdown-toggle">--%>
+                    <%--<i class="menu-icon fa fa-caret-right"></i>--%>
 
-                        Layouts
-                        <b class="arrow fa fa-angle-down"></b>
-                    </a>
+                    <%--Layouts--%>
+                    <%--<b class="arrow fa fa-angle-down"></b>--%>
+                    <%--</a>--%>
 
                     <b class="arrow"></b>
 
@@ -74,113 +74,24 @@
                         </li>
                     </ul>
                 </li>
-
                 <li class="">
-                    <a href="typography.html">
+                    <a href="backMovie/listMovie">
                         <i class="menu-icon fa fa-caret-right"></i>
-                        Typography
+                        查询电影
+                    </a>
+
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <a href="backMovie/toAddMovie">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        添加电影
                     </a>
 
                     <b class="arrow"></b>
                 </li>
 
-                <li class="">
-                    <a href="elements.html">
-                        <i class="menu-icon fa fa-caret-right"></i>
-                        Elements
-                    </a>
 
-                    <b class="arrow"></b>
-                </li>
-
-                <li class="">
-                    <a href="buttons.html">
-                        <i class="menu-icon fa fa-caret-right"></i>
-                        Buttons &amp; Icons
-                    </a>
-
-                    <b class="arrow"></b>
-                </li>
-
-                <li class="">
-                    <a href="treeview.html">
-                        <i class="menu-icon fa fa-caret-right"></i>
-                        Treeview
-                    </a>
-
-                    <b class="arrow"></b>
-                </li>
-
-                <li class="">
-                    <a href="jquery-ui.html">
-                        <i class="menu-icon fa fa-caret-right"></i>
-                        jQuery UI
-                    </a>
-
-                    <b class="arrow"></b>
-                </li>
-
-                <li class="">
-                    <a href="nestable-list.html">
-                        <i class="menu-icon fa fa-caret-right"></i>
-                        Nestable Lists
-                    </a>
-
-                    <b class="arrow"></b>
-                </li>
-
-                <li class="">
-                    <a href="#" class="dropdown-toggle">
-                        <i class="menu-icon fa fa-caret-right"></i>
-
-                        Three Level Menu
-                        <b class="arrow fa fa-angle-down"></b>
-                    </a>
-
-                    <b class="arrow"></b>
-
-                    <ul class="submenu">
-                        <li class="">
-                            <a href="#">
-                                <i class="menu-icon fa fa-leaf green"></i>
-                                Item #1
-                            </a>
-
-                            <b class="arrow"></b>
-                        </li>
-
-                        <li class="">
-                            <a href="#" class="dropdown-toggle">
-                                <i class="menu-icon fa fa-pencil orange"></i>
-
-                                4th level
-                                <b class="arrow fa fa-angle-down"></b>
-                            </a>
-
-                            <b class="arrow"></b>
-
-                            <ul class="submenu">
-                                <li class="">
-                                    <a href="#">
-                                        <i class="menu-icon fa fa-plus purple"></i>
-                                        Add Product
-                                    </a>
-
-                                    <b class="arrow"></b>
-                                </li>
-
-                                <li class="">
-                                    <a href="#">
-                                        <i class="menu-icon fa fa-eye pink"></i>
-                                        View Products
-                                    </a>
-
-                                    <b class="arrow"></b>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
             </ul>
         </li>
 
