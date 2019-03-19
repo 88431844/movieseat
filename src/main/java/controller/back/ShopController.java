@@ -8,63 +8,62 @@ import util.LoginUtil;
 
 import javax.servlet.http.HttpSession;
 
-
 @Controller
-@RequestMapping("/backMovie")
-public class BackMovieController {
+@RequestMapping("/shop")
+public class ShopController {
 
     private Logger log = Logger.getLogger(this.getClass());
 
-    @RequestMapping("/toAddMovie")
-    public ModelAndView toAddMovie(HttpSession session) {
+    @RequestMapping("/toAddShop")
+    public ModelAndView toAddShop(HttpSession session) {
         ModelAndView modelAndView = LoginUtil.checkAdminLogin(session);
         if (null == modelAndView.getViewName()) {
-            modelAndView.setViewName("back/movie/addMovie");
+            modelAndView.setViewName("back/shop/addShop");
         }
         return modelAndView;
     }
 
-    @RequestMapping("/addMovie")
-    public ModelAndView addMovie(HttpSession session) {
+    @RequestMapping("/addShop")
+    public ModelAndView addShop(HttpSession session) {
         ModelAndView modelAndView = LoginUtil.checkAdminLogin(session);
         if (null == modelAndView.getViewName()) {
-            modelAndView.setViewName("back/movie/listMovie");
+            modelAndView.setViewName("back/shop/listShop");
         }
         return modelAndView;
     }
 
-    @RequestMapping("/delMovie")
-    public ModelAndView delMovie(HttpSession session) {
+    @RequestMapping("/delShop")
+    public ModelAndView delShop(HttpSession session) {
         ModelAndView modelAndView = LoginUtil.checkAdminLogin(session);
         if (null == modelAndView.getViewName()) {
-            modelAndView.setViewName("back/movie/listMovie");
+            modelAndView.setViewName("back/shop/listShop");
         }
         return modelAndView;
     }
 
-    @RequestMapping("/toEditMovie")
-    public ModelAndView toEditMovie(HttpSession session) {
+    @RequestMapping("/toEditShop")
+    public ModelAndView toEditShop(HttpSession session) {
         ModelAndView modelAndView = LoginUtil.checkAdminLogin(session);
         if (null == modelAndView.getViewName()) {
-            modelAndView.setViewName("back/movie/editMovie");
+            modelAndView.setViewName("back/shop/editShop");
         }
         return modelAndView;
     }
 
-    @RequestMapping("/editMovie")
-    public ModelAndView editMovie(HttpSession session) {
+    @RequestMapping("/editShop")
+    public ModelAndView editShop(HttpSession session) {
         ModelAndView modelAndView = LoginUtil.checkAdminLogin(session);
         if (null == modelAndView.getViewName()) {
-            modelAndView.setViewName("back/movie/listMovie");
+            modelAndView.setViewName("back/shop/listShop");
         }
         return modelAndView;
     }
 
-    @RequestMapping("/listMovie")
-    public ModelAndView listMovie(HttpSession session) {
+    @RequestMapping("/listShop")
+    public ModelAndView listShop(HttpSession session) {
         ModelAndView modelAndView = LoginUtil.checkAdminLogin(session);
         if (null == modelAndView.getViewName()) {
-            modelAndView.setViewName("back/movie/listMovie");
+            modelAndView.setViewName("back/shop/listShop");
         }
         return modelAndView;
     }

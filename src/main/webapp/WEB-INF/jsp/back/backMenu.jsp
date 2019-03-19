@@ -19,7 +19,7 @@
         <li class="">
             <a href="#" class="dropdown-toggle">
                 <i class="menu-icon fa fa-desktop"></i>
-                <span class="menu-text">电影管理 </span>
+                <span class="menu-text">电影内容管理 </span>
                 <b class="arrow fa fa-angle-down"></b>
             </a>
 
@@ -49,7 +49,7 @@
         <li class="">
             <a href="#" class="dropdown-toggle">
                 <i class="menu-icon fa fa-desktop"></i>
-                <span class="menu-text">影院管理 </span>
+                <span class="menu-text">影院信息管理 </span>
                 <b class="arrow fa fa-angle-down"></b>
             </a>
 
@@ -57,17 +57,17 @@
 
             <ul class="submenu">
                 <li class="">
-                    <a href="backMovie/listMovie">
+                    <a href="cinema/listCinema">
                         <i class="menu-icon fa fa-caret-right"></i>
-                        查询电影
+                        查询影院
                     </a>
 
                     <b class="arrow"></b>
                 </li>
                 <li class="">
-                    <a href="backMovie/toAddMovie">
+                    <a href="cinema/toAddCinema">
                         <i class="menu-icon fa fa-caret-right"></i>
-                        添加电影
+                        添加影院
                     </a>
 
                     <b class="arrow"></b>
@@ -79,7 +79,7 @@
         <li class="">
             <a href="#" class="dropdown-toggle">
                 <i class="menu-icon fa fa-desktop"></i>
-                <span class="menu-text">票务管理 </span>
+                <span class="menu-text">票务信息管理 </span>
                 <b class="arrow fa fa-angle-down"></b>
             </a>
 
@@ -87,17 +87,17 @@
 
             <ul class="submenu">
                 <li class="">
-                    <a href="backMovie/listMovie">
+                    <a href="ticket/listTicket">
                         <i class="menu-icon fa fa-caret-right"></i>
-                        票务电影
+                        查看票务信息
                     </a>
 
                     <b class="arrow"></b>
                 </li>
                 <li class="">
-                    <a href="backMovie/toAddMovie">
+                    <a href="ticket/toAddTicket">
                         <i class="menu-icon fa fa-caret-right"></i>
-                        添加票务
+                        添加票务信息
                     </a>
 
                     <b class="arrow"></b>
@@ -117,7 +117,7 @@
 
             <ul class="submenu">
                 <li class="">
-                    <a href="backMovie/listMovie">
+                    <a href="shop/listShop">
                         <i class="menu-icon fa fa-caret-right"></i>
                         查询商城套餐
                     </a>
@@ -125,7 +125,7 @@
                     <b class="arrow"></b>
                 </li>
                 <li class="">
-                    <a href="backMovie/toAddMovie">
+                    <a href="shop/toAddShop">
                         <i class="menu-icon fa fa-caret-right"></i>
                         添加商城套餐
                     </a>
@@ -135,7 +135,6 @@
             </ul>
 
         </li>
-
 
     </ul><!-- /.nav-list -->
     <script type="text/javascript">

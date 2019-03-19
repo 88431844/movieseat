@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import service.AdminService;
+import util.LoginUtil;
 
 import javax.servlet.http.HttpSession;
 
@@ -31,13 +32,9 @@ public class AdminController {
 
     @RequestMapping("/adminIndex")
     public ModelAndView adminIndex(HttpSession session) {
-        ModelAndView modelAndView = new ModelAndView();
-        String adminUserName = (String) session.getAttribute("adminUserName");
-        if (null != adminUserName) {
+        ModelAndView modelAndView = LoginUtil.checkAdminLogin(session);
+        if (null == modelAndView.getViewName()) {
             modelAndView.setViewName("back/adminIndex");
-        } else {
-            modelAndView.addObject("message", "请重新登录");
-            modelAndView.setViewName("back/adminLogin");
         }
         return modelAndView;
     }
