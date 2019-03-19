@@ -29,6 +29,18 @@ public class AdminController {
         return modelAndView;
     }
 
+    @RequestMapping("/adminIndex")
+    public ModelAndView adminIndex(HttpSession session) {
+        ModelAndView modelAndView = new ModelAndView();
+        String adminUserName = (String) session.getAttribute("adminUserName");
+        if (null != adminUserName) {
+            modelAndView.setViewName("back/adminIndex");
+        } else {
+            modelAndView.addObject("message", "请重新登录");
+            modelAndView.setViewName("back/adminLogin");
+        }
+        return modelAndView;
+    }
     @RequestMapping("/adminLogin")
     public ModelAndView adminLogin(AdminLoginDto adminLoginDto, HttpSession session) {
         log.info("--- AdminController adminLoginDto : " + JSON.toJSONString(adminLoginDto));
