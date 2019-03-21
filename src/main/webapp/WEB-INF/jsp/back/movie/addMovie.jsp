@@ -101,130 +101,130 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> Full Length </label>
+                            <%--<div class="form-group">--%>
+                            <%--<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> Full Length </label>--%>
 
-                                <div class="col-sm-9">
-                                    <input type="text" id="form-field-1-1" placeholder="Text Field" class="form-control" />
-                                </div>
-                            </div>
+                            <%--<div class="col-sm-9">--%>
+                            <%--<input type="text" id="form-field-1-1" placeholder="Text Field" class="form-control" />--%>
+                            <%--</div>--%>
+                            <%--</div>--%>
 
                             <!-- /section:elements.form -->
                             <div class="space-4"></div>
 
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label no-padding-right" for="form-field-2"> Password Field </label>
+                            <%--<div class="form-group">--%>
+                            <%--<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> Password Field </label>--%>
 
-                                <div class="col-sm-9">
-                                    <input type="password" id="form-field-2" placeholder="Password" class="col-xs-10 col-sm-5" />
-                                    <span class="help-inline col-xs-12 col-sm-7">
-												<span class="middle">Inline help text</span>
-											</span>
-                                </div>
-                            </div>
-
-                            <div class="space-4"></div>
-
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label no-padding-right" for="form-input-readonly"> Readonly field </label>
-
-                                <div class="col-sm-9">
-                                    <input readonly="" type="text" class="col-xs-10 col-sm-5" id="form-input-readonly" value="This text field is readonly!" />
-                                    <span class="help-inline col-xs-12 col-sm-7">
-												<label class="middle">
-													<input class="ace" type="checkbox" id="id-disable-check" />
-													<span class="lbl"> Disable it!</span>
-												</label>
-											</span>
-                                </div>
-                            </div>
+                            <%--<div class="col-sm-9">--%>
+                            <%--<input type="password" id="form-field-2" placeholder="Password" class="col-xs-10 col-sm-5" />--%>
+                            <%--<span class="help-inline col-xs-12 col-sm-7">--%>
+                            <%--<span class="middle">Inline help text</span>--%>
+                            <%--</span>--%>
+                            <%--</div>--%>
+                            <%--</div>--%>
 
                             <div class="space-4"></div>
 
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label no-padding-right" for="form-field-4">Relative Sizing</label>
+                            <%--<div class="form-group">--%>
+                            <%--<label class="col-sm-3 control-label no-padding-right" for="form-input-readonly"> Readonly field </label>--%>
 
-                                <div class="col-sm-9">
-                                    <input class="input-sm" type="text" id="form-field-4" placeholder=".input-sm" />
-                                    <div class="space-2"></div>
-
-                                    <div class="help-block" id="input-size-slider"></div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label no-padding-right" for="form-field-5">Grid Sizing</label>
-
-                                <div class="col-sm-9">
-                                    <div class="clearfix">
-                                        <input class="col-xs-1" type="text" id="form-field-5" placeholder=".col-xs-1" />
-                                    </div>
-
-                                    <div class="space-2"></div>
-
-                                    <div class="help-block" id="input-span-slider"></div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label no-padding-right">Input with Icon</label>
-
-                                <div class="col-sm-9">
-                                    <!-- #section:elements.form.input-icon -->
-                                    <span class="input-icon">
-												<input type="text" id="form-field-icon-1" />
-												<i class="ace-icon fa fa-leaf blue"></i>
-											</span>
-
-                                    <span class="input-icon input-icon-right">
-												<input type="text" id="form-field-icon-2" />
-												<i class="ace-icon fa fa-leaf green"></i>
-											</span>
-
-                                    <!-- /section:elements.form.input-icon -->
-                                </div>
-                            </div>
+                            <%--<div class="col-sm-9">--%>
+                            <%--<input readonly="" type="text" class="col-xs-10 col-sm-5" id="form-input-readonly" value="This text field is readonly!" />--%>
+                            <%--<span class="help-inline col-xs-12 col-sm-7">--%>
+                            <%--<label class="middle">--%>
+                            <%--<input class="ace" type="checkbox" id="id-disable-check" />--%>
+                            <%--<span class="lbl"> Disable it!</span>--%>
+                            <%--</label>--%>
+                            <%--</span>--%>
+                            <%--</div>--%>
+                            <%--</div>--%>
 
                             <div class="space-4"></div>
 
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label no-padding-right" for="form-field-6">Tooltip and help button</label>
+                            <%--<div class="form-group">--%>
+                            <%--<label class="col-sm-3 control-label no-padding-right" for="form-field-4">Relative Sizing</label>--%>
 
-                                <div class="col-sm-9">
-                                    <input data-rel="tooltip" type="text" id="form-field-6" placeholder="Tooltip on hover" title="Hello Tooltip!" data-placement="bottom" />
-                                    <span class="help-button" data-rel="popover" data-trigger="hover" data-placement="left" data-content="More details." title="Popover on hover">?</span>
-                                </div>
-                            </div>
+                            <%--<div class="col-sm-9">--%>
+                            <%--<input class="input-sm" type="text" id="form-field-4" placeholder=".input-sm" />--%>
+                            <%--<div class="space-2"></div>--%>
+
+                            <%--<div class="help-block" id="input-size-slider"></div>--%>
+                            <%--</div>--%>
+                            <%--</div>--%>
+
+                            <%--<div class="form-group">--%>
+                            <%--<label class="col-sm-3 control-label no-padding-right" for="form-field-5">Grid Sizing</label>--%>
+
+                            <%--<div class="col-sm-9">--%>
+                            <%--<div class="clearfix">--%>
+                            <%--<input class="col-xs-1" type="text" id="form-field-5" placeholder=".col-xs-1" />--%>
+                            <%--</div>--%>
+
+                            <%--<div class="space-2"></div>--%>
+
+                            <%--<div class="help-block" id="input-span-slider"></div>--%>
+                            <%--</div>--%>
+                            <%--</div>--%>
+
+                            <%--<div class="form-group">--%>
+                            <%--<label class="col-sm-3 control-label no-padding-right">Input with Icon</label>--%>
+
+                            <%--<div class="col-sm-9">--%>
+                            <%--<!-- #section:elements.form.input-icon -->--%>
+                            <%--<span class="input-icon">--%>
+                            <%--<input type="text" id="form-field-icon-1" />--%>
+                            <%--<i class="ace-icon fa fa-leaf blue"></i>--%>
+                            <%--</span>--%>
+
+                            <%--<span class="input-icon input-icon-right">--%>
+                            <%--<input type="text" id="form-field-icon-2" />--%>
+                            <%--<i class="ace-icon fa fa-leaf green"></i>--%>
+                            <%--</span>--%>
+
+                            <%--<!-- /section:elements.form.input-icon -->--%>
+                            <%--</div>--%>
+                            <%--</div>--%>
 
                             <div class="space-4"></div>
 
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label no-padding-right" for="form-field-tags">Tag input</label>
+                            <%--<div class="form-group">--%>
+                            <%--<label class="col-sm-3 control-label no-padding-right" for="form-field-6">Tooltip and help button</label>--%>
 
-                                <div class="col-sm-9">
-                                    <!-- #section:plugins/input.tag-input -->
-                                    <div class="inline">
-                                        <input type="text" name="tags" id="form-field-tags" value="Tag Input Control" placeholder="Enter tags ..." />
-                                    </div>
+                            <%--<div class="col-sm-9">--%>
+                            <%--<input data-rel="tooltip" type="text" id="form-field-6" placeholder="Tooltip on hover" title="Hello Tooltip!" data-placement="bottom" />--%>
+                            <%--<span class="help-button" data-rel="popover" data-trigger="hover" data-placement="left" data-content="More details." title="Popover on hover">?</span>--%>
+                            <%--</div>--%>
+                            <%--</div>--%>
 
-                                    <!-- /section:plugins/input.tag-input -->
-                                </div>
-                            </div>
+                            <%--<div class="space-4"></div>--%>
+
+                            <%--<div class="form-group">--%>
+                            <%--<label class="col-sm-3 control-label no-padding-right" for="form-field-tags">Tag input</label>--%>
+
+                            <%--<div class="col-sm-9">--%>
+                            <%--<!-- #section:plugins/input.tag-input -->--%>
+                            <%--<div class="inline">--%>
+                            <%--<input type="text" name="tags" id="form-field-tags" value="Tag Input Control" placeholder="Enter tags ..." />--%>
+                            <%--</div>--%>
+
+                            <%--<!-- /section:plugins/input.tag-input -->--%>
+                            <%--</div>--%>
+                            <%--</div>--%>
 
                             <div class="space-4"></div>
 
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label no-padding-right" for="form-field-tags">Typeahead.js</label>
+                            <%--<div class="form-group">--%>
+                            <%--<label class="col-sm-3 control-label no-padding-right" for="form-field-tags">Typeahead.js</label>--%>
 
-                                <div class="col-sm-9">
-                                    <!-- #section:plugins/bootstrap.typeahead-js -->
-                                    <div class="pos-rel">
-                                        <input class="typeahead scrollable" type="text" placeholder="States of USA" />
-                                    </div>
+                            <%--<div class="col-sm-9">--%>
+                            <%--<!-- #section:plugins/bootstrap.typeahead-js -->--%>
+                            <%--<div class="pos-rel">--%>
+                            <%--<input class="typeahead scrollable" type="text" placeholder="States of USA" />--%>
+                            <%--</div>--%>
 
-                                    <!-- /section:plugins/bootstrap.typeahead-js -->
-                                </div>
-                            </div>
+                            <%--<!-- /section:plugins/bootstrap.typeahead-js -->--%>
+                            <%--</div>--%>
+                            <%--</div>--%>
 
                             <div class="clearfix form-actions">
                                 <div class="col-md-offset-3 col-md-9">
@@ -241,7 +241,7 @@
                                 </div>
                             </div>
 
-                            <div class="hr hr-24"></div>
+                            <%--<div class="hr hr-24"></div>--%>
 
                             <div class="row">
                                 <div class="col-xs-12 col-sm-4">
@@ -293,98 +293,98 @@
                                     </div>
                                 </div><!-- /.span -->
 
-                                <div class="col-xs-12 col-sm-4">
-                                    <div class="widget-box">
-                                        <div class="widget-header">
-                                            <h4 class="widget-title">Masked Input</h4>
+                                <%--<div class="col-xs-12 col-sm-4">--%>
+                                <%--<div class="widget-box">--%>
+                                <%--<div class="widget-header">--%>
+                                <%--<h4 class="widget-title">Masked Input</h4>--%>
 
-                                            <span class="widget-toolbar">
-														<a href="#" data-action="settings">
-															<i class="ace-icon fa fa-cog"></i>
-														</a>
+                                <%--<span class="widget-toolbar">--%>
+                                <%--<a href="#" data-action="settings">--%>
+                                <%--<i class="ace-icon fa fa-cog"></i>--%>
+                                <%--</a>--%>
 
-														<a href="#" data-action="reload">
-															<i class="ace-icon fa fa-refresh"></i>
-														</a>
+                                <%--<a href="#" data-action="reload">--%>
+                                <%--<i class="ace-icon fa fa-refresh"></i>--%>
+                                <%--</a>--%>
 
-														<a href="#" data-action="collapse">
-															<i class="ace-icon fa fa-chevron-up"></i>
-														</a>
+                                <%--<a href="#" data-action="collapse">--%>
+                                <%--<i class="ace-icon fa fa-chevron-up"></i>--%>
+                                <%--</a>--%>
 
-														<a href="#" data-action="close">
-															<i class="ace-icon fa fa-times"></i>
-														</a>
-													</span>
-                                        </div>
+                                <%--<a href="#" data-action="close">--%>
+                                <%--<i class="ace-icon fa fa-times"></i>--%>
+                                <%--</a>--%>
+                                <%--</span>--%>
+                                <%--</div>--%>
 
-                                        <div class="widget-body">
-                                            <div class="widget-main">
-                                                <div>
-                                                    <label for="form-field-mask-1">
-                                                        Date
-                                                        <small class="text-success">99/99/9999</small>
-                                                    </label>
+                                <%--<div class="widget-body">--%>
+                                <%--<div class="widget-main">--%>
+                                <%--<div>--%>
+                                <%--<label for="form-field-mask-1">--%>
+                                <%--Date--%>
+                                <%--<small class="text-success">99/99/9999</small>--%>
+                                <%--</label>--%>
 
-                                                    <!-- #section:plugins/input.masked-input -->
-                                                    <div class="input-group">
-                                                        <input class="form-control input-mask-date" type="text" id="form-field-mask-1" />
-                                                        <span class="input-group-btn">
-																	<button class="btn btn-sm btn-default" type="button">
-																		<i class="ace-icon fa fa-calendar bigger-110"></i>
-																		Go!
-																	</button>
-																</span>
-                                                    </div>
+                                <%--<!-- #section:plugins/input.masked-input -->--%>
+                                <%--<div class="input-group">--%>
+                                <%--<input class="form-control input-mask-date" type="text" id="form-field-mask-1" />--%>
+                                <%--<span class="input-group-btn">--%>
+                                <%--<button class="btn btn-sm btn-default" type="button">--%>
+                                <%--<i class="ace-icon fa fa-calendar bigger-110"></i>--%>
+                                <%--Go!--%>
+                                <%--</button>--%>
+                                <%--</span>--%>
+                                <%--</div>--%>
 
-                                                    <!-- /section:plugins/input.masked-input -->
-                                                </div>
+                                <%--<!-- /section:plugins/input.masked-input -->--%>
+                                <%--</div>--%>
 
-                                                <hr />
-                                                <div>
-                                                    <label for="form-field-mask-2">
-                                                        Phone
-                                                        <small class="text-warning">(999) 999-9999</small>
-                                                    </label>
+                                <%--<hr />--%>
+                                <%--<div>--%>
+                                <%--<label for="form-field-mask-2">--%>
+                                <%--Phone--%>
+                                <%--<small class="text-warning">(999) 999-9999</small>--%>
+                                <%--</label>--%>
 
-                                                    <div class="input-group">
-																<span class="input-group-addon">
-																	<i class="ace-icon fa fa-phone"></i>
-																</span>
+                                <%--<div class="input-group">--%>
+                                <%--<span class="input-group-addon">--%>
+                                <%--<i class="ace-icon fa fa-phone"></i>--%>
+                                <%--</span>--%>
 
-                                                        <input class="form-control input-mask-phone" type="text" id="form-field-mask-2" />
-                                                    </div>
-                                                </div>
+                                <%--<input class="form-control input-mask-phone" type="text" id="form-field-mask-2" />--%>
+                                <%--</div>--%>
+                                <%--</div>--%>
 
-                                                <hr />
-                                                <div>
-                                                    <label for="form-field-mask-3">
-                                                        Product Key
-                                                        <small class="text-error">a*-999-a999</small>
-                                                    </label>
+                                <%--<hr />--%>
+                                <%--<div>--%>
+                                <%--<label for="form-field-mask-3">--%>
+                                <%--Product Key--%>
+                                <%--<small class="text-error">a*-999-a999</small>--%>
+                                <%--</label>--%>
 
-                                                    <div class="input-group">
-                                                        <input class="form-control input-mask-product" type="text" id="form-field-mask-3" />
-                                                        <span class="input-group-addon">
-																	<i class="ace-icon fa fa-key"></i>
-																</span>
-                                                    </div>
-                                                </div>
+                                <%--<div class="input-group">--%>
+                                <%--<input class="form-control input-mask-product" type="text" id="form-field-mask-3" />--%>
+                                <%--<span class="input-group-addon">--%>
+                                <%--<i class="ace-icon fa fa-key"></i>--%>
+                                <%--</span>--%>
+                                <%--</div>--%>
+                                <%--</div>--%>
 
-                                                <hr />
-                                                <div>
-                                                    <label for="form-field-mask-4">
-                                                        Eye Script
-                                                        <small class="text-info">~9.99 ~9.99 999</small>
-                                                    </label>
+                                <%--<hr />--%>
+                                <%--<div>--%>
+                                <%--<label for="form-field-mask-4">--%>
+                                <%--Eye Script--%>
+                                <%--<small class="text-info">~9.99 ~9.99 999</small>--%>
+                                <%--</label>--%>
 
-                                                    <div>
-                                                        <input class="input-medium input-mask-eyescript" type="text" id="form-field-mask-4" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div><!-- /.span -->
+                                <%--<div>--%>
+                                <%--<input class="input-medium input-mask-eyescript" type="text" id="form-field-mask-4" />--%>
+                                <%--</div>--%>
+                                <%--</div>--%>
+                                <%--</div>--%>
+                                <%--</div>--%>
+                                <%--</div>--%>
+                                <%--</div><!-- /.span -->--%>
 
                                 <div class="col-xs-12 col-sm-4">
                                     <div class="widget-box">
@@ -939,28 +939,28 @@
                                     <%--</div>--%>
                                 <%--</div>--%>
 
-                                <div class="col-sm-4">
-                                    <div class="widget-box">
-                                        <div class="widget-header">
-                                            <h4 class="widget-title">Spinners</h4>
-                                        </div>
+                                <%--<div class="col-sm-4">--%>
+                                <%--<div class="widget-box">--%>
+                                <%--<div class="widget-header">--%>
+                                <%--<h4 class="widget-title">Spinners</h4>--%>
+                                <%--</div>--%>
 
-                                        <div class="widget-body">
-                                            <div class="widget-main">
-                                                <!-- #section:plugins/fuelux.spinner -->
-                                                <input type="text" class="input-mini" id="spinner1" />
-                                                <div class="space-6"></div>
+                                <%--<div class="widget-body">--%>
+                                <%--<div class="widget-main">--%>
+                                <%--<!-- #section:plugins/fuelux.spinner -->--%>
+                                <%--<input type="text" class="input-mini" id="spinner1" />--%>
+                                <%--<div class="space-6"></div>--%>
 
-                                                <input type="text" class="input-mini" id="spinner2" />
-                                                <div class="space-6"></div>
+                                <%--<input type="text" class="input-mini" id="spinner2" />--%>
+                                <%--<div class="space-6"></div>--%>
 
-                                                <input type="text" class="input-mini" id="spinner3" />
+                                <%--<input type="text" class="input-mini" id="spinner3" />--%>
 
-                                                <!-- /section:plugins/fuelux.spinner -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <%--<!-- /section:plugins/fuelux.spinner -->--%>
+                                <%--</div>--%>
+                                <%--</div>--%>
+                                <%--</div>--%>
+                                <%--</div>--%>
                             </div>
 
                             <hr />
@@ -1624,8 +1624,8 @@
         //dynamically change allowed formats by changing allowExt && allowMime function
         $('#id-file-format').removeAttr('checked').on('change', function() {
             var whitelist_ext, whitelist_mime;
-            var btn_choose
-            var no_icon
+            var btn_choose;
+            var no_icon;
             if(this.checked) {
                 btn_choose = "Drop images here or click to choose";
                 no_icon = "ace-icon fa fa-picture-o";
@@ -1648,7 +1648,7 @@
                         'no_icon': no_icon,
                         'allowExt': whitelist_ext,
                         'allowMime': whitelist_mime
-                    })
+                    });
             file_input.ace_file_input('reset_input');
 
             file_input
@@ -1768,7 +1768,7 @@
 						}
                      */
                 }
-            )
+            );
 
             //programmatically add a new
             var $tag_obj = $('#form-field-tags').data('tag');
@@ -1807,7 +1807,7 @@
 
                 cb(matches);
             }
-        }
+        };
 
         $('input.typeahead').typeahead({
             hint: true,
@@ -1829,7 +1829,7 @@
             no_icon:'ace-icon fa fa-cloud-upload',
             droppable:true,
             thumbnail:'large'
-        })
+        });
 
         //chosen plugin inside a modal will have a zero width because the select element is originally hidden
         //and its width cannot be determined.
@@ -1840,7 +1840,7 @@
                 $(this).find('.chosen-drop').css('width' , '210px');
                 $(this).find('.chosen-search input').css('width' , '200px');
             });
-        })
+        });
         /**
          //or you can activate the chosen plugin after modal is shown
          //this way select element becomes visible with dimensions and chosen works as expected
