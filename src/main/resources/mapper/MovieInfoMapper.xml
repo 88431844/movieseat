@@ -29,8 +29,8 @@
     delete from movieinfo
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="entity.MovieInfo">
-    insert into movieinfo (id, name, director, 
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="entity.MovieInfo">
+    insert into movieinfo (id, name, director,
       screenwriter, starring, type, 
       language, releasedate, length, 
       synopsis, img, rating
@@ -174,4 +174,17 @@
       rating = #{rating,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="haveMovie" parameterType="java.lang.String" resultType="java.lang.Integer">
+    select
+    count(1)
+    from movieinfo
+    where name = #{name}
+  </select>
+
+  <select id="listMovie" resultType="dto.MovieInfoDto">
+    select
+    <include refid="Base_Column_List"/>
+    from movieinfo
+  </select>
 </mapper>

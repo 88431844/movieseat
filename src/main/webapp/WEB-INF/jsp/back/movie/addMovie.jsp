@@ -54,6 +54,12 @@
     <script src="static/assets/js/html5shiv.min.js"></script>
     <script src="static/assets/js/respond.min.js"></script>
     <![endif]-->
+    <script>
+        function addMovie() {
+            var form = document.getElementById('movieInfo');
+            form.submit();
+        }
+    </script>
 </head>
 
 <body class="no-skin">
@@ -91,7 +97,8 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <!-- PAGE CONTENT BEGINS -->
-                        <form class="form-horizontal" role="form">
+                        <form class="form-horizontal" role="form" action="backMovie/addMovie"
+                              enctype="multipart/form-data" method="post" id="movieInfo">
                             <!-- #section:elements.form -->
                             <div class="form-group">
                                 <label class="col-sm-3 control-label no-padding-right"> 电影名称 </label>
@@ -125,35 +132,47 @@
                                 <label class="col-sm-3 control-label no-padding-right"> 电影类型 </label>
 
                                 <div class="col-sm-9">
-                                    <select>
-                                        <option>1</option>
-                                        <option>2</option>
+                                    <select name="type">
+                                        <option value="剧情">剧情</option>
+                                        <option value="喜剧">喜剧</option>
+                                        <option value="动作">动作</option>
+                                        <option value="爱情">爱情</option>
+                                        <option value="科幻">科幻</option>
+                                        <option value="动画">动画</option>
+                                        <option value="悬疑">悬疑</option>
+                                        <option value="惊悚">惊悚</option>
+                                        <option value="犯罪">犯罪</option>
+                                        <option value="历史">历史</option>
+                                        <option value="冒险">冒险</option>
+                                        <option value="武侠">武侠</option>
+                                        <option value="战争">战争</option>
                                     </select>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="col-sm-3 control-label no-padding-right"> 语言 </label>
+                                <label class="col-sm-3 control-label no-padding-right" for="language"> 语言 </label>
 
                                 <div class="col-sm-9">
-                                    <select>
-                                        <option>汉语</option>
-                                        <option>英语</option>
-                                        <option>法语</option>
-                                        <option>德语</option>
-                                        <option>西班牙语</option>
-                                        <option>意大利语</option>
-                                        <option>俄语</option>
-                                        <option>日语</option>
+                                    <select name="language" id="language">
+                                        <option value="汉语">汉语</option>
+                                        <option value="英语">英语</option>
+                                        <option value="法语">法语</option>
+                                        <option value="德语">德语</option>
+                                        <option value="西班牙语">西班牙语</option>
+                                        <option value="意大利语">意大利语</option>
+                                        <option value="俄语">俄语</option>
+                                        <option value="日语">日语</option>
                                     </select>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="col-sm-3 control-label no-padding-right"> 上映日期 </label>
+                                <label class="col-sm-3 control-label no-padding-right" for="releasedate"> 上映日期 </label>
 
                                 <div class="col-sm-9">
-                                    <input class="date-picker" type="text" data-date-format="yyyy-mm-dd"/>
+                                    <input class="date-picker" id="releasedate" name="releasedate" type="text"
+                                           data-date-format="yyyy-mm-dd"/>
                                 </div>
                             </div>
 
@@ -178,7 +197,7 @@
                                 <label class="col-sm-3 control-label no-padding-right"> 影片海报 </label>
 
                                 <div class="col-sm-9">
-                                    <input multiple="" type="file" id="id-input-file-3"/>
+                                    <input multiple="" type="file" name="imgFile" id="id-input-file-3"/>
                                 </div>
                             </div>
 
@@ -188,31 +207,31 @@
                                 <div class="col-sm-9">
                                     <div class="radio">
                                         <label>
-                                            <input name="form-field-radio" type="radio" class="ace"/>
+                                            <input name="rating" value="1" type="radio" class="ace"/>
                                             <span class="lbl"> 一星</span>
                                         </label>
                                     </div>
                                     <div class="radio">
                                         <label>
-                                            <input name="form-field-radio" type="radio" class="ace"/>
+                                            <input name="rating" value="2" type="radio" class="ace"/>
                                             <span class="lbl"> 二星</span>
                                         </label>
                                     </div>
                                     <div class="radio">
                                         <label>
-                                            <input checked="" name="form-field-radio" type="radio" class="ace"/>
+                                            <input checked="" value="3" name="rating" type="radio" class="ace"/>
                                             <span class="lbl"> 三星</span>
                                         </label>
                                     </div>
                                     <div class="radio">
                                         <label>
-                                            <input name="form-field-radio" type="radio" class="ace"/>
+                                            <input name="rating" value="4" type="radio" class="ace"/>
                                             <span class="lbl"> 四星</span>
                                         </label>
                                     </div>
                                     <div class="radio">
                                         <label>
-                                            <input name="form-field-radio" type="radio" class="ace"/>
+                                            <input name="rating" value="5" type="radio" class="ace"/>
                                             <span class="lbl"> 五星</span>
                                         </label>
                                     </div>
@@ -223,15 +242,14 @@
 
                             <div class="clearfix form-actions">
                                 <div class="col-md-offset-3 col-md-9">
-                                    <button class="btn btn-info" type="button">
+                                    <button class="btn btn-info" type="button" onclick="addMovie()">
                                         <i class="ace-icon fa fa-check bigger-110"></i>
-                                        Submit
+                                        添加
                                     </button>
-
                                     &nbsp; &nbsp; &nbsp;
                                     <button class="btn" type="reset">
                                         <i class="ace-icon fa fa-undo bigger-110"></i>
-                                        Reset
+                                        重置
                                     </button>
                                 </div>
                             </div>

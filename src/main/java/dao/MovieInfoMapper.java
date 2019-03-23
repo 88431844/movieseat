@@ -1,6 +1,10 @@
 package dao;
 
+import dto.MovieInfoDto;
 import entity.MovieInfo;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface MovieInfoMapper {
     int deleteByPrimaryKey(Integer id);
@@ -14,4 +18,8 @@ public interface MovieInfoMapper {
     int updateByPrimaryKeySelective(MovieInfo record);
 
     int updateByPrimaryKey(MovieInfo record);
+
+    int haveMovie(@Param("name") String name);
+
+    List<MovieInfoDto> listMovie();
 }
