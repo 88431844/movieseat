@@ -209,7 +209,7 @@
                                 <label class="col-sm-3 control-label no-padding-right" for="synopsis"> 剧情简介 </label>
 
                                 <div class="col-sm-9">
-                                    <textarea class="autosize-transition" id="synopsis"
+                                    <textarea class="autosize-transition" id="synopsis" cols="80"
                                               name="synopsis">${movieInfo.synopsis}</textarea>
                                 </div>
                             </div>
@@ -219,6 +219,7 @@
 
                                 <div class="col-sm-9">
                                     <img src="uploadFile/${movieInfo.img}" width="20%">
+                                    <%--<input multiple="" type="file" name="imgFile" id="id-input-file-3"/>--%>
                                 </div>
                             </div>
 
@@ -229,11 +230,11 @@
                                     <select name="rating" id="rating">
                                         <option value="${movieInfo.rating}">
                                             *${movieInfo.rating                                                                                                                                                                                                                                                                                                                                                                      }</option>
-                                        <option value="一星">一星</option>
-                                        <option value="二星">二星</option>
-                                        <option value="三星">三星</option>
-                                        <option value="四星">四星</option>
-                                        <option value="五星">五星</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
 
                                     </select>
                                 </div>
@@ -254,6 +255,7 @@
                             </div>
 
                             <input type="hidden" name="id" value="${movieInfo.id}">
+                            <input type="hidden" name="oldName" value="${movieInfo.name}">
                         </form>
 
                     </div><!-- /.col -->

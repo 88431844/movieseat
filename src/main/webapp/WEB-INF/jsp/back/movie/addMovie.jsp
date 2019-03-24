@@ -180,7 +180,7 @@
                                 <label class="col-sm-3 control-label no-padding-right"> 片长 </label>
 
                                 <div class="col-sm-9">
-                                    <input type="text" name="length" placeholder="片长" class="col-xs-10 col-sm-5"/>
+                                    <input type="text" name="length" placeholder="片长" class=""/> 单位（分钟）
                                 </div>
                             </div>
 
@@ -189,7 +189,8 @@
                                 <label class="col-sm-3 control-label no-padding-right" for="synopsis"> 剧情简介 </label>
 
                                 <div class="col-sm-9">
-                                    <textarea class="autosize-transition" id="synopsis" name="synopsis"></textarea>
+                                    <textarea class="autosize-transition" id="synopsis" name="synopsis"
+                                              cols="80"></textarea>
                                 </div>
                             </div>
 

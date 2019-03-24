@@ -77,7 +77,7 @@ CREATE TABLE `movieinfo` (
   `language` varchar(255) DEFAULT NULL COMMENT '语言',
   `releasedate` date DEFAULT NULL COMMENT '上映日期',
   `length` int(11) DEFAULT NULL COMMENT '片长',
-  `synopsis` varchar(255) DEFAULT NULL COMMENT '剧情简介',
+  `synopsis` text DEFAULT NULL COMMENT '剧情简介',
   `img` varchar(255) DEFAULT NULL COMMENT '影片海报',
   `rating` int(255) DEFAULT NULL COMMENT '评分1-5',
   PRIMARY KEY (`id`) USING BTREE

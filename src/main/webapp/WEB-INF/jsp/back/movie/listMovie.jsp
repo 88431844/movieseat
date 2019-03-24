@@ -59,6 +59,10 @@
             window.location.href = "backMovie/toEditMovie?id=" + id;
         }
 
+        function toAddMovie() {
+            window.location.href = "backMovie/toAddMovie";
+        }
+
         function myAlert() {
             var message = "${message}";
             var messageStr = message.toString();
@@ -101,6 +105,9 @@
                     <i class="ace-icon fa fa-home home-icon"></i>
                     <span>查看电影</span>
                 </li>
+                <li>
+                    <button onclick="toAddMovie()">添加电影</button>
+                </li>
             </ul><!-- /.breadcrumb -->
         </div>
 
@@ -125,6 +132,7 @@
                                             <span class="lbl"></span>
                                         </label>
                                     </th>
+
                                     <th width="20%">电影名称</th>
                                     <th width="10%">导演</th>
                                     <th width="10%">编剧</th>

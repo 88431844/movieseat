@@ -6,6 +6,8 @@ public class MovieInfoDto {
 
     private String name;
 
+    private String oldName;
+
     private String director;
 
     private String screenwriter;
@@ -120,5 +122,17 @@ public class MovieInfoDto {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getOldName() {
+        return oldName;
+    }
+
+    public void setOldName(String oldName) {
+        this.oldName = oldName;
     }
 }

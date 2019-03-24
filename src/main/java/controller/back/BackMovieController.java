@@ -8,8 +8,6 @@ import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
@@ -125,6 +123,18 @@ public class BackMovieController {
             modelAndView.setViewName("back/movie/listMovie");
         }
         log.info("BackMovieController editMovie param :  " + JSON.toJSONString(movieInfoDto));
+        //判断电影名称是否已经存在
+        int haveMovie = 0;
+        //当电影旧名称等于新传入电影名称则不判断是否重复
+        if (!movieInfoDto.getOldName().equals(movieInfoDto.getName())) {
+            haveMovie = movieService.haveMovie(movieInfoDto.getName());
+        }
+
+        if (haveMovie > 0) {
+            modelAndView.addObject("message", "修改失败，电影名称重复");
+            return queryMovieInfo(modelAndView);
+        }
+
         int haveEdit = movieService.editMovie(movieInfoDto);
         if (haveEdit > 0) {
             modelAndView.addObject("message", "修改成功");
