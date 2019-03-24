@@ -183,8 +183,29 @@
   </select>
 
   <select id="listMovie" resultType="dto.MovieInfoDto">
-    select
-    <include refid="Base_Column_List"/>
-    from movieinfo order by id desc
+      select
+      <include refid="Base_Column_List"/>
+      from movieinfo order by id desc
   </select>
+
+    <select id="lastFiveMovie" resultType="dto.MovieInfoDto">
+        select
+        <include refid="Base_Column_List"/>
+        FROM
+        movieinfo
+        ORDER BY
+        id DESC
+        LIMIT 5
+    </select>
+
+
+    <select id="searchByName" resultType="dto.MovieInfoDto">
+        <bind name="name" value="'%' + name + '%'"/>
+        select
+        <include refid="Base_Column_List"/>
+        FROM
+        movieinfo
+        where
+        name like #{name}
+    </select>
 </mapper>

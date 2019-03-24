@@ -22,4 +22,8 @@ public interface MovieInfoMapper {
     int haveMovie(@Param("name") String name);
 
     List<MovieInfoDto> listMovie();
+
+    List<MovieInfoDto> lastFiveMovie();
+
+    List<MovieInfoDto> searchByName(@Param("name") String name);
 }

@@ -30,8 +30,8 @@
             </div>
             <div class="header_top_right">
                 <div class="search_box">
-                    <form>
-                        <input type="text" value="搜索电影" onfocus="this.value = '';"
+                    <form action="movie/search" method="post">
+                        <input type="text" value="搜索电影" name="name" onfocus="this.value = '';"
                                onblur="if (this.value == '') {this.value = '搜索电影';}"><input type="submit" value="">
                     </form>
                 </div>
@@ -52,7 +52,7 @@
                             event.stopPropagation();
                         });
                     }
-                }
+                };
 
                 $(function () {
 

@@ -26,7 +26,6 @@ import java.util.List;
 @RequestMapping("/backMovie")
 public class BackMovieController {
 
-    private String imgPath = "src/main/webapp/static/uploadImg/";
     private Logger log = Logger.getLogger(this.getClass());
     @Autowired
     private MovieService movieService;

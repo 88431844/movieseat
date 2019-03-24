@@ -55,4 +55,14 @@ public class MovieServiceImpl implements MovieService {
         BeanUtils.copyProperties(movieInfoDto, movieInfo);
         return movieInfoMapper.updateByPrimaryKeySelective(movieInfo);
     }
+
+    @Override
+    public List<MovieInfoDto> lastFiveMovie() {
+        return movieInfoMapper.lastFiveMovie();
+    }
+
+    @Override
+    public List<MovieInfoDto> searchByName(String name) {
+        return movieInfoMapper.searchByName(name);
+    }
 }

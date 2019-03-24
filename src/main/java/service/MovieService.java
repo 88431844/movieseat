@@ -21,4 +21,8 @@ public interface MovieService {
     MovieInfo getMovie(int id);
 
     int editMovie(MovieInfoDto movieInfoDto);
+
+    List<MovieInfoDto> lastFiveMovie();
+
+    List<MovieInfoDto> searchByName(String name);
 }
