@@ -20,7 +20,7 @@ public class MovieServiceImpl implements MovieService {
     public int addMovie(MovieInfoDto movieInfoDto) {
         MovieInfo movieInfo = new MovieInfo();
         BeanUtils.copyProperties(movieInfoDto, movieInfo);
-        movieInfoMapper.insert(movieInfo);
+        movieInfoMapper.insertSelective(movieInfo);
         return movieInfo.getId();
     }
 
@@ -42,5 +42,17 @@ public class MovieServiceImpl implements MovieService {
     @Override
     public int delMovie(int id) {
         return movieInfoMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public MovieInfo getMovie(int id) {
+        return movieInfoMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public int editMovie(MovieInfoDto movieInfoDto) {
+        MovieInfo movieInfo = new MovieInfo();
+        BeanUtils.copyProperties(movieInfoDto, movieInfo);
+        return movieInfoMapper.updateByPrimaryKeySelective(movieInfo);
     }
 }

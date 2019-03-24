@@ -17,4 +17,8 @@ public interface MovieService {
     int haveMovie(String name);
 
     int delMovie(int id);
+
+    MovieInfo getMovie(int id);
+
+    int editMovie(MovieInfoDto movieInfoDto);
 }

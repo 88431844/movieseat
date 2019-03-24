@@ -202,39 +202,17 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="col-sm-3 control-label no-padding-right"> 评分 </label>
+                                <label class="col-sm-3 control-label no-padding-right" for="rating"> 评分 </label>
 
                                 <div class="col-sm-9">
-                                    <div class="radio">
-                                        <label>
-                                            <input name="rating" value="1" type="radio" class="ace"/>
-                                            <span class="lbl"> 一星</span>
-                                        </label>
-                                    </div>
-                                    <div class="radio">
-                                        <label>
-                                            <input name="rating" value="2" type="radio" class="ace"/>
-                                            <span class="lbl"> 二星</span>
-                                        </label>
-                                    </div>
-                                    <div class="radio">
-                                        <label>
-                                            <input checked="" value="3" name="rating" type="radio" class="ace"/>
-                                            <span class="lbl"> 三星</span>
-                                        </label>
-                                    </div>
-                                    <div class="radio">
-                                        <label>
-                                            <input name="rating" value="4" type="radio" class="ace"/>
-                                            <span class="lbl"> 四星</span>
-                                        </label>
-                                    </div>
-                                    <div class="radio">
-                                        <label>
-                                            <input name="rating" value="5" type="radio" class="ace"/>
-                                            <span class="lbl"> 五星</span>
-                                        </label>
-                                    </div>
+                                    <select name="rating" id="rating">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+
+                                    </select>
 
 
                                 </div>

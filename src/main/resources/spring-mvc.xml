@@ -14,6 +14,7 @@
 	<context:component-scan base-package="controller" />
 
 	<mvc:resources mapping="/static/**" location="/static/" />
+	<mvc:resources mapping="/uploadFile/**" location="/uploadFile/"/>
 
 	<!-- 定义Spring MVC 的模板文件 -->
 	<bean id="viewResolver"
@@ -26,5 +27,4 @@
 
 	<mvc:annotation-driven />
 
-	<mvc:resources mapping="/uploadFile/**" location="/uploadFile/" cache-period="2592000" />
 </beans>

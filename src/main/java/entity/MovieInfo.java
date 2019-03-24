@@ -17,7 +17,7 @@ public class MovieInfo {
 
     private String language;
 
-    private Date releasedate;
+    private String releasedate;
 
     private Integer length;
 
@@ -83,11 +83,11 @@ public class MovieInfo {
         this.language = language == null ? null : language.trim();
     }
 
-    public Date getReleasedate() {
+    public String getReleasedate() {
         return releasedate;
     }
 
-    public void setReleasedate(Date releasedate) {
+    public void setReleasedate(String releasedate) {
         this.releasedate = releasedate;
     }
 

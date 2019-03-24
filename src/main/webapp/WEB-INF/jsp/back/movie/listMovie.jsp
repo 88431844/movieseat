@@ -49,10 +49,14 @@
     <script src="static/assets/js/respond.min.js"></script>
     <![endif]-->
     <script>
-        function Del(id) {
+        function delMovie(id) {
             if (confirm('您确定删除吗？')) {
                 window.location.href = "backMovie/delMovie?id=" + id;
             }
+        }
+
+        function toEditMovie(id) {
+            window.location.href = "backMovie/toEditMovie?id=" + id;
         }
 
         function myAlert() {
@@ -130,7 +134,7 @@
                                     <th width="10%">上映日期</th>
                                     <th width="10%">片长(分钟)</th>
                                     <th width="5%">评分</th>
-                                    <th width="15%">操作</th>
+                                    <th width="18%">操作</th>
                                 </tr>
                                 </thead>
 
@@ -156,15 +160,15 @@
                                     <td><span>${movieList.rating}</span></td>
                                     <td>
                                         <div class="">
-                                            <a class="green" href="backMovie/toEditMovie">
+                                            <button class="green" onclick="toEditMovie(${movieList.id})">
                                                 <i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
                                                 编辑电影
-                                            </a>
-                                            &nbsp; &nbsp;
-                                            <a class="red" onclick="Del(${movieList.id})">
+                                            </button>
+
+                                            <button class="red" onclick="delMovie(${movieList.id})">
                                                 <i class="ace-icon fa fa-trash-o bigger-120"></i>
                                                 删除电影
-                                            </a>
+                                            </button>
                                         </div>
                                     </td>
                                 </tr>
