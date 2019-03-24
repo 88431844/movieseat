@@ -10,10 +10,60 @@ Target Server Type    : MYSQL
 Target Server Version : 50725
 File Encoding         : 65001
 
-Date: 2019-03-24 23:14:27
+Date: 2019-03-24 23:21:53
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for cinema
+-- ----------------------------
+DROP TABLE IF EXISTS `cinema`;
+CREATE TABLE `cinema` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL COMMENT '影院名称',
+  `phone` varchar(255) DEFAULT NULL COMMENT '影院电话',
+  `addr` varchar(255) DEFAULT NULL COMMENT '影院地址',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+
+-- ----------------------------
+-- Records of cinema
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for iteminfo
+-- ----------------------------
+DROP TABLE IF EXISTS `iteminfo`;
+CREATE TABLE `iteminfo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL COMMENT '物品名称',
+  `img` varchar(255) DEFAULT NULL COMMENT '物品图片',
+  `desc` varchar(255) DEFAULT NULL COMMENT '物品描述',
+  `cost` int(10) DEFAULT NULL COMMENT '消耗积分',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+
+-- ----------------------------
+-- Records of iteminfo
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for madmin
+-- ----------------------------
+DROP TABLE IF EXISTS `madmin`;
+CREATE TABLE `madmin` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) DEFAULT NULL COMMENT '管理员账号',
+  `password` varchar(255) DEFAULT NULL COMMENT '管理员密码',
+  `role` int(255) DEFAULT NULL COMMENT '0=admin；1=经理；2=员工',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+
+-- ----------------------------
+-- Records of madmin
+-- ----------------------------
+INSERT INTO `madmin` VALUES ('1', 'admin', 'dengluxinyuan', '0');
 
 -- ----------------------------
 -- Table structure for movieinfo
@@ -49,3 +99,119 @@ INSERT INTO `movieinfo` VALUES ('8', '波西米亚狂想曲', '布莱恩·辛格
 INSERT INTO `movieinfo` VALUES ('9', '惊奇队长', '安娜·波顿 / 瑞安·弗雷克', '安娜·波顿 / 瑞安·弗雷克 / 吉内瓦·德沃莱特-罗宾森 / 尼科尔·帕尔曼 / 梅格·勒福夫', '布丽·拉尔森 / 裘德·洛 / 塞缪尔·杰克逊 / 本·门德尔森 / 安妮特·贝宁 /', '动作', '英语', '2019-03-08', '124', '　漫画中的初代“惊奇女士”原名Carol Danvers，她曾经是一名美国空军情报局探员，暗恋惊奇先生。此后她得到了超能力，成为“惊奇女士”，在漫画中是非常典型的女性英雄人物。 \r\n　　她可以吸收并控制任意形态的能量，拥有众多超能力。《惊奇队长》将是漫威首部以女性超级英雄为主角的电影。', '9_惊奇队长.jpg', '3');
 INSERT INTO `movieinfo` VALUES ('10', '夏目友人帐', '大森贵弘 / 伊藤秀树', '绿川幸 / 村井贞之', '神谷浩史 / 井上和彦 / 高良健吾 / 小林沙苗 / 泽城美雪', '动画', '日语', '2019-03-07', '104', '在人与妖怪之间过着忙碌日子的夏目，偶然与以前的同学结城重逢，由此回忆起了被妖怪缠身的苦涩记忆。此时，夏目认识了在归还名字的妖怪记忆中出现的女性·津村容莉枝。和玲子相识的她，现在和独子椋雄一同过着平稳的生活。夏目通过与他们的交流，心境也变得平和。但这对母子居住的城镇，却似乎潜伏着神秘的妖怪。在调查此事归来后，寄生于猫咪老师身体的“妖之种”，在藤原家的庭院中，一夜之间就长成树结出果实。而吃掉了与自己形状相似果实的猫咪老师，竟然分裂成了3个——！？', '10_夏目友人帐 .jpg', '3');
 INSERT INTO `movieinfo` VALUES ('11', '阿丽塔：战斗天使', '罗伯特·罗德里格兹', '詹姆斯·卡梅隆 / 莱塔·卡罗格里迪斯 / 木城幸人', '罗莎·萨拉查 / 克里斯托弗·沃尔兹 / 基恩·约翰逊 / 艾德·斯克林 / 马赫沙拉·阿里', '科幻', '英语', '2019-02-22', '122', '　　故事发生在遥远的26世纪，外科医生依德（克里斯托弗·瓦尔兹 Christoph Waltz 饰）在垃圾场里捡到了只剩下头部的机械少女将她带回家中，给她装上了本来为自己已故的女儿所准备的义体，并取名阿丽塔（罗莎·萨拉扎尔 Rosa Salazar 饰）。苏醒后的阿丽塔对这个五彩斑斓但却暴力而又残酷的世界产生了浓厚的兴趣，在结识了青年雨果（基恩·约翰逊 Keean Johnson 饰）后，阿丽塔开始接触名为机动球的运动，并在比赛中展现出了惊人的格斗天赋。 \r\n　　在废铁城居民们的头顶，漂浮着巨大的浮空城市撒冷，废铁城居民们的一切劳作和付出，都是为了给撒冷提供继续运作的燃料。在大财阀维克特（马赫沙拉·阿里 Mahershala Ali 饰）所设立的机动球比赛中，最终获得冠军的人能够获得前往撒冷生活的资格，阿丽塔决定利用自己的格斗天赋参加比赛，却被卷入了一个巨大的阴谋之中。', '11_阿丽塔：战斗天使.jpg', '5');
+
+-- ----------------------------
+-- Table structure for movierecord
+-- ----------------------------
+DROP TABLE IF EXISTS `movierecord`;
+CREATE TABLE `movierecord` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `userid` int(11) DEFAULT NULL COMMENT '用户ID',
+  `moviesessionid` int(11) DEFAULT NULL COMMENT '场次信息id',
+  `movieseatid` int(11) DEFAULT NULL COMMENT '座位信息id',
+  `movietimeid` int(11) DEFAULT NULL COMMENT '电影价格/开始结束时间信息id',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+
+-- ----------------------------
+-- Records of movierecord
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for movieseat
+-- ----------------------------
+DROP TABLE IF EXISTS `movieseat`;
+CREATE TABLE `movieseat` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `row` int(11) DEFAULT NULL COMMENT '第几排',
+  `col` int(11) DEFAULT NULL COMMENT '第几列',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+
+-- ----------------------------
+-- Records of movieseat
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for moviesession
+-- ----------------------------
+DROP TABLE IF EXISTS `moviesession`;
+CREATE TABLE `moviesession` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `movieid` int(11) DEFAULT NULL COMMENT '电影id',
+  `cinemaid` int(11) DEFAULT NULL COMMENT '影院id',
+  `moviedate` date DEFAULT NULL COMMENT '场次日期',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+
+-- ----------------------------
+-- Records of moviesession
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for movietime
+-- ----------------------------
+DROP TABLE IF EXISTS `movietime`;
+CREATE TABLE `movietime` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `moviesessionid` int(11) DEFAULT NULL COMMENT '电影-影院-日期关系表id',
+  `starttime` datetime DEFAULT NULL COMMENT '电影开场时间',
+  `endtime` datetime DEFAULT NULL COMMENT '电影结束时间',
+  `price` double(10,2) DEFAULT NULL COMMENT '电影票价',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+
+-- ----------------------------
+-- Records of movietime
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for muser
+-- ----------------------------
+DROP TABLE IF EXISTS `muser`;
+CREATE TABLE `muser` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增ID',
+  `username` varchar(255) DEFAULT NULL COMMENT '用户账号',
+  `password` varchar(255) DEFAULT NULL COMMENT '用户密码',
+  `nickname` varchar(255) DEFAULT NULL COMMENT '用户昵称',
+  `phone` int(255) DEFAULT NULL COMMENT '手机号码',
+  `cardtype` int(255) DEFAULT '0' COMMENT '0=铜卡；1=银卡；2=金卡',
+  `integral` int(255) DEFAULT NULL COMMENT '用户积分',
+  `money` int(255) DEFAULT NULL COMMENT '用户钱包；单位（元）',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+
+-- ----------------------------
+-- Records of muser
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for package
+-- ----------------------------
+DROP TABLE IF EXISTS `package`;
+CREATE TABLE `package` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL COMMENT '套餐名称',
+  `price` double(10,2) DEFAULT NULL COMMENT '套餐价格',
+  `desc` varchar(255) DEFAULT NULL COMMENT '套餐介绍',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+
+-- ----------------------------
+-- Records of package
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for packageitem
+-- ----------------------------
+DROP TABLE IF EXISTS `packageitem`;
+CREATE TABLE `packageitem` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `packageid` int(11) DEFAULT NULL COMMENT '套餐id',
+  `itemid` int(11) DEFAULT NULL COMMENT '物品id',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+
+-- ----------------------------
+-- Records of packageitem
+-- ----------------------------
