@@ -85,7 +85,8 @@
                 <c:forEach items="${lastFiveMovie}" var="lastFiveMovie">
                     <div class="special_movies">
                         <div class="movie_poster">
-                            <a href="movie/detail"><img src="uploadFile/${lastFiveMovie.img}" alt=""/></a>
+                            <a href="movie/detail?id=${lastFiveMovie.id}"><img src="uploadFile/${lastFiveMovie.img}"
+                                                                               alt=""/></a>
                         </div>
                         <div class="movie_desc">
                             <h3><a href="movie/detail?id=${lastFiveMovie.id}">${lastFiveMovie.name}</a></h3>
