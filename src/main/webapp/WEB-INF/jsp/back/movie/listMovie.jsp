@@ -133,7 +133,7 @@
                                         </label>
                                     </th>
 
-                                    <th width="20%">电影名称</th>
+                                    <th width="18%">电影名称</th>
                                     <th width="10%">导演</th>
                                     <th width="10%">编剧</th>
                                     <th width="10%">主演</th>
@@ -142,7 +142,7 @@
                                     <th width="10%">上映日期</th>
                                     <th width="10%">片长(分钟)</th>
                                     <th width="5%">评分</th>
-                                    <th width="18%">操作</th>
+                                    <th width="20%">操作</th>
                                 </tr>
                                 </thead>
 
