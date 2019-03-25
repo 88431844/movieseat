@@ -7,8 +7,9 @@
                     <%
                         String nickName = (String)session.getAttribute("nickName");
                         if (null == nickName || "".equals(nickName)){
-                            out.print("<li><a href=\"user/toLogin\">登录</a></li>");
                             out.print("<li><a href=\"user/toRegisterUser\">注册</a></li>");
+                            out.print("<li><a href=\"user/toLogin\">登录</a></li>");
+
                         }
                         else {
                             out.print("<li><a href=>欢迎:"+nickName+"</a></li>");

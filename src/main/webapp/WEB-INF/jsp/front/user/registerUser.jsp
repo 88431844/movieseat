@@ -26,19 +26,19 @@
                         <form method="post" action="user/registerUser">
                             <div>
                                 <span><label>账号</label></span>
-                                <span><input name="userName" type="text" class="textbox" ></span>
+                                <span><input name="username" type="text" class="textbox"></span>
                             </div>
                             <div>
                                 <span><label>密码</label></span>
-                                <span><input name="userEmail" type="text" class="textbox"></span>
+                                <span><input name="password" type="password" class="textbox"></span>
                             </div>
                             <div>
                                 <span><label>昵称</label></span>
-                                <span><input name="userPhone" type="text" class="textbox"></span>
+                                <span><input name="nickname" type="text" class="textbox"></span>
                             </div>
                             <div>
                                 <span><label>电话</label></span>
-                                <span><input name="userPhone" type="text" class="textbox"></span>
+                                <span><input name="phone" type="text" class="textbox"></span>
                             </div>
                             <div>
                                 <span><input type="submit" value="Submit"  class="mybutton"></span>

@@ -28,11 +28,10 @@ public class MovieController {
     public ModelAndView wall() {
         ModelAndView modelAndView = new ModelAndView();
         log.info("----- movie wall loading .....");
-        List<MovieInfoDto> movieInfoDtoList = movieService.listMovie();
-        return initMovieWall(modelAndView, movieInfoDtoList);
+        return movieWallInit(modelAndView, movieService);
     }
 
-    private ModelAndView initMovieWall(ModelAndView modelAndView, List<MovieInfoDto> movieInfoDtoList) {
+    private static ModelAndView initMovieWall(ModelAndView modelAndView, List<MovieInfoDto> movieInfoDtoList) {
         modelAndView.setViewName("front/movie/movieWall");
         List<List<MovieInfoDto>> movieLists = ListUtil.subList(movieInfoDtoList, 5);
         modelAndView.addObject("movieLists", movieLists);
@@ -84,6 +83,11 @@ public class MovieController {
             List<MovieInfoDto> movieInfoDtoList = movieService.listMovie();
             return initMovieWall(modelAndView, movieInfoDtoList);
         }
+    }
+
+    public static ModelAndView movieWallInit(ModelAndView modelAndView, MovieService movieService) {
+        List<MovieInfoDto> movieInfoDtoList = movieService.listMovie();
+        return initMovieWall(modelAndView, movieInfoDtoList);
     }
 
 }

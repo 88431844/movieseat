@@ -1,7 +1,9 @@
 package dao;
 
 import dto.MovieInfoDto;
+import dto.MuserDto;
 import entity.MovieInfo;
+import entity.Muser;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -26,4 +28,6 @@ public interface MovieInfoMapper {
     List<MovieInfoDto> lastFiveMovie();
 
     List<MovieInfoDto> searchByName(@Param("name") String name);
+
+    Muser userLogin(MuserDto muserDto);
 }

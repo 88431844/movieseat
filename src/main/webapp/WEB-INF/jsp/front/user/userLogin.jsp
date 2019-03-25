@@ -25,11 +25,11 @@
                         <form method="post" action="user/userLogin">
                             <div>
                                 <span><label>账号</label></span>
-                                <span><input name="userName" type="text" class="textbox" ></span>
+                                <span><input name="username" type="text" class="textbox"></span>
                             </div>
                             <div>
                                 <span><label>密码</label></span>
-                                <span><input name="userEmail" type="password" class="textbox"></span>
+                                <span><input name="password" type="password" class="textbox"></span>
                             </div>
                             <div>
                                 <span><input type="submit" value="Submit"  class="mybutton"></span>

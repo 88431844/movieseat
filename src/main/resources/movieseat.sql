@@ -185,7 +185,7 @@ CREATE TABLE `muser` (
   `username` varchar(255) DEFAULT NULL COMMENT '用户账号',
   `password` varchar(255) DEFAULT NULL COMMENT '用户密码',
   `nickname` varchar(255) DEFAULT NULL COMMENT '用户昵称',
-  `phone` int(255) DEFAULT NULL COMMENT '手机号码',
+  `phone` varchar(255) DEFAULT NULL COMMENT '手机号码',
   `cardtype` int(255) DEFAULT '0' COMMENT '0=铜卡；1=银卡；2=金卡',
   `integral` int(255) DEFAULT NULL COMMENT '用户积分',
   `money` int(255) DEFAULT NULL COMMENT '用户钱包；单位（元）',
