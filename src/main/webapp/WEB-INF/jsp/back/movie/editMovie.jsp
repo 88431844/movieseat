@@ -56,7 +56,7 @@
     <script src="static/assets/js/respond.min.js"></script>
     <![endif]-->
     <script>
-        function editMovie() {
+        function edit() {
             var form = document.getElementById('movieInfo');
             form.submit();
         }
@@ -242,7 +242,7 @@
 
                             <div class="clearfix form-actions">
                                 <div class="col-md-offset-3 col-md-9">
-                                    <button class="btn btn-info" type="button" onclick="editMovie()">
+                                    <button class="btn btn-info" type="button" onclick="edit()">
                                         <i class="ace-icon fa fa-check bigger-110"></i>
                                         修改
                                     </button>
