@@ -51,16 +51,16 @@
     <script>
         function delCinema(id) {
             if (confirm('您确定删除吗？')) {
-                window.location.href = "backMovie/delCinema?id=" + id;
+                window.location.href = "cinema/delCinema?id=" + id;
             }
         }
 
         function toEditCinema(id) {
-            window.location.href = "backMovie/toEditCinema?id=" + id;
+            window.location.href = "cinema/toEditCinema?id=" + id;
         }
 
         function toAddCinema() {
-            window.location.href = "backMovie/toAddCinema";
+            window.location.href = "cinema/toAddCinema";
         }
 
         function myAlert() {
