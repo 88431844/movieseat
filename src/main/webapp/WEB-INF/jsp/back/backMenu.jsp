@@ -26,32 +26,32 @@
         </li>
 
         <li class="">
-            <a href="#" class="dropdown-toggle">
+            <a href="cinema/listCinema">
                 <i class="menu-icon fa fa-desktop"></i>
                 <span class="menu-text">影院信息管理 </span>
-                <b class="arrow fa fa-angle-down"></b>
+                <%--<b class="arrow fa fa-angle-down"></b>--%>
             </a>
 
             <b class="arrow"></b>
 
-            <ul class="submenu">
-                <li class="">
-                    <a href="cinema/listCinema">
-                        <i class="menu-icon fa fa-caret-right"></i>
-                        查询影院
-                    </a>
+            <%--<ul class="submenu">--%>
+            <%--<li class="">--%>
+            <%--<a href="cinema/listCinema">--%>
+            <%--<i class="menu-icon fa fa-caret-right"></i>--%>
+            <%--查询影院--%>
+            <%--</a>--%>
 
-                    <b class="arrow"></b>
-                </li>
-                <li class="">
-                    <a href="cinema/toAddCinema">
-                        <i class="menu-icon fa fa-caret-right"></i>
-                        添加影院
-                    </a>
+            <%--<b class="arrow"></b>--%>
+            <%--</li>--%>
+            <%--<li class="">--%>
+            <%--<a href="cinema/toAddCinema">--%>
+            <%--<i class="menu-icon fa fa-caret-right"></i>--%>
+            <%--添加影院--%>
+            <%--</a>--%>
 
-                    <b class="arrow"></b>
-                </li>
-            </ul>
+            <%--<b class="arrow"></b>--%>
+            <%--</li>--%>
+            <%--</ul>--%>
 
         </li>
 
