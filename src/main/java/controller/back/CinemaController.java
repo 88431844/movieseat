@@ -91,7 +91,7 @@ public class CinemaController {
         }
         if (haveCinema > 0){
             modelAndView.addObject("message", "修改失败，影院名称重复");
-
+            return queryCinema(modelAndView);
         }
 
         int haveEdit = cinemaService.editCinema(cinemaDto);
