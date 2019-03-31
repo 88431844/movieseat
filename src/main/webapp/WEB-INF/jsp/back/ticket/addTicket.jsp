@@ -3,6 +3,7 @@
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
 %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -56,7 +57,7 @@
     <![endif]-->
     <script>
         function add() {
-            var form = document.getElementById('movieInfo');
+            var form = document.getElementById('ticket');
             form.submit();
         }
     </script>
@@ -103,17 +104,18 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <!-- PAGE CONTENT BEGINS -->
-                        <form class="form-horizontal" role="form" action="backMovie/addMovie"
-                              enctype="multipart/form-data" method="post" id="movieInfo">
+                        <form class="form-horizontal" role="form" action="ticket/addTicket"
+                              enctype="multipart/form-data" method="post" id="ticket">
                             <!-- #section:elements.form -->
                             <div class="form-group">
                                 <label class="col-sm-3 control-label no-padding-right"> 电影名称 </label>
 
                                 <div class="col-sm-9">
-                                    <select name="movieName">
-                                        <option value="神奇女侠">神奇女侠</option>
-                                        <option value="钢铁侠">钢铁侠</option>
-                                        <option value="绿箭侠">绿箭侠</option>
+                                    <select name="movieid">
+                                        <option value="0">请选择</option>
+                                        <c:forEach items="${movieList}" var="movieList">
+                                            <option value="${movieList.id}">${movieList.name}</option>
+                                        </c:forEach>
                                     </select>
                                 </div>
                             </div>
@@ -121,10 +123,11 @@
                                 <label class="col-sm-3 control-label no-padding-right"> 影院名称 </label>
 
                                 <div class="col-sm-9">
-                                    <select name="movieName">
-                                        <option value="比高电影">比高电影</option>
-                                        <option value="龙之梦金逸影院">龙之梦金逸影院</option>
-                                        <option value="铁西卢米埃影院">铁西卢米埃影院</option>
+                                    <select name="cinemaid">
+                                        <option value="0">请选择</option>
+                                        <c:forEach items="${cinemaList}" var="cinemaList">
+                                            <option value="${cinemaList.id}">${cinemaList.name}</option>
+                                        </c:forEach>
                                     </select>
                                 </div>
                             </div>
@@ -135,8 +138,16 @@
 
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input id="date-timepicker1" type="text" class=""/>
+                                        <input id="date-timepicker1" type="text" name="time" class=""/>
                                     </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label no-padding-right"> 票价 </label>
+
+                                <div class="col-sm-9">
+                                    <input type="text" name="price" placeholder="票价" class=""/> 单位（元）
                                 </div>
                             </div>
 

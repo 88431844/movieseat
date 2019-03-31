@@ -63,8 +63,7 @@ public class CinemaController {
         else {
             modelAndView.addObject("message","删除失败");
         }
-        modelAndView = queryCinema(modelAndView);
-        return modelAndView;
+        return queryCinema(modelAndView);
     }
 
     @RequestMapping("/toEditCinema")

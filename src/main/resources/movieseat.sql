@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50725
 File Encoding         : 65001
 
-Date: 2019-03-25 22:21:13
+Date: 2019-03-31 23:17:30
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -112,71 +112,6 @@ INSERT INTO `movieinfo` VALUES ('10', '夏目友人帐', '大森贵弘 / 伊藤�
 INSERT INTO `movieinfo` VALUES ('11', '阿丽塔：战斗天使', '罗伯特·罗德里格兹', '詹姆斯·卡梅隆 / 莱塔·卡罗格里迪斯 / 木城幸人', '罗莎·萨拉查 / 克里斯托弗·沃尔兹 / 基恩·约翰逊 / 艾德·斯克林 / 马赫沙拉·阿里', '科幻', '英语', '2019-02-22', '122', '　　故事发生在遥远的26世纪，外科医生依德（克里斯托弗·瓦尔兹 Christoph Waltz 饰）在垃圾场里捡到了只剩下头部的机械少女将她带回家中，给她装上了本来为自己已故的女儿所准备的义体，并取名阿丽塔（罗莎·萨拉扎尔 Rosa Salazar 饰）。苏醒后的阿丽塔对这个五彩斑斓但却暴力而又残酷的世界产生了浓厚的兴趣，在结识了青年雨果（基恩·约翰逊 Keean Johnson 饰）后，阿丽塔开始接触名为机动球的运动，并在比赛中展现出了惊人的格斗天赋。 \r\n　　在废铁城居民们的头顶，漂浮着巨大的浮空城市撒冷，废铁城居民们的一切劳作和付出，都是为了给撒冷提供继续运作的燃料。在大财阀维克特（马赫沙拉·阿里 Mahershala Ali 饰）所设立的机动球比赛中，最终获得冠军的人能够获得前往撒冷生活的资格，阿丽塔决定利用自己的格斗天赋参加比赛，却被卷入了一个巨大的阴谋之中。', '11_阿丽塔：战斗天使.jpg', '5');
 
 -- ----------------------------
--- Table structure for movierecord
--- ----------------------------
-DROP TABLE IF EXISTS `movierecord`;
-CREATE TABLE `movierecord` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `userid` int(11) DEFAULT NULL COMMENT '用户ID',
-  `moviesessionid` int(11) DEFAULT NULL COMMENT '场次信息id',
-  `movieseatid` int(11) DEFAULT NULL COMMENT '座位信息id',
-  `movietimeid` int(11) DEFAULT NULL COMMENT '电影价格/开始结束时间信息id',
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
-
--- ----------------------------
--- Records of movierecord
--- ----------------------------
-
--- ----------------------------
--- Table structure for movieseat
--- ----------------------------
-DROP TABLE IF EXISTS `movieseat`;
-CREATE TABLE `movieseat` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `row` int(11) DEFAULT NULL COMMENT '第几排',
-  `col` int(11) DEFAULT NULL COMMENT '第几列',
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
-
--- ----------------------------
--- Records of movieseat
--- ----------------------------
-
--- ----------------------------
--- Table structure for moviesession
--- ----------------------------
-DROP TABLE IF EXISTS `moviesession`;
-CREATE TABLE `moviesession` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `movieid` int(11) DEFAULT NULL COMMENT '电影id',
-  `cinemaid` int(11) DEFAULT NULL COMMENT '影院id',
-  `moviedate` date DEFAULT NULL COMMENT '场次日期',
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
-
--- ----------------------------
--- Records of moviesession
--- ----------------------------
-
--- ----------------------------
--- Table structure for movietime
--- ----------------------------
-DROP TABLE IF EXISTS `movietime`;
-CREATE TABLE `movietime` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `moviesessionid` int(11) DEFAULT NULL COMMENT '电影-影院-日期关系表id',
-  `starttime` datetime DEFAULT NULL COMMENT '电影开场时间',
-  `endtime` datetime DEFAULT NULL COMMENT '电影结束时间',
-  `price` double(10,2) DEFAULT NULL COMMENT '电影票价',
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
-
--- ----------------------------
--- Records of movietime
--- ----------------------------
-
--- ----------------------------
 -- Table structure for muser
 -- ----------------------------
 DROP TABLE IF EXISTS `muser`;
@@ -190,11 +125,13 @@ CREATE TABLE `muser` (
   `integral` int(255) DEFAULT NULL COMMENT '用户积分',
   `money` int(255) DEFAULT NULL COMMENT '用户钱包；单位（元）',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Records of muser
 -- ----------------------------
+INSERT INTO `muser` VALUES ('1', 'luck', 'luck', '醉家男煮饺', '15840505894', '0', null, null);
+INSERT INTO `muser` VALUES ('2', '1', '1', '1', '1', '0', null, null);
 
 -- ----------------------------
 -- Table structure for package
@@ -225,4 +162,37 @@ CREATE TABLE `packageitem` (
 
 -- ----------------------------
 -- Records of packageitem
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for seat
+-- ----------------------------
+DROP TABLE IF EXISTS `seat`;
+CREATE TABLE `seat` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `row` int(11) DEFAULT NULL COMMENT '第几排',
+  `col` int(11) DEFAULT NULL COMMENT '第几列',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+
+-- ----------------------------
+-- Records of seat
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for ticket
+-- ----------------------------
+DROP TABLE IF EXISTS `ticket`;
+CREATE TABLE `ticket` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `movieId` int(11) DEFAULT NULL COMMENT '电影id',
+  `cinemaId` int(11) DEFAULT NULL COMMENT '影院id',
+  `day` varchar(255) DEFAULT NULL COMMENT '日期（2019-01-01）',
+  `time` varchar(255) DEFAULT NULL COMMENT '时间（18:30）',
+  `price` double DEFAULT NULL COMMENT '票价',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of ticket
 -- ----------------------------

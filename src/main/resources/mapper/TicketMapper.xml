@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.TicketMapper">
+    <resultMap id="BaseResultMap" type="entity.Ticket">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="movieId" jdbcType="INTEGER" property="movieid"/>
+        <result column="cinemaId" jdbcType="INTEGER" property="cinemaid"/>
+        <result column="day" jdbcType="VARCHAR" property="day"/>
+        <result column="time" jdbcType="VARCHAR" property="time"/>
+        <result column="price" jdbcType="DOUBLE" property="price"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, movieId, cinemaId, day, time, price
+  </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from ticket
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from ticket
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" parameterType="entity.Ticket">
+    insert into ticket (id, movieId, cinemaId, 
+      day, time, price)
+    values (#{id,jdbcType=INTEGER}, #{movieid,jdbcType=INTEGER}, #{cinemaid,jdbcType=INTEGER}, 
+      #{day,jdbcType=VARCHAR}, #{time,jdbcType=VARCHAR}, #{price,jdbcType=DOUBLE})
+  </insert>
+    <insert id="insertSelective" parameterType="entity.Ticket">
+        insert into ticket
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="movieid != null">
+                movieId,
+            </if>
+            <if test="cinemaid != null">
+                cinemaId,
+            </if>
+            <if test="day != null">
+                day,
+            </if>
+            <if test="time != null">
+                time,
+            </if>
+            <if test="price != null">
+                price,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="movieid != null">
+                #{movieid,jdbcType=INTEGER},
+            </if>
+            <if test="cinemaid != null">
+                #{cinemaid,jdbcType=INTEGER},
+            </if>
+            <if test="day != null">
+                #{day,jdbcType=VARCHAR},
+            </if>
+            <if test="time != null">
+                #{time,jdbcType=VARCHAR},
+            </if>
+            <if test="price != null">
+                #{price,jdbcType=DOUBLE},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="entity.Ticket">
+        update ticket
+        <set>
+            <if test="movieid != null">
+                movieId = #{movieid,jdbcType=INTEGER},
+            </if>
+            <if test="cinemaid != null">
+                cinemaId = #{cinemaid,jdbcType=INTEGER},
+            </if>
+            <if test="day != null">
+                day = #{day,jdbcType=VARCHAR},
+            </if>
+            <if test="time != null">
+                time = #{time,jdbcType=VARCHAR},
+            </if>
+            <if test="price != null">
+                price = #{price,jdbcType=DOUBLE},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="entity.Ticket">
+    update ticket
+    set movieId = #{movieid,jdbcType=INTEGER},
+      cinemaId = #{cinemaid,jdbcType=INTEGER},
+      day = #{day,jdbcType=VARCHAR},
+      time = #{time,jdbcType=VARCHAR},
+      price = #{price,jdbcType=DOUBLE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
