@@ -49,17 +49,17 @@
     <script src="static/assets/js/respond.min.js"></script>
     <![endif]-->
     <script>
-        function delCinema(id) {
+        function del(id) {
             if (confirm('您确定删除吗？')) {
                 window.location.href = "cinema/delCinema?id=" + id;
             }
         }
 
-        function toEditCinema(id) {
+        function toEdit(id) {
             window.location.href = "cinema/toEditCinema?id=" + id;
         }
 
-        function toAddCinema() {
+        function toAdd() {
             window.location.href = "cinema/toAddCinema";
         }
 
@@ -106,7 +106,7 @@
                     <span>查看影院</span>
                 </li>
                 <li>
-                    <button onclick="toAddCinema()">添加影院</button>
+                    <button onclick="toAdd()">添加影院</button>
                 </li>
             </ul><!-- /.breadcrumb -->
         </div>
@@ -156,12 +156,12 @@
                                         <td><span>${cinemaList.addr}</span></td>
                                         <td>
                                             <div class="">
-                                                <button class="green" onclick="toEditCinema(${cinemaList.id})">
+                                                <button class="green" onclick="toEdit(${cinemaList.id})">
                                                     <i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
                                                     编辑影院
                                                 </button>
 
-                                                <button class="red" onclick="delCinema(${cinemaList.id})">
+                                                <button class="red" onclick="del(${cinemaList.id})">
                                                     <i class="ace-icon fa fa-trash-o bigger-120"></i>
                                                     删除影院
                                                 </button>
