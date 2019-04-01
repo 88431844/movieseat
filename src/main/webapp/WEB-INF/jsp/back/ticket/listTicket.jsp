@@ -126,12 +126,6 @@
                             <table id="sample-table-2" class="table table-striped table-bordered table-hover">
                                 <thead>
                                 <tr>
-                                    <th class="center">
-                                        <label class="position-relative">
-                                            <input type="checkbox" class="ace"/>
-                                            <span class="lbl"></span>
-                                        </label>
-                                    </th>
                                     <th width="20%">电影名称</th>
                                     <th width="20%">影院名称</th>
                                     <th width="10%">影厅名称</th>
@@ -148,13 +142,6 @@
 
                                 <c:forEach items="${ticketList}" var="ticketList">
                                     <tr>
-                                        <td class="center">
-                                            <label class="position-relative">
-                                                <input type="checkbox" class="ace"/>
-                                                <span class="lbl"></span>
-                                            </label>
-                                        </td>
-
                                         <td><span>${ticketList.movieName}</span></td>
                                         <td><span>${ticketList.cinemaName}</span></td>
                                         <td><span>${ticketList.hallname}</span></td>
@@ -233,7 +220,7 @@
                     bAutoWidth: true,
                     "aoColumns": [
                         {"bSortable": false},
-                        null, null, null, null,null, null, null, null,
+                        null, null, null, null, null, null, null,
                         {"bSortable": false}
                     ],
                     "aaSorting": [],
