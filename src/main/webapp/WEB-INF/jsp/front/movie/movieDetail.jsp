@@ -47,13 +47,10 @@
                                 </li>
                                 <li>
                                         <p>日期选择 :</p>
-                                        <select>
-                                            <option>3月10日</option>
-                                            <option>3月11日</option>
-                                            <option>3月12日</option>
-                                            <option>3月13日</option>
-                                            <option>3月14日</option>
-                                            <option>3月15日</option>
+                                    <select name="day">
+                                        <c:forEach items="${dateList}" var="dateList">
+                                            <option value="${dateList.day}">${dateList.day}</option>
+                                        </c:forEach>
                                         </select>
                                 </li>
 

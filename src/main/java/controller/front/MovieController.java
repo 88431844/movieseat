@@ -1,5 +1,6 @@
 package controller.front;
 
+import dto.DateDto;
 import dto.MovieInfoDto;
 import entity.MovieInfo;
 import org.apache.log4j.Logger;
@@ -11,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 import service.MovieService;
 import util.ListUtil;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -47,6 +49,15 @@ public class MovieController {
 
         MovieInfo movieInfo = movieService.getMovie(id);
         modelAndView.addObject("movieInfo", movieInfo);
+
+        List<DateDto> dateList = new ArrayList<>();
+        LocalDate now = LocalDate.now();
+        for (int i = 0; i < 7; i++) {
+            DateDto dateDto = new DateDto();
+            dateDto.setDay(now.plusDays(i).toString());
+            dateList.add(dateDto);
+        }
+        modelAndView.addObject("dateList", dateList);
         return getLastFiveMovie(modelAndView);
     }
 
