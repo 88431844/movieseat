@@ -1,7 +1,7 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : 2
+ Source Server         : movieseat
  Source Server Type    : MySQL
  Source Server Version : 50725
  Source Host           : localhost:3306
@@ -11,7 +11,7 @@
  Target Server Version : 50725
  File Encoding         : 65001
 
- Date: 01/04/2019 16:47:45
+ Date: 01/04/2019 19:01:40
 */
 
 SET NAMES utf8mb4;
@@ -119,7 +119,7 @@ CREATE TABLE `movieinfo` (
   `img` varchar(255) DEFAULT NULL COMMENT '影片海报',
   `rating` int(255) DEFAULT NULL COMMENT '评分1-5',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Records of movieinfo
@@ -204,11 +204,23 @@ CREATE TABLE `ticket` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `movieId` int(11) DEFAULT NULL COMMENT '电影id',
   `cinemaId` int(11) DEFAULT NULL COMMENT '影院id',
+  `hallid` int(11) DEFAULT NULL COMMENT '影厅id',
   `day` varchar(255) DEFAULT NULL COMMENT '日期（2019-01-01）',
   `time` varchar(255) DEFAULT NULL COMMENT '时间（18:30）',
   `price` double DEFAULT NULL COMMENT '票价',
   `type` varchar(255) DEFAULT NULL COMMENT '电影类型（3D/IMax）',
+  `ticketsum` int(11) DEFAULT NULL COMMENT '电影票数量',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of ticket
+-- ----------------------------
+BEGIN;
+INSERT INTO `ticket` VALUES (2, 3, 2, 7, '2019-04-02', '18:30', 99, '2D', 50);
+INSERT INTO `ticket` VALUES (4, 3, 2, 7, '2019-04-02', '19:00', 33, '2D', 50);
+INSERT INTO `ticket` VALUES (5, 3, 2, 7, '2019-04-01', '19:00', 33, '2D', 50);
+INSERT INTO `ticket` VALUES (7, 6, 2, 5, '2019-04-02', '19:00', 25, '2D', 100);
+COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;
