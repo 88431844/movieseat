@@ -41,7 +41,7 @@
                                     <div class="product_desc">
                                         <span>剧情简介 :</span>
                                         <textarea class="autosize-transition" id="synopsis" cols="120" rows="10"
-                                                  disabled=""
+                                                  readonly="readonly"
                                                   name="synopsis">${movieInfo.synopsis}</textarea>
                                     </div>
                                 </li>
