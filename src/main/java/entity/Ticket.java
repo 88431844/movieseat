@@ -13,6 +13,8 @@ public class Ticket {
 
     private Double price;
 
+    private String type;
+
     public Integer getId() {
         return id;
     }
@@ -59,5 +61,13 @@ public class Ticket {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type == null ? null : type.trim();
     }
 }

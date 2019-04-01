@@ -12,11 +12,18 @@ public class TicketDto {
     private String cinemaName;
 
 
+    private String day;
+    private String oldDay;
+
+
     private String time;
     private String oldTime;
 
     private Double price;
     private Double olePrice;
+
+    private String type;
+    private String oldType;
 
     public Integer getId() {
         return id;
@@ -104,6 +111,38 @@ public class TicketDto {
 
     public void setOlePrice(Double olePrice) {
         this.olePrice = olePrice;
+    }
+
+    public String getDay() {
+        return day;
+    }
+
+    public void setDay(String day) {
+        this.day = day;
+    }
+
+    public String getOldDay() {
+        return oldDay;
+    }
+
+    public void setOldDay(String oldDay) {
+        this.oldDay = oldDay;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getOldType() {
+        return oldType;
+    }
+
+    public void setOldType(String oldType) {
+        this.oldType = oldType;
     }
 }
 

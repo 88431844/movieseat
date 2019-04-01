@@ -2,9 +2,8 @@ package dao;
 
 import dto.TicketDto;
 import entity.Ticket;
-import org.apache.ibatis.annotations.Param;
-
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface TicketMapper {
     int deleteByPrimaryKey(Integer id);

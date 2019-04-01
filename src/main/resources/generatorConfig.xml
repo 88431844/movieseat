@@ -22,7 +22,7 @@
         <javaClientGenerator targetPackage="dao" targetProject="src/main/java" type="XMLMAPPER">
             <property name="enableSubPackages" value="true"/>  
         </javaClientGenerator>
-        <table tableName="ticket" domainObjectName="Ticket" enableCountByExample="false"
+        <table tableName="hall" domainObjectName="Hall" enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
     </context>  
 </generatorConfiguration>  

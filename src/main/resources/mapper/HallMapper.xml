@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.HallMapper">
+  <resultMap id="BaseResultMap" type="entity.Hall">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="cinemaid" jdbcType="INTEGER" property="cinemaid" />
+    <result column="hallname" jdbcType="VARCHAR" property="hallname" />
+    <result column="seatrows" jdbcType="INTEGER" property="seatrows" />
+    <result column="seatcols" jdbcType="INTEGER" property="seatcols" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, cinemaid, hallname, seatrows, seatcols, type
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from hall
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from hall
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="entity.Hall">
+    insert into hall (id, cinemaid, hallname, 
+      seatrows, seatcols, type
+      )
+    values (#{id,jdbcType=INTEGER}, #{cinemaid,jdbcType=INTEGER}, #{hallname,jdbcType=VARCHAR}, 
+      #{seatrows,jdbcType=INTEGER}, #{seatcols,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="entity.Hall">
+    insert into hall
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="cinemaid != null">
+        cinemaid,
+      </if>
+      <if test="hallname != null">
+        hallname,
+      </if>
+      <if test="seatrows != null">
+        seatrows,
+      </if>
+      <if test="seatcols != null">
+        seatcols,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="cinemaid != null">
+        #{cinemaid,jdbcType=INTEGER},
+      </if>
+      <if test="hallname != null">
+        #{hallname,jdbcType=VARCHAR},
+      </if>
+      <if test="seatrows != null">
+        #{seatrows,jdbcType=INTEGER},
+      </if>
+      <if test="seatcols != null">
+        #{seatcols,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="entity.Hall">
+    update hall
+    <set>
+      <if test="cinemaid != null">
+        cinemaid = #{cinemaid,jdbcType=INTEGER},
+      </if>
+      <if test="hallname != null">
+        hallname = #{hallname,jdbcType=VARCHAR},
+      </if>
+      <if test="seatrows != null">
+        seatrows = #{seatrows,jdbcType=INTEGER},
+      </if>
+      <if test="seatcols != null">
+        seatcols = #{seatcols,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="entity.Hall">
+    update hall
+    set cinemaid = #{cinemaid,jdbcType=INTEGER},
+      hallname = #{hallname,jdbcType=VARCHAR},
+      seatrows = #{seatrows,jdbcType=INTEGER},
+      seatcols = #{seatcols,jdbcType=INTEGER},
+      type = #{type,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="listHall" resultType="dto.HallDto">
+    select
+    h.id as id,
+    h.cinemaid as cinemaid,
+    c.name as cinemaName,
+    h.hallname as hallName,
+    h.seatrows as seatRows,
+    h.seatcols as seatCols,
+    h.type as type
+    from hall as h,cinema as c
+    where c.id = h.cinemaid order by h.id desc
+  </select>
+
+  <select id="haveHall" resultType="java.lang.Integer">
+    select
+    count(1)
+    from hall
+    where cinemaid = #{cinemaId} and hallname = #{hallName}
+  </select>
+
+
+  <select id="getHall" resultType="dto.HallDto">
+    select
+    h.id as id,
+    h.cinemaid as cinemaid,
+    c.name as cinemaName,
+    h.hallname as hallName,
+    h.seatrows as seatRows,
+    h.seatcols as seatCols,
+    h.type as type
+    from hall as h,cinema as c
+    where h.id = #{id} and c.id = h.cinemaid
+  </select>
+</mapper>
