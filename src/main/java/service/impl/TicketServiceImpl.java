@@ -1,6 +1,7 @@
 package service.impl;
 
 import dao.TicketMapper;
+import dto.MovieTicket;
 import dto.TicketDto;
 import entity.Ticket;
 import org.springframework.beans.BeanUtils;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import service.TicketService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -53,5 +55,32 @@ public class TicketServiceImpl implements TicketService {
         Ticket ticket = new Ticket();
         BeanUtils.copyProperties(ticketDto, ticket);
         return ticketMapper.updateByPrimaryKeySelective(ticket);
+    }
+
+    @Override
+    public List<MovieTicket> getTicketByDay(String movieId, String day) {
+        List<TicketDto> ticketDtoList = ticketMapper.getTicketByDay(movieId, day);
+        List<MovieTicket> movieTicketList = new ArrayList<>();
+        if (null != ticketDtoList && ticketDtoList.size() > 0) {
+            for (TicketDto ticketDto : ticketDtoList) {
+                MovieTicket movieTicket = new MovieTicket();
+                StringBuilder myInfo = new StringBuilder();
+                myInfo.append(ticketDto.getCinemaName());
+                myInfo.append("-");
+                myInfo.append(ticketDto.getHallname());
+                myInfo.append("-");
+                myInfo.append(ticketDto.getDay());
+                myInfo.append("-");
+                myInfo.append(ticketDto.getTime());
+                myInfo.append("-");
+                myInfo.append(ticketDto.getPrice());
+                myInfo.append("元-");
+                myInfo.append(ticketDto.getType());
+
+                movieTicket.setMyInfo(myInfo.toString());
+                movieTicketList.add(movieTicket);
+            }
+        }
+        return movieTicketList;
     }
 }

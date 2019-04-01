@@ -1,5 +1,6 @@
 package service;
 
+import dto.MovieTicket;
 import dto.TicketDto;
 import entity.Ticket;
 
@@ -19,4 +20,6 @@ public interface TicketService {
     TicketDto getTicket(int id);
 
     int editTicket(TicketDto ticketDto);
+
+    List<MovieTicket> getTicketByDay(String movieId, String day);
 }

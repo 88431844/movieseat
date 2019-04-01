@@ -13,6 +13,34 @@
     <script type="text/javascript" src="static/js/jquery-1.9.0.min.js"></script>
     <script type="text/javascript" src="static/js/move-top.js"></script>
     <script type="text/javascript" src="static/js/easing.js"></script>
+    <script>
+        function getTicket() {
+            var day = $("#daySelected").val();
+            var movieId = $("#movieId").val();
+            $.ajax({
+                type: "post",
+                url: "ticket/getTicketByDay" + "?day=" + day + "&movieId=" + movieId,
+                // data: {"day":day},
+                dataType: "json",
+                success: function (data) {
+                    //下拉菜单id
+                    var c = $("#ticketId");
+                    //清空菜单
+                    c.empty();
+                    //json格式的对象数组
+                    var items = eval(data);
+                    $.each(items, function (index, item) {
+                        //名称与id
+                        var cname = items[index].myInfo;
+                        var cid = items[index].id;
+                        c.append("<option value='" + cid + "'>" + cname + "</option>");
+                    });
+                }
+
+            });
+
+        }
+    </script>
 </head>
 <body>
 <%@include file="../head.jsp"%>
@@ -27,6 +55,7 @@
                     </div>
                     <div class="desc span_3_of_2">
                         <h2>电影名称 ： ${movieInfo.name} </h2>
+                        <input type="hidden" name="movieId" id="movieId" value="${movieInfo.id}">
                         <div class="available">
                             <ul>
                                 <li><span>导演:</span> &nbsp; ${movieInfo.starring}</li>
@@ -47,7 +76,8 @@
                                 </li>
                                 <li>
                                         <p>日期选择 :</p>
-                                    <select name="day">
+                                    <select name="day" id="daySelected" onchange="getTicket()">
+                                        <option value="0">请选择</option>
                                         <c:forEach items="${dateList}" var="dateList">
                                             <option value="${dateList.day}">${dateList.day}</option>
                                         </c:forEach>
@@ -55,14 +85,9 @@
                                 </li>
 
                                 <li>
-                                        <p>影院选择 :</p>
-                                        <select>
-                                            <option>中街比高电影院</option>
-                                            <option>3月11日</option>
-                                            <option>3月12日</option>
-                                            <option>3月13日</option>
-                                            <option>3月14日</option>
-                                            <option>3月15日</option>
+                                    <p>观影选择 :</p>
+                                    <select name="ticketId" id="ticketId">
+                                        <option value="0">请先选择日期</option>
                                         </select>
                                 </li>
                                 <li>

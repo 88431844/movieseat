@@ -3,8 +3,8 @@
 <mapper namespace="dao.TicketMapper">
   <resultMap id="BaseResultMap" type="entity.Ticket">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="movieId" jdbcType="INTEGER" property="movieid" />
-    <result column="cinemaId" jdbcType="INTEGER" property="cinemaid" />
+    <result column="movieId" jdbcType="INTEGER" property="movieid"/>
+      <result column="cinemaId" jdbcType="INTEGER" property="cinemaid" />
     <result column="hallid" jdbcType="INTEGER" property="hallid" />
     <result column="day" jdbcType="VARCHAR" property="day" />
     <result column="time" jdbcType="VARCHAR" property="time" />
@@ -197,5 +197,29 @@
 
     from ticket as t,movieinfo as m,cinema as c,hall as h
     where t.movieid = m.id and t.cinemaid = c.id and t.hallid = h.id and t.id = #{id}
+  </select>
+
+
+    <select id="getTicketByDay" resultType="dto.TicketDto">
+    select
+    t.id as id,
+
+    t.movieid as movieid,
+    m.name as movieName,
+
+    t.cinemaid as cinemaid,
+    c.name as cinemaName,
+
+    t.hallid as hallid,
+    h.hallname as hallname,
+
+    t.day as 'day',
+    t.time as 'time',
+    t.price as price,
+    t.type as type,
+    t.ticketsum as ticketsum
+
+    from ticket as t,movieinfo as m,cinema as c,hall as h
+    where t.movieid = m.id and t.cinemaid = c.id and t.hallid = h.id and t.movieid = #{movieId} and day = #{day}
   </select>
 </mapper>

@@ -1,5 +1,6 @@
 package dao;
 
+import dto.MovieTicket;
 import dto.TicketDto;
 import entity.Ticket;
 import java.util.List;
@@ -23,4 +24,6 @@ public interface TicketMapper {
     int haveTicket(TicketDto ticketDto);
 
     TicketDto getTicket(@Param("id") int id);
+
+    List<TicketDto> getTicketByDay(@Param("movieId") String movieId, @Param("day") String day);
 }
