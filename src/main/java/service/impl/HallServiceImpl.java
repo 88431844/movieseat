@@ -54,4 +54,9 @@ public class HallServiceImpl implements HallService {
     BeanUtils.copyProperties(hallDto,hall);
     return hallMapper.updateByPrimaryKeySelective(hall);
   }
+
+  @Override
+  public List<HallDto> getHallByCinemaId(int cinemaId) {
+    return hallMapper.getHallByCinemaId(cinemaId);
+  }
 }

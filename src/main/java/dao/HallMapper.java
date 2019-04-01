@@ -24,4 +24,6 @@ public interface HallMapper {
   int haveHall(@Param("cinemaId") int cinemaId,@Param("hallName")  String hallName);
 
   HallDto getHall(@Param("id") int id);
+
+  List<HallDto> getHallByCinemaId(@Param("cinemaId") int cinemaId);
 }

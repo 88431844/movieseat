@@ -1,15 +1,19 @@
 
 package controller.back;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import dto.CinemaDto;
 import dto.HallDto;
 import java.util.List;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import service.CinemaService;
 import service.HallService;
@@ -123,5 +127,26 @@ public class HallController {
     modelAndView.addObject("hallList", list);
     modelAndView.setViewName("back/hall/listHall");
     return modelAndView;
+  }
+
+  @RequestMapping("/getHallByCinemaId")
+  @ResponseBody
+  public void getHallByCinemaId(HttpServletResponse response, @RequestParam("cinemaId") int cinemaId) {
+
+    try {
+      List<HallDto> hallDtoList = hallService.getHallByCinemaId(cinemaId);
+      if (hallDtoList.size() == 0){
+        HallDto hallDto = new HallDto();
+        hallDto.setId(0);
+        hallDto.setHallname("请先添加对应影院的影厅信息");
+        hallDtoList.add(hallDto);
+      }
+      JSONArray json = JSONArray.parseArray(JSON.toJSONString(hallDtoList));
+      response.setContentType("text/html;character=utf-8");
+      response.getWriter().println(json);
+    }catch (Exception e){
+      e.printStackTrace();
+    }
+
   }
 }

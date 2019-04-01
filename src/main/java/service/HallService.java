@@ -20,4 +20,6 @@ public interface HallService {
   HallDto getHall(int id);
 
   int editHall(HallDto hallDto);
+
+  List<HallDto> getHallByCinemaId(int cinemaId);
 }

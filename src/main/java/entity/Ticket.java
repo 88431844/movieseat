@@ -7,6 +7,8 @@ public class Ticket {
 
     private Integer cinemaid;
 
+    private Integer hallid;
+
     private String day;
 
     private String time;
@@ -14,6 +16,8 @@ public class Ticket {
     private Double price;
 
     private String type;
+
+    private Integer ticketsum;
 
     public Integer getId() {
         return id;
@@ -37,6 +41,14 @@ public class Ticket {
 
     public void setCinemaid(Integer cinemaid) {
         this.cinemaid = cinemaid;
+    }
+
+    public Integer getHallid() {
+        return hallid;
+    }
+
+    public void setHallid(Integer hallid) {
+        this.hallid = hallid;
     }
 
     public String getDay() {
@@ -69,5 +81,13 @@ public class Ticket {
 
     public void setType(String type) {
         this.type = type == null ? null : type.trim();
+    }
+
+    public Integer getTicketsum() {
+        return ticketsum;
+    }
+
+    public void setTicketsum(Integer ticketsum) {
+        this.ticketsum = ticketsum;
     }
 }

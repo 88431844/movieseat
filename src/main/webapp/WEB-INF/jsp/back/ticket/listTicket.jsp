@@ -132,12 +132,15 @@
                                             <span class="lbl"></span>
                                         </label>
                                     </th>
-
                                     <th width="20%">电影名称</th>
-                                    <th width="15%">影院名称</th>
-                                    <th width="20%">场次信息</th>
-                                    <th width="20%">票价</th>
-                                    <th width="25%">操作</th>
+                                    <th width="20%">影院名称</th>
+                                    <th width="10%">影厅名称</th>
+                                    <th width="10%">日期</th>
+                                    <th width="5%">时间</th>
+                                    <th width="5%">票价</th>
+                                    <th width="5%">类型</th>
+                                    <th width="5%">票数</th>
+                                    <th width="20%">操作</th>
                                 </tr>
                                 </thead>
 
@@ -154,8 +157,12 @@
 
                                         <td><span>${ticketList.movieName}</span></td>
                                         <td><span>${ticketList.cinemaName}</span></td>
+                                        <td><span>${ticketList.hallname}</span></td>
+                                        <td><span>${ticketList.day}</span></td>
                                         <td><span>${ticketList.time}</span></td>
                                         <td><span>${ticketList.price}</span></td>
+                                        <td><span>${ticketList.type}</span></td>
+                                        <td><span>${ticketList.ticketsum}</span></td>
                                         <td>
                                             <div class="">
                                                 <button class="green" onclick="edit(${ticketList.id})">
@@ -226,7 +233,7 @@
                     bAutoWidth: true,
                     "aoColumns": [
                         {"bSortable": false},
-                        null, null, null, null,
+                        null, null, null, null,null, null, null, null,
                         {"bSortable": false}
                     ],
                     "aaSorting": [],

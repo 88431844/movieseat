@@ -35,12 +35,8 @@ public class TicketController {
         if (null == modelAndView.getViewName()) {
             modelAndView.setViewName("back/ticket/addTicket");
         }
-        List<MovieInfoDto> movieList = movieService.listMovie();
-        List<CinemaDto> cinemaList = cinemaService.listCinema();
-        modelAndView.addObject("movieList", movieList);
-        modelAndView.addObject("cinemaList", cinemaList);
 
-        return modelAndView;
+        return getMovCinList(modelAndView);
     }
 
     @RequestMapping("/addTicket")
@@ -81,7 +77,7 @@ public class TicketController {
         TicketDto ticketDto = ticketService.getTicket(id);
         modelAndView.addObject("ticketDto", ticketDto);
 
-        return modelAndView;
+        return getMovCinList(modelAndView);
     }
 
     @RequestMapping("/editTicket")
@@ -89,20 +85,6 @@ public class TicketController {
         ModelAndView modelAndView = LoginUtil.checkAdminLogin(session);
         if (null == modelAndView.getViewName()) {
             modelAndView.setViewName("back/ticket/listTicket");
-        }
-
-        int haveTicket = 0;
-        if (ticketDto.getOldMovieId() != ticketDto.getMovieid()
-                || ticketDto.getOldCinemaId() != ticketDto.getOldCinemaId()
-                || !ticketDto.getOldTime().equals(ticketDto.getTime())
-                || ticketDto.getOlePrice().equals(ticketDto.getPrice())
-        ) {
-            haveTicket = ticketService.haveTicket(ticketDto);
-        }
-
-        if (haveTicket > 0) {
-            modelAndView.addObject("message", "修改失败，票务信息重复");
-            return queryTicket(modelAndView);
         }
 
         int haveEdit = ticketService.editTicket(ticketDto);
@@ -130,6 +112,13 @@ public class TicketController {
         }
         modelAndView.addObject("ticketList", list);
         modelAndView.setViewName("back/ticket/listTicket");
+        return modelAndView;
+    }
+    private ModelAndView getMovCinList(ModelAndView modelAndView){
+        List<MovieInfoDto> movieList = movieService.listMovie();
+        List<CinemaDto> cinemaList = cinemaService.listCinema();
+        modelAndView.addObject("movieList", movieList);
+        modelAndView.addObject("cinemaList", cinemaList);
         return modelAndView;
     }
 }

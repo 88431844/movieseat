@@ -11,6 +11,8 @@ public class TicketDto {
     private int oldCinemaId;
     private String cinemaName;
 
+    private Integer hallid;
+    private String hallname;
 
     private String day;
     private String oldDay;
@@ -24,6 +26,10 @@ public class TicketDto {
 
     private String type;
     private String oldType;
+
+    private Integer ticketsum;
+
+
 
     public Integer getId() {
         return id;
@@ -143,6 +149,30 @@ public class TicketDto {
 
     public void setOldType(String oldType) {
         this.oldType = oldType;
+    }
+
+    public Integer getHallid() {
+        return hallid;
+    }
+
+    public void setHallid(Integer hallid) {
+        this.hallid = hallid;
+    }
+
+    public String getHallname() {
+        return hallname;
+    }
+
+    public void setHallname(String hallname) {
+        this.hallname = hallname;
+    }
+
+    public Integer getTicketsum() {
+        return ticketsum;
+    }
+
+    public void setTicketsum(Integer ticketsum) {
+        this.ticketsum = ticketsum;
     }
 }
 

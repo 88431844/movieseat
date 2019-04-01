@@ -137,4 +137,13 @@
     from hall as h,cinema as c
     where h.id = #{id} and c.id = h.cinemaid
   </select>
+
+
+  <select id="getHallByCinemaId" resultType="dto.HallDto">
+    select
+    h.id as id,
+    h.hallname as hallName
+    from hall as h,cinema as c
+    where c.id = h.cinemaid and c.id = #{cinemaId} order by h.id desc
+  </select>
 </mapper>

@@ -60,6 +60,31 @@
             var form = document.getElementById('ticket');
             form.submit();
         }
+        function getCinemaHall(){
+          var cinemaId = $("#cinemaId").val();
+          $.ajax({
+            type: "post" ,
+            url: "hall/getHallByCinemaId"+"?cinemaId="+cinemaId,
+            data: {"cinemaId":cinemaId},
+            dataType: "json",
+            success : function (data){
+              //下拉菜单id
+              var c = $("#hallid");
+              //清空菜单
+              c.empty();
+              //json格式的对象数组
+              var items = eval(data);
+              $.each(items,function(index , item){
+                //名称与id
+                var cname = items[index].hallname;
+                var cid = items[index].id;
+                c.append("<option value='"+cid+"'>"+cname+"</option>");
+              });
+            }
+
+          });
+
+        }
     </script>
 </head>
 
@@ -123,7 +148,7 @@
                                 <label class="col-sm-3 control-label no-padding-right"> 影院名称 </label>
 
                                 <div class="col-sm-9">
-                                    <select name="cinemaid">
+                                    <select name="cinemaid" id="cinemaId" onchange="getCinemaHall()">
                                         <option value="0">请选择</option>
                                         <c:forEach items="${cinemaList}" var="cinemaList">
                                             <option value="${cinemaList.id}">${cinemaList.name}</option>
@@ -131,14 +156,36 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label no-padding-right"> 影厅名称 </label>
+
+                                <div class="col-sm-9">
+                                    <select name="hallid" id="hallid">
+                                        <option value="0">请先选择影院</option>
+                                    </select>
+                                </div>
+                            </div>
 
                             <div class="form-group">
-                                <label class="col-sm-3 control-label no-padding-right" for="date-timepicker1">
-                                    场次信息 </label>
+                                <label class="col-sm-3 control-label no-padding-right" for="id-date-picker-1">
+                                    日期 </label>
 
                                 <div class="col-sm-9">
                                     <div class="input-group">
-                                        <input id="date-timepicker1" type="text" name="time" class=""/>
+                                        <input class="form-control date-picker" id="id-date-picker-1" name="day"
+                                               readonly=""
+                                               type="text" data-date-format="yyyy-mm-dd" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label no-padding-right" for="timepicker1">
+                                    时间 </label>
+
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                        <input id="timepicker1" readonly="" type="text" name="time" class="form-control" />
                                     </div>
                                 </div>
                             </div>
@@ -148,6 +195,24 @@
 
                                 <div class="col-sm-9">
                                     <input type="text" name="price" placeholder="票价" class=""/> 单位（元）
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label no-padding-right"> 类型 </label>
+
+                                <div class="col-sm-9">
+                                    <select name="type" id="type">
+                                        <option value="2D">2D</option>
+                                        <option value="3D">3D</option>
+                                        <option value="IMAX">IMAX</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label no-padding-right"> 电影票数量 </label>
+
+                                <div class="col-sm-9">
+                                    <input type="text" name="ticketsum" readonly=""  class="input-mini spinner-input form-control" id="spinner3" maxlength="3">
                                 </div>
                             </div>
 
@@ -481,9 +546,9 @@
             icon_down: 'ace-icon fa fa-caret-down'
         });
         $('#spinner3').ace_spinner({
-            value: 0,
-            min: -100,
-            max: 100,
+            value: 50,
+            min: 40,
+            max: 400,
             step: 10,
             on_sides: true,
             icon_up: 'ace-icon fa fa-plus smaller-75',
@@ -527,8 +592,8 @@
 
 
         $('#timepicker1').timepicker({
-            minuteStep: 1,
-            showSeconds: true,
+            minuteStep: 10,
+            showSeconds: false,
             showMeridian: false
         }).next().on(ace.click_event, function () {
             $(this).prev().focus();
