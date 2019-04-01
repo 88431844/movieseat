@@ -171,7 +171,7 @@
                                 <label class="col-sm-3 control-label no-padding-right" for="releasedate"> 上映日期 </label>
 
                                 <div class="col-sm-9">
-                                    <input class="date-picker" id="releasedate" name="releasedate" type="text"
+                                    <input class="date-picker" id="releasedate" readonly="" name="releasedate" type="text"
                                            data-date-format="yyyy-mm-dd"/>
                                 </div>
                             </div>
