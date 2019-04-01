@@ -55,7 +55,7 @@
     <script src="static/assets/js/respond.min.js"></script>
     <![endif]-->
     <script>
-        function addCinema() {
+        function add() {
             var form = document.getElementById('cinema');
             form.submit();
         }
@@ -125,7 +125,7 @@
 
                             <div class="clearfix form-actions">
                                 <div class="col-md-offset-3 col-md-9">
-                                    <button class="btn btn-info" type="button" onclick="addCinema()">
+                                    <button class="btn btn-info" type="button" onclick="add()">
                                         <i class="ace-icon fa fa-check bigger-110"></i>
                                         添加
                                     </button>
