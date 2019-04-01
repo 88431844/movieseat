@@ -7,14 +7,6 @@
         }
     </script>
     <ul class="nav nav-list">
-        <li class="">
-            <a href="admin/adminIndex">
-                <i class="menu-icon fa fa-tachometer"></i>
-                <span class="menu-text"> 主页 </span>
-            </a>
-
-            <b class="arrow"></b>
-        </li>
 
         <li class="">
             <a href="backMovie/listMovie">

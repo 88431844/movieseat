@@ -152,7 +152,7 @@ public class BackMovieController {
         return modelAndView;
     }
 
-    private ModelAndView queryMovieInfo(ModelAndView modelAndView) {
+    public ModelAndView queryMovieInfo(ModelAndView modelAndView) {
         List<MovieInfoDto> movieList = movieService.listMovie();
         if (0 == movieList.size()) {
             modelAndView.addObject("message", "查询列表为空");

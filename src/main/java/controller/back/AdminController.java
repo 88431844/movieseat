@@ -21,6 +21,8 @@ public class AdminController {
 
     @Autowired
     private AdminService adminService;
+    @Autowired
+    private BackMovieController controller;
 
     @RequestMapping("/toAdminLogin")
     public ModelAndView toAdminLogin(){
@@ -34,7 +36,7 @@ public class AdminController {
     public ModelAndView adminIndex(HttpSession session) {
         ModelAndView modelAndView = LoginUtil.checkAdminLogin(session);
         if (null == modelAndView.getViewName()) {
-            modelAndView.setViewName("back/adminIndex");
+            return controller.queryMovieInfo(modelAndView);
         }
         return modelAndView;
     }
@@ -52,8 +54,7 @@ public class AdminController {
             modelAndView.setViewName("back/adminLogin");
             modelAndView.addObject("message","登录失败");
         }
-
-        return modelAndView;
+        return controller.queryMovieInfo(modelAndView);
     }
 
     @RequestMapping("/adminLogout")
