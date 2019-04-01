@@ -52,8 +52,12 @@
             <div class="front">屏幕</div>
         </div>
         <div class="booking-details">
-            <p>影片：<span>${movie.movieName}</span></p>
+            <p>电影名称：<span>${movie.movieName}</span></p>
+            <p>影院名称：<span>${movie.movieName}</span></p>
+            <p>影厅名称：<span>${movie.movieName}</span></p>
+            <p>日期：<span>${movie.movieDate}</span></p>
             <p>时间：<span>${movie.movieDate}</span></p>
+            <p>类型：<span>${movie.movieDate}</span></p>
             <p>票价：<span>￥${movie.moviePrice}/张</span></p>
             <p>座位：</p>
             <ul id="selected-seats"></ul>
