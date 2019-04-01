@@ -117,7 +117,7 @@
                                 <label class="col-sm-3 control-label no-padding-right"> 影厅名称 </label>
 
                                 <div class="col-sm-9">
-                                    <input type="text" name="hallname" placeholder="影厅名称" class="col-xs-10 col-sm-5"/>
+                                    <input type="text" name="hallname" placeholder="影厅名称" class=""/>
                                 </div>
                             </div>
                             <div class="form-group">

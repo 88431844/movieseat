@@ -104,21 +104,21 @@
                                 <label class="col-sm-3 control-label no-padding-right"> 影院名称 </label>
 
                                 <div class="col-sm-9">
-                                    <input type="text" name="name" placeholder="影院名称" class="col-xs-10 col-sm-5"/>
+                                    <input type="text" name="name" placeholder="影院名称" class=""/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label no-padding-right"> 影院电话 </label>
 
                                 <div class="col-sm-9">
-                                    <input type="text" name="phone" placeholder="影院电话" class="col-xs-10 col-sm-5"/>
+                                    <input type="text" name="phone" placeholder="影院电话" class=""/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label no-padding-right"> 影院地址 </label>
 
                                 <div class="col-sm-9">
-                                    <input type="text" name="addr" placeholder=影院地址 class="col-xs-10 col-sm-5"/>
+                                    <input type="text" name="addr" placeholder=影院地址 class=""/>
                                 </div>
                             </div>
 

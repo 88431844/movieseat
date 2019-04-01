@@ -104,28 +104,28 @@
                                 <label class="col-sm-3 control-label no-padding-right"> 电影名称 </label>
 
                                 <div class="col-sm-9">
-                                    <input type="text" name="name" placeholder="电影名称" class="col-xs-10 col-sm-5"/>
+                                    <input type="text" name="name" placeholder="电影名称" class=""/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label no-padding-right"> 导演 </label>
 
                                 <div class="col-sm-9">
-                                    <input type="text" name="director" placeholder="导演" class="col-xs-10 col-sm-5"/>
+                                    <input type="text" name="director" placeholder="导演" class=""/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label no-padding-right"> 编剧 </label>
 
                                 <div class="col-sm-9">
-                                    <input type="text" name="screenwriter" placeholder="编剧" class="col-xs-10 col-sm-5"/>
+                                    <input type="text" name="screenwriter" placeholder="编剧" class=""/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label no-padding-right"> 主演 </label>
 
                                 <div class="col-sm-9">
-                                    <input type="text" name="starring" placeholder="主演" class="col-xs-10 col-sm-5"/>
+                                    <input type="text" name="starring" placeholder="主演" class=""/>
                                 </div>
                             </div>
                             <div class="form-group">
