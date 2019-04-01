@@ -126,12 +126,6 @@
                             <table id="sample-table-2" class="table table-striped table-bordered table-hover">
                                 <thead>
                                 <tr>
-                                    <th class="center">
-                                        <label class="position-relative">
-                                            <input type="checkbox" class="ace"/>
-                                            <span class="lbl"></span>
-                                        </label>
-                                    </th>
 
                                     <th width="20%">影院名称</th>
                                     <th width="15%">影院电话</th>
@@ -144,12 +138,6 @@
 
                                 <c:forEach items="${cinemaList}" var="cinemaList">
                                     <tr>
-                                        <td class="center">
-                                            <label class="position-relative">
-                                                <input type="checkbox" class="ace"/>
-                                                <span class="lbl"></span>
-                                            </label>
-                                        </td>
 
                                         <td><span>${cinemaList.name}</span></td>
                                         <td><span>${cinemaList.phone}</span></td>
@@ -224,7 +212,7 @@
                     bAutoWidth: true,
                     "aoColumns": [
                         {"bSortable": false},
-                        null, null, null,
+                        null, null,
                         {"bSortable": false}
                     ],
                     "aaSorting": [],
