@@ -44,7 +44,7 @@
                     <b class="arrow"></b>
                 </li>
                 <li class="">
-                    <a href="cinema/listCinema">
+                    <a href="hall/listHall">
                         <i class="menu-icon fa fa-caret-right"></i>
                         查询影厅
                     </a>
