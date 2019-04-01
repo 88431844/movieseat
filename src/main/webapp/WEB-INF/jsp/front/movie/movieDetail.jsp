@@ -14,6 +14,17 @@
     <script type="text/javascript" src="static/js/move-top.js"></script>
     <script type="text/javascript" src="static/js/easing.js"></script>
     <script>
+        function checkInfo() {
+            var daySelected = $("#daySelected").val();
+            var ticketId = $("#ticketId").val();
+            if (daySelected == 0) {
+                alert("请先选择日期")
+            } else if (ticketId == 0) {
+                alert("无影片档期，不可选座")
+            } else {
+                window.location.href = "movie/seat";
+            }
+        }
         function getTicket() {
             var day = $("#daySelected").val();
             var movieId = $("#movieId").val();
@@ -91,7 +102,7 @@
                                         </select>
                                 </li>
                                 <li>
-                                        <div class="button"><span><a href="movie/seat">电影选座</a></span></div>
+                                    <div class="button"><span><a onclick="checkInfo()">电影选座</a></span></div>
                                         <div class="clear"></div>
                                 </li>
 
