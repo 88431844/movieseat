@@ -78,6 +78,7 @@ public class TicketServiceImpl implements TicketService {
                 myInfo.append(ticketDto.getType());
 
                 movieTicket.setMyInfo(myInfo.toString());
+                movieTicket.setTicketId(ticketDto.getId());
                 movieTicketList.add(movieTicket);
             }
         }

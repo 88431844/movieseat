@@ -2,6 +2,8 @@ package controller.front;
 
 import dto.DateDto;
 import dto.MovieInfoDto;
+import dto.SeatInfo;
+import dto.TicketDto;
 import entity.MovieInfo;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import service.MovieService;
+import service.TicketService;
 import util.ListUtil;
 
 import java.time.LocalDate;
@@ -25,6 +28,8 @@ public class MovieController {
     private Logger log = Logger.getLogger(this.getClass());
     @Autowired
     private MovieService movieService;
+    @Autowired
+    private TicketService ticketService;
 
     @RequestMapping("/wall")
     public ModelAndView wall() {
@@ -67,18 +72,24 @@ public class MovieController {
     }
 
     @RequestMapping("/seat")
-    public ModelAndView test() {
+    public ModelAndView seat(@RequestParam("ticketId") int ticketId) {
         System.out.println("-------- movie seat !");
         ModelAndView modelAndView = new ModelAndView();
 
-        Map<String, Object> movie = new HashMap<>();
-        movie.put("movieName", "塞尔达");
-        movie.put("movieDate", "2019年03月06日");
-        movie.put("moviePrice", "88");
+        TicketDto ticketDto = ticketService.getTicket(ticketId);
 
         modelAndView.setViewName("front/movie/selectSeat");
 
-        modelAndView.addObject("movie", movie);
+        modelAndView.addObject("ticketDto", ticketDto);
+
+        List<SeatInfo> seatInfo = new ArrayList<>();
+        SeatInfo seat = new SeatInfo();
+
+
+        seat.setSeat("\"aa__aaa__a\"");
+        seatInfo.add(seat);
+
+        modelAndView.addObject("seatInfo",seatInfo);
 
         return modelAndView;
     }

@@ -1,15 +1,15 @@
 package dto;
 
 public class MovieTicket {
-    private Integer id;
+    private Integer ticketId;
     private String myInfo;
 
-    public Integer getId() {
-        return id;
+    public Integer getTicketId() {
+        return ticketId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setTicketId(Integer ticketId) {
+        this.ticketId = ticketId;
     }
 
     public String getMyInfo() {

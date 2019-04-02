@@ -132,7 +132,7 @@ public class TicketController {
             List<MovieTicket> movieTicketList = ticketService.getTicketByDay(movieId, day);
             if (movieTicketList.size() == 0) {
                 MovieTicket movieTicket = new MovieTicket();
-                movieTicket.setId(0);
+                movieTicket.setTicketId(0);
                 movieTicket.setMyInfo("该日期没有该电影档期");
                 movieTicketList.add(movieTicket);
             }

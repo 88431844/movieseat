@@ -5,7 +5,7 @@
             + request.getServerName() + ":" + request.getServerPort()
             + path + "/";
 %>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -52,13 +52,13 @@
             <div class="front">屏幕</div>
         </div>
         <div class="booking-details">
-            <p>电影名称：<span>${movie.movieName}</span></p>
-            <p>影院名称：<span>${movie.movieName}</span></p>
-            <p>影厅名称：<span>${movie.movieName}</span></p>
-            <p>日期：<span>${movie.movieDate}</span></p>
-            <p>时间：<span>${movie.movieDate}</span></p>
-            <p>类型：<span>${movie.movieDate}</span></p>
-            <p>票价：<span>￥${movie.moviePrice}/张</span></p>
+            <p>电影名称：<span>${ticketDto.movieName}</span></p>
+            <p>影院名称：<span>${ticketDto.cinemaName}</span></p>
+            <p>影厅名称：<span>${ticketDto.hallname}</span></p>
+            <p>日期：<span>${ticketDto.day}</span></p>
+            <p>时间：<span>${ticketDto.time}</span></p>
+            <p>类型：<span>${ticketDto.type}</span></p>
+            <p>票价：<span>￥${ticketDto.price}/张</span></p>
             <p>座位：</p>
             <ul id="selected-seats"></ul>
             <p>票数：<span id="counter">0</span></p>
@@ -84,18 +84,12 @@
             $total = $('#total'); //总计金额
 
         var sc = $('#seat-map').seatCharts({
-            map: [  //座位图
-                'aaaaaaaaaa',
-                'aaaaaaaaaa',
-                '__________',
-                'aaaaaaaa__',
-                'aaaaaaaaaa',
-                'aaaaaaaaaa',
-                'aaaaaaaaaa',
-                'aaaaaaaaaa',
-                'aaaaaaaaaa',
-                'aa__aa__aa'
-            ],
+            map:[
+          <c:forEach items="${seatInfo}" var="seatInfo">
+            ${seatInfo.seat}
+          </c:forEach>
+            ]
+          ,
             naming : {
                 top : false
             },

@@ -2,7 +2,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
     String path = request.getContextPath();
-    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+    String basePath =
+            request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+                    + path + "/";
 %>
 <!DOCTYPE HTML>
 <head>
@@ -14,47 +16,49 @@
     <script type="text/javascript" src="static/js/move-top.js"></script>
     <script type="text/javascript" src="static/js/easing.js"></script>
     <script>
-        function checkInfo() {
-            var daySelected = $("#daySelected").val();
-            var ticketId = $("#ticketId").val();
-            if (daySelected == 0) {
-                alert("请先选择日期")
-            } else if (ticketId == 0) {
-                alert("无影片档期，不可选座")
-            } else {
-                window.location.href = "movie/seat";
-            }
+      function checkInfo() {
+        var daySelected = $("#daySelected").val();
+        var ticketId = $("#ticketId").val();
+        if (daySelected == 0) {
+          alert("请先选择日期")
+        } else if (ticketId == 0) {
+          alert("无影片档期，不可选座")
+        } else {
+          var id = $("#ticketId option:selected").val();
+          window.location.href = "movie/seat?ticketId=" + id;
         }
-        function getTicket() {
-            var day = $("#daySelected").val();
-            var movieId = $("#movieId").val();
-            $.ajax({
-                type: "post",
-                url: "ticket/getTicketByDay" + "?day=" + day + "&movieId=" + movieId,
-                // data: {"day":day},
-                dataType: "json",
-                success: function (data) {
-                    //下拉菜单id
-                    var c = $("#ticketId");
-                    //清空菜单
-                    c.empty();
-                    //json格式的对象数组
-                    var items = eval(data);
-                    $.each(items, function (index, item) {
-                        //名称与id
-                        var cname = items[index].myInfo;
-                        var cid = items[index].id;
-                        c.append("<option value='" + cid + "'>" + cname + "</option>");
-                    });
-                }
+      }
 
+      function getTicket() {
+        var day = $("#daySelected").val();
+        var movieId = $("#movieId").val();
+        $.ajax({
+          type: "post",
+          url: "ticket/getTicketByDay" + "?day=" + day + "&movieId=" + movieId,
+          // data: {"day":day},
+          dataType: "json",
+          success: function (data) {
+            //下拉菜单id
+            var c = $("#ticketId");
+            //清空菜单
+            c.empty();
+            //json格式的对象数组
+            var items = eval(data);
+            $.each(items, function (index, item) {
+              //名称与id
+              var cname = items[index].myInfo;
+              var cid = items[index].ticketId;
+              c.append("<option value='" + cid + "'>" + cname + "</option>");
             });
+          }
 
-        }
+        });
+
+      }
     </script>
 </head>
 <body>
-<%@include file="../head.jsp"%>
+<%@include file="../head.jsp" %>
 <div class="main">
     <div class="wrap">
 
@@ -62,7 +66,8 @@
             <div class="cont-desc span_1_of_2">
                 <div class="product-details">
                     <div class="grid static/images_3_of_2">
-                        <img src="uploadFile/${movieInfo.img}" alt="电影海报" width="100%" height="800px"/>
+                        <img src="uploadFile/${movieInfo.img}" alt="电影海报" width="100%"
+                             height="800px"/>
                     </div>
                     <div class="desc span_3_of_2">
                         <h2>电影名称 ： ${movieInfo.name} </h2>
@@ -80,30 +85,32 @@
 
                                     <div class="product_desc">
                                         <span>剧情简介 :</span>
-                                        <textarea class="autosize-transition" id="synopsis" cols="120" rows="10"
+                                        <textarea class="autosize-transition" id="synopsis"
+                                                  cols="120" rows="10"
                                                   readonly="readonly"
                                                   name="synopsis">${movieInfo.synopsis}</textarea>
                                     </div>
                                 </li>
                                 <li>
-                                        <p>日期选择 :</p>
+                                    <p>日期选择 :</p>
                                     <select name="day" id="daySelected" onchange="getTicket()">
                                         <option value="0">请选择</option>
                                         <c:forEach items="${dateList}" var="dateList">
                                             <option value="${dateList.day}">${dateList.day}</option>
                                         </c:forEach>
-                                        </select>
+                                    </select>
                                 </li>
 
                                 <li>
                                     <p>观影选择 :</p>
                                     <select name="ticketId" id="ticketId">
                                         <option value="0">请先选择日期</option>
-                                        </select>
+                                    </select>
                                 </li>
                                 <li>
-                                    <div class="button"><span><a onclick="checkInfo()">电影选座</a></span></div>
-                                        <div class="clear"></div>
+                                    <div class="button"><span><a
+                                            onclick="checkInfo()">电影选座</a></span></div>
+                                    <div class="clear"></div>
                                 </li>
 
                             </ul>
@@ -118,11 +125,14 @@
                 <c:forEach items="${lastFiveMovie}" var="lastFiveMovie">
                     <div class="special_movies">
                         <div class="movie_poster">
-                            <a href="movie/detail?id=${lastFiveMovie.id}"><img src="uploadFile/${lastFiveMovie.img}"
-                                                                               alt=""/></a>
+                            <a href="movie/detail?id=${lastFiveMovie.id}"><img
+                                    src="uploadFile/${lastFiveMovie.img}"
+                                    alt=""/></a>
                         </div>
                         <div class="movie_desc">
-                            <h3><a href="movie/detail?id=${lastFiveMovie.id}">${lastFiveMovie.name}</a></h3>
+                            <h3>
+                                <a href="movie/detail?id=${lastFiveMovie.id}">${lastFiveMovie.name}</a>
+                            </h3>
                             <p></p>
                             <span><a href="movie/detail?id=${lastFiveMovie.id}">电影详情</a></span>
                         </div>
@@ -133,15 +143,18 @@
         </div>
     </div>
 </div>
-<%@include file="../footer.jsp"%>
+<%@include file="../footer.jsp" %>
 <script type="text/javascript">
-    $(document).ready(function() {
-        $().UItoTop({ easingType: 'easeOutQuart' });
+  $(document).ready(function () {
+    $().UItoTop({easingType: 'easeOutQuart'});
 
-    });
+  });
 </script>
 <a href="#" id="toTop"><span id="toTopHover"> </span></a>
-<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
+<div style="display:none">
+    <script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript'
+            charset='gb2312'></script>
+</div>
 </body>
 </html>
 
