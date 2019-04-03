@@ -493,9 +493,29 @@
       icon_up: 'ace-icon fa fa-caret-up',
       icon_down: 'ace-icon fa fa-caret-down'
     });
-    $('#spinner3').ace_spinner({value:10,min:10,max:20,step:1, on_sides: true, icon_up:'ace-icon fa fa-plus smaller-75', icon_down:'ace-icon fa fa-minus smaller-75', btn_up_class:'btn-success' , btn_down_class:'btn-danger'});
-    $('#spinner4').ace_spinner({value:20,min:10,max:30,step:1, on_sides: true, icon_up:'ace-icon fa fa-plus smaller-75', icon_down:'ace-icon fa fa-minus smaller-75', btn_up_class:'btn-success' , btn_down_class:'btn-danger'});
-    //$('#spinner1').ace_spinner('disable').ace_spinner('value', 11);
+      $('#spinner3').ace_spinner({
+          value: 10,
+          min: 10,
+          max: 20,
+          step: 2,
+          on_sides: true,
+          icon_up: 'ace-icon fa fa-plus smaller-75',
+          icon_down: 'ace-icon fa fa-minus smaller-75',
+          btn_up_class: 'btn-success',
+          btn_down_class: 'btn-danger'
+      });
+      $('#spinner4').ace_spinner({
+          value: 20,
+          min: 10,
+          max: 30,
+          step: 2,
+          on_sides: true,
+          icon_up: 'ace-icon fa fa-plus smaller-75',
+          icon_down: 'ace-icon fa fa-minus smaller-75',
+          btn_up_class: 'btn-success',
+          btn_down_class: 'btn-danger'
+      });
+//$('#spinner1').ace_spinner('disable').ace_spinner('value', 11);
     //or
     //$('#spinner1').closest('.ace-spinner').spinner('disable').spinner('enable').spinner('value', 11);//disable, enable or change value
     //$('#spinner1').closest('.ace-spinner').spinner('value', 0);//reset to 0
