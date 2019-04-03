@@ -81,7 +81,8 @@
 <script type='text/javascript' src="static/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="static/js/jquery.seat-charts.min.js"></script>
 <script type="text/javascript">
-    var price = 80; //票价
+  var selectSeat = "";
+    var price = ${ticketDto.price}; //票价
     $(document).ready(function() {
         var $cart = $('#selected-seats'), //座位区
             $counter = $('#counter'), //票数
@@ -119,8 +120,9 @@
 
                     $counter.text(sc.find('selected').length+1);
                     $total.text(recalculateTotal(sc)+price);
+                  selectSeat += this.settings.row+1 +"_"+this.settings.label + ",";
 
-                    return 'selected';
+                  return 'selected';
                 } else if (this.status() == 'selected') { //已选中
                     //更新数量
                     $counter.text(sc.find('selected').length-1);
@@ -154,7 +156,7 @@
     }
 
     $('#btn1').click(function () {
-      alert("确定购买!2");
+      alert("selectSeat : " +selectSeat);
     });
 </script>
 
