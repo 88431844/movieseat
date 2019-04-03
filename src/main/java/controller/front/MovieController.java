@@ -1,9 +1,11 @@
 package controller.front;
 
 import dto.DateDto;
+import dto.HallDto;
 import dto.MovieInfoDto;
 import dto.SeatInfo;
 import dto.TicketDto;
+import entity.Hall;
 import entity.MovieInfo;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import service.HallService;
 import service.MovieService;
 import service.TicketService;
 import util.ListUtil;
@@ -20,6 +23,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import util.SeatUtil;
 
 @Controller
 @RequestMapping("/movie")
@@ -30,6 +34,8 @@ public class MovieController {
     private MovieService movieService;
     @Autowired
     private TicketService ticketService;
+    @Autowired
+    private HallService hallService;
 
     @RequestMapping("/wall")
     public ModelAndView wall() {
@@ -82,13 +88,11 @@ public class MovieController {
 
         modelAndView.addObject("ticketDto", ticketDto);
 
-        List<SeatInfo> seatInfo = new ArrayList<>();
-        SeatInfo seat = new SeatInfo();
-
-
-        seat.setSeat("\"aa__aaa__a\"");
-        seatInfo.add(seat);
-
+        int hallid = ticketDto.getHallid();
+        HallDto hallDto = hallService.getHall(hallid);
+        int seatRows = hallDto.getSeatrows();
+        int seatCols = hallDto.getSeatcols();
+        List<SeatInfo> seatInfo = SeatUtil.getSeat(seatRows,seatCols);
         modelAndView.addObject("seatInfo",seatInfo);
 
         return modelAndView;

@@ -26,10 +26,14 @@
         div.seatCharts-seat {color: #fff;cursor: pointer;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;}
         div.seatCharts-row {height: 35px;}
         div.seatCharts-seat.available {background-color: #B9DEA0;}
-        div.seatCharts-seat.focused {background-color: #76B474;border: none;}
+        div.seatCharts-seat.available.first-class {
+            /* 	background: url(vip.png); */
+            background-color: #c31e1f;
+        }
+        div.seatCharts-seat.focused {background-color: #6f65b4;border: none;}
         div.seatCharts-seat.selected {background-color: #E6CAC4;}
         div.seatCharts-seat.unavailable {background-color: #472B34;cursor: not-allowed;}
-        div.seatCharts-container {border-right: 1px dotted #adadad;width: 400px;padding: 20px;float: left;}
+        div.seatCharts-container {border-right: 1px dotted #adadad;width: 600px;padding: 20px;float: left;}
         div.seatCharts-legend {padding-left: 0px;position: absolute;bottom: 16px;}
         ul.seatCharts-legendList {padding-left: 0px;}
         .seatCharts-legendItem{float:left; width:90px;margin-top: 10px;line-height: 2;}
@@ -90,6 +94,11 @@
           </c:forEach>
             ]
           ,
+          seats: {
+            r: {
+              classes: 'first-class' //your custom CSS class
+            }
+          },
             naming : {
                 top : false
             },
@@ -97,6 +106,7 @@
                 node : $('#legend'),
                 items : [
                     [ 'a', 'available',   '可选座' ],
+                    [ 'r', 'available',   '推荐座' ],
                     [ 'a', 'unavailable', '已售出']
                 ]
             },
@@ -129,7 +139,8 @@
             }
         });
         //已售出的座位
-        sc.get(['1_2', '4_4','4_5','6_6','6_7','8_5','8_6','8_7','8_8', '10_1', '10_2']).status('unavailable');
+        // sc.get(['1_2', '4_4','4_5','6_6','6_7','8_5','8_6','8_7','8_8', '10_1', '10_2']).status('unavailable');
+      sc.get(['1_2']).status('unavailable');
 
     });
     //计算总金额
