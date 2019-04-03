@@ -14,8 +14,17 @@
     <title>电影选座</title>
     <link rel="stylesheet" type="text/css" href="static/css/main.css" />
     <style type="text/css">
-        .demo{width:700px; margin:40px auto 0 auto; min-height:450px;}
-        @media screen and (max-width: 360px) {.demo {width:340px}}
+        .demo {
+            width: 100%;
+            margin: 40px auto 0 auto;
+            min-height: 450px;
+        }
+
+        @media screen and (max-width: 560px) {
+            .demo {
+                width: 540px
+            }
+        }
 
         .front{width: 300px;margin: 5px 32px 45px 32px;background-color: #f0f0f0;	color: #666;text-align: center;padding: 3px;border-radius: 5px;}
         .booking-details {float: right;position: relative;width:200px;height: 450px; }
@@ -33,7 +42,13 @@
         div.seatCharts-seat.focused {background-color: #6f65b4;border: none;}
         div.seatCharts-seat.selected {background-color: #E6CAC4;}
         div.seatCharts-seat.unavailable {background-color: #472B34;cursor: not-allowed;}
-        div.seatCharts-container {border-right: 1px dotted #adadad;width: 600px;padding: 20px;float: left;}
+
+        div.seatCharts-container {
+            border-right: 1px dotted #adadad;
+            width: 70%;
+            padding: 20px;
+            float: right;
+        }
         div.seatCharts-legend {padding-left: 0px;position: absolute;bottom: 16px;}
         ul.seatCharts-legendList {padding-left: 0px;}
         .seatCharts-legendItem{float:left; width:90px;margin-top: 10px;line-height: 2;}

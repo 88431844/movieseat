@@ -507,7 +507,7 @@
       $('#spinner4').ace_spinner({
           value: 20,
           min: 10,
-          max: 30,
+          max: 20,
           step: 2,
           on_sides: true,
           icon_up: 'ace-icon fa fa-plus smaller-75',
