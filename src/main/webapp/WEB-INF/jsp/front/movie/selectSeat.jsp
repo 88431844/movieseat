@@ -68,7 +68,7 @@
             <p>票数：<span id="counter">0</span></p>
             <p>总计：<b>￥<span id="total">0</span></b></p>
 
-            <button class="checkout-button">确定购买</button>
+            <button class="checkout-button" id="btn1">确定购买</button>
 
             <div id="legend"></div>
         </div>
@@ -152,6 +152,10 @@
 
         return total;
     }
+
+    $('#btn1').click(function () {
+      alert("确定购买!2");
+    });
 </script>
 
 <div id="footer">
