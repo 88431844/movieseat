@@ -172,7 +172,8 @@
 
     $('#btn1').click(function () {
       var ticketId = ${ticketDto.id};
-      alert("selectSeat : " +selectSeat + "ticketId=" + ticketId);
+        var userId = "${sessionScope.userId}";
+        alert("selectSeat : " + selectSeat + "ticketId=" + ticketId + " userId: " + userId);
     });
 </script>
 
