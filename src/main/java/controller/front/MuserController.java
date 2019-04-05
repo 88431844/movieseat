@@ -59,6 +59,7 @@ public class MuserController {
             } else {
                 modelAndView.addObject("message", "登录成功");
                 session.setAttribute("nickName", muser.getNickname());
+                session.setAttribute("userId", muser.getId());
             }
         } else {
             modelAndView.addObject("message", "登录失败");

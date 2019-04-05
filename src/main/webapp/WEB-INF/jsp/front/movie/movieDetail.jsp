@@ -17,16 +17,21 @@
     <script type="text/javascript" src="static/js/easing.js"></script>
     <script>
       function checkInfo() {
-        var daySelected = $("#daySelected").val();
-        var ticketId = $("#ticketId").val();
-        if (daySelected == 0) {
-          alert("请先选择日期")
-        } else if (ticketId == 0) {
-          alert("无影片档期，不可选座")
-        } else {
-          var id = $("#ticketId option:selected").val();
-          window.location.href = "movie/seat?ticketId=" + id;
-        }
+          var userId = "${sessionScope.userId}";
+          if ("".endsWith(userId)) {
+              alert("请先登录！");
+          } else {
+              var daySelected = $("#daySelected").val();
+              var ticketId = $("#ticketId").val();
+              if (daySelected == 0) {
+                  alert("请先选择日期")
+              } else if (ticketId == 0) {
+                  alert("无影片档期，不可选座")
+              } else {
+                  var id = $("#ticketId option:selected").val();
+                  window.location.href = "movie/seat?ticketId=" + id;
+              }
+          }
       }
 
       function getTicket() {
