@@ -266,7 +266,11 @@
     });
     //已售出的座位
     // sc.get(['1_2', '4_4','4_5','6_6','6_7','8_5','8_6','8_7','8_8', '10_1', '10_2']).status('unavailable');
-    sc.get(['1_2','1_1']).status('unavailable');
+    sc.get([
+      <c:forEach items="${selledSeatList}" var="selledSeatList">
+      ${selledSeatList.selledSeat}
+      </c:forEach>
+    ]).status('unavailable');
 
   });
   //计算总金额
@@ -411,7 +415,9 @@
 
               $( this ).dialog( "close" );
 
-              window.location.href = "seat/paySeat";
+              window.location.href = "seat/paySeat?selectSeat="
+                  + selectSeat.substring(0,(selectSeat.length - 1) )
+                  + "&ticketId=" + ticketId + "&userId=" + userId;
             }
           }
           ,
