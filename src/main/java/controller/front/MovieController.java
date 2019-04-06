@@ -32,10 +32,6 @@ public class MovieController {
     private Logger log = Logger.getLogger(this.getClass());
     @Autowired
     private MovieService movieService;
-    @Autowired
-    private TicketService ticketService;
-    @Autowired
-    private HallService hallService;
 
     @RequestMapping("/wall")
     public ModelAndView wall() {
@@ -75,27 +71,6 @@ public class MovieController {
     private ModelAndView getLastFiveMovie(ModelAndView modelAndView) {
         List<MovieInfoDto> lastFiveMovie = movieService.lastFiveMovie();
         return modelAndView.addObject("lastFiveMovie", lastFiveMovie);
-    }
-
-    @RequestMapping("/seat")
-    public ModelAndView seat(@RequestParam("ticketId") int ticketId) {
-        System.out.println("-------- movie seat !");
-        ModelAndView modelAndView = new ModelAndView();
-
-        TicketDto ticketDto = ticketService.getTicket(ticketId);
-
-        modelAndView.setViewName("front/movie/selectSeat");
-
-        modelAndView.addObject("ticketDto", ticketDto);
-
-        int hallid = ticketDto.getHallid();
-        HallDto hallDto = hallService.getHall(hallid);
-        int seatRows = hallDto.getSeatrows();
-        int seatCols = hallDto.getSeatcols();
-        List<SeatInfo> seatInfo = SeatUtil.getSeat(seatRows,seatCols);
-        modelAndView.addObject("seatInfo",seatInfo);
-
-        return modelAndView;
     }
 
     @RequestMapping("/search")

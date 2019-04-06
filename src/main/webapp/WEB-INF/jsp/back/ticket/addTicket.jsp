@@ -78,12 +78,26 @@
                 //名称与id
                 var cname = items[index].hallname;
                 var cid = items[index].id;
-                c.append("<option value='"+cid+"'>"+cname+"</option>");
+                var seatrows = items[index].seatrows;
+                var seatcols = items[index].seatcols;
+                var seatSum = seatrows * seatcols;
+                if (seatSum > 0){
+                  c.append("<option value='"+cid+"'>"+cname+" - 总座位数："+seatSum+"</option>");
+                }
+                else {
+                  alert("请先添加对应，影院的影厅信息！")
+                  c.append("<option value='"+cid+"'>"+cname+"</option>");
+                }
+
               });
             }
 
           });
 
+        }
+
+        function getHallInfo() {
+          alert("getHallInfo");
         }
     </script>
 </head>
@@ -160,7 +174,7 @@
                                 <label class="col-sm-3 control-label no-padding-right"> 影厅名称 </label>
 
                                 <div class="col-sm-9">
-                                    <select name="hallid" id="hallid">
+                                    <select name="hallid" id="hallid" onload="getHallInfo()">
                                         <option value="0">请先选择影院</option>
                                     </select>
                                 </div>
@@ -546,10 +560,10 @@
             icon_down: 'ace-icon fa fa-caret-down'
         });
         $('#spinner3').ace_spinner({
-            value: 50,
-            min: 40,
+            value: 100,
+            min: 100,
             max: 400,
-            step: 10,
+            step: 2,
             on_sides: true,
             icon_up: 'ace-icon fa fa-plus smaller-75',
             icon_down: 'ace-icon fa fa-minus smaller-75',

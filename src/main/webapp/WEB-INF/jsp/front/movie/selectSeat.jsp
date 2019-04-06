@@ -411,7 +411,7 @@
 
               $( this ).dialog( "close" );
 
-              window.location.href = "movie/wall";
+              window.location.href = "seat/paySeat";
             }
           }
           ,

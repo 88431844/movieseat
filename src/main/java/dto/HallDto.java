@@ -15,6 +15,8 @@ public class HallDto {
 
   private Integer seatcols;
 
+  private Integer seatSum;
+
   private String type;
 
   public Integer getId() {
@@ -87,5 +89,19 @@ public class HallDto {
 
   public void setType(String type) {
     this.type = type;
+  }
+
+  public Integer getSeatSum() {
+    if (null != seatrows && null != seatcols){
+      return seatrows * seatcols;
+    }
+    else {
+      return 0;
+    }
+
+  }
+
+  public void setSeatSum(Integer seatSum) {
+    this.seatSum = seatSum;
   }
 }

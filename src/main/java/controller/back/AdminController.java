@@ -53,6 +53,7 @@ public class AdminController {
         else {
             modelAndView.setViewName("back/adminLogin");
             modelAndView.addObject("message","登录失败");
+            return modelAndView;
         }
         return controller.queryMovieInfo(modelAndView);
     }

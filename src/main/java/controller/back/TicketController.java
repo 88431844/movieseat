@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import service.CinemaService;
+import service.HallService;
 import service.MovieService;
 import service.TicketService;
 import util.LoginUtil;
@@ -30,6 +31,8 @@ public class TicketController {
     private CinemaService cinemaService;
     @Autowired
     private TicketService ticketService;
+    @Autowired
+    private HallService hallService;
 
     @RequestMapping("/toAddTicket")
     public ModelAndView toAddTicket(HttpSession session) {
@@ -78,6 +81,9 @@ public class TicketController {
         }
         TicketDto ticketDto = ticketService.getTicket(id);
         modelAndView.addObject("ticketDto", ticketDto);
+        int hallid = ticketDto.getHallid();
+        HallDto hallDto = hallService.getHall(hallid);
+        modelAndView.addObject("hallDto", hallDto);
 
         return getMovCinList(modelAndView);
     }

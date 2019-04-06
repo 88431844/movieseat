@@ -29,7 +29,7 @@
                   alert("无影片档期，不可选座")
               } else {
                   var id = $("#ticketId option:selected").val();
-                  window.location.href = "movie/seat?ticketId=" + id;
+                  window.location.href = "seat/getSeat?ticketId=" + id;
               }
           }
       }

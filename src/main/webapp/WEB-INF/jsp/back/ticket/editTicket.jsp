@@ -134,6 +134,13 @@
                                     <input type="text" readonly="" value="${ticketDto.hallname}">
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label no-padding-right"> 影厅座位数 </label>
+
+                                <div class="col-sm-9">
+                                    <input type="text" readonly="" value="${hallDto.seatSum}">
+                                </div>
+                            </div>
 
                             <div class="form-group">
                                 <label class="col-sm-3 control-label no-padding-right" for="id-date-picker-1">
@@ -182,7 +189,9 @@
                                 <label class="col-sm-3 control-label no-padding-right"> 电影票数量 </label>
 
                                 <div class="col-sm-9">
-                                    <input type="text" name="ticketsum" value="${ticketDto.ticketsum}" readonly=""  class="input-mini spinner-input form-control" id="spinner3" maxlength="3">
+                                    <input type="text" name="ticketsum" value="${ticketDto.ticketsum}"
+                                           readonly=""  class="input-mini spinner-input form-control"
+                                           id="spinner3" maxlength="3">
                                 </div>
                             </div>
 
@@ -516,10 +525,10 @@
       icon_down: 'ace-icon fa fa-caret-down'
     });
     $('#spinner3').ace_spinner({
-      value: 50,
-      min: 40,
-      max: 400,
-      step: 10,
+      value: 100,
+      min: 100,
+      max: ${hallDto.seatSum},
+      step: 2,
       on_sides: true,
       icon_up: 'ace-icon fa fa-plus smaller-75',
       icon_down: 'ace-icon fa fa-minus smaller-75',

@@ -142,7 +142,12 @@
   <select id="getHallByCinemaId" resultType="dto.HallDto">
     select
     h.id as id,
-    h.hallname as hallName
+    h.cinemaid as cinemaid,
+    c.name as cinemaName,
+    h.hallname as hallName,
+    h.seatrows as seatRows,
+    h.seatcols as seatCols,
+    h.type as type
     from hall as h,cinema as c
     where c.id = h.cinemaid and c.id = #{cinemaId} order by h.id desc
   </select>
