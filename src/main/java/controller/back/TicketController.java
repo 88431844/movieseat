@@ -101,10 +101,15 @@ public class TicketController {
     }
 
     @RequestMapping("/editTicket")
-    public ModelAndView editTicket(HttpSession session, TicketDto ticketDto) {
+    public ModelAndView editTicket(HttpSession session, TicketDto ticketDto,int selledSeat) {
         ModelAndView modelAndView = LoginUtil.checkAdminLogin(session);
         if (null == modelAndView.getViewName()) {
             modelAndView.setViewName("back/ticket/listTicket");
+        }
+        System.out.println("--- selledSeat : " + selledSeat);
+        if (ticketDto.getTicketsum() < selledSeat){
+            modelAndView.addObject("message", "修改失败，已买票数大于修改票数！");
+            return queryTicket(modelAndView);
         }
 
         int haveEdit = ticketService.editTicket(ticketDto);

@@ -145,7 +145,7 @@
                                 <label class="col-sm-3 control-label no-padding-right"> 已售票数 </label>
 
                                 <div class="col-sm-9">
-                                    <input type="text" readonly="" value="${selledSeat}">
+                                    <input type="text" readonly="" name="selledSeat" value="${selledSeat}">
                                 </div>
                             </div>
 
