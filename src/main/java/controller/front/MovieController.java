@@ -1,29 +1,21 @@
 package controller.front;
 
 import dto.DateDto;
-import dto.HallDto;
 import dto.MovieInfoDto;
-import dto.SeatInfo;
-import dto.TicketDto;
-import entity.Hall;
 import entity.MovieInfo;
+import javax.servlet.http.HttpSession;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import service.HallService;
 import service.MovieService;
-import service.TicketService;
 import util.ListUtil;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import util.SeatUtil;
 
 @Controller
 @RequestMapping("/movie")
@@ -49,9 +41,16 @@ public class MovieController {
 
 
     @RequestMapping("/detail")
-    public ModelAndView detail(@RequestParam("id") int id) {
+    public ModelAndView detail(@RequestParam("id") int id, HttpSession session) {
         ModelAndView modelAndView = new ModelAndView();
         System.out.println("----- movie detail  .....");
+
+        Integer userId = (Integer) session.getAttribute("userId");
+        if (null == userId){
+            modelAndView.addObject("message","请先登录！");
+            return movieWallInit(modelAndView, movieService);
+        }
+
         modelAndView.setViewName("front/movie/movieDetail");
 
         MovieInfo movieInfo = movieService.getMovie(id);
