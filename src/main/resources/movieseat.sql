@@ -11,7 +11,7 @@
  Target Server Version : 50725
  File Encoding         : 65001
 
- Date: 01/04/2019 19:01:40
+ Date: 06/04/2019 20:35:18
 */
 
 SET NAMES utf8mb4;
@@ -27,7 +27,7 @@ CREATE TABLE `cinema` (
   `phone` varchar(255) DEFAULT NULL COMMENT '影院电话',
   `addr` varchar(255) DEFAULT NULL COMMENT '影院地址',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Records of cinema
@@ -64,9 +64,9 @@ CREATE TABLE `hall` (
 -- Records of hall
 -- ----------------------------
 BEGIN;
-INSERT INTO `hall` VALUES (5, 2, '一号影厅', 10, 20, '2D');
-INSERT INTO `hall` VALUES (6, 2, '二号影厅', 15, 20, 'IMAX');
-INSERT INTO `hall` VALUES (7, 2, '三号影厅', 15, 20, '3D');
+INSERT INTO `hall` VALUES (5, 2, '一号影厅', 10, 16, '2D');
+INSERT INTO `hall` VALUES (6, 2, '二号影厅', 10, 18, 'IMAX');
+INSERT INTO `hall` VALUES (7, 2, '三号影厅', 16, 10, '3D');
 COMMIT;
 
 -- ----------------------------
@@ -119,7 +119,7 @@ CREATE TABLE `movieinfo` (
   `img` varchar(255) DEFAULT NULL COMMENT '影片海报',
   `rating` int(255) DEFAULT NULL COMMENT '评分1-5',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Records of movieinfo
@@ -193,8 +193,18 @@ CREATE TABLE `seat` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `row` int(11) DEFAULT NULL COMMENT '第几排',
   `col` int(11) DEFAULT NULL COMMENT '第几列',
+  `ticketid` int(11) DEFAULT NULL COMMENT '影票id',
+  `userid` int(11) DEFAULT NULL COMMENT '用户id',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+
+-- ----------------------------
+-- Records of seat
+-- ----------------------------
+BEGIN;
+INSERT INTO `seat` VALUES (1, 6, 8, 3, 1);
+INSERT INTO `seat` VALUES (2, 6, 9, 3, 1);
+COMMIT;
 
 -- ----------------------------
 -- Table structure for ticket
@@ -211,16 +221,15 @@ CREATE TABLE `ticket` (
   `type` varchar(255) DEFAULT NULL COMMENT '电影类型（3D/IMax）',
   `ticketsum` int(11) DEFAULT NULL COMMENT '电影票数量',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of ticket
 -- ----------------------------
 BEGIN;
-INSERT INTO `ticket` VALUES (2, 3, 2, 7, '2019-04-02', '18:30', 99, '2D', 50);
-INSERT INTO `ticket` VALUES (4, 3, 2, 7, '2019-04-02', '19:00', 33, '2D', 50);
-INSERT INTO `ticket` VALUES (5, 3, 2, 7, '2019-04-01', '19:00', 33, '2D', 50);
-INSERT INTO `ticket` VALUES (7, 6, 2, 5, '2019-04-02', '19:00', 25, '2D', 100);
+INSERT INTO `ticket` VALUES (1, 11, 2, 7, '2019-04-06', '20:10', 33, '2D', 100);
+INSERT INTO `ticket` VALUES (2, 3, 2, 6, '2019-04-06', '19:00', 55, '3D', 100);
+INSERT INTO `ticket` VALUES (3, 7, 2, 5, '2019-04-06', '20:00', 44, '3D', 110);
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;
