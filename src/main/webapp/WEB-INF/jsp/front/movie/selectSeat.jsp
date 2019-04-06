@@ -411,8 +411,6 @@
 
               var ticketId = ${ticketDto.id};
               var userId = "${sessionScope.userId}";
-              alert("selectSeat : " + selectSeat + "ticketId=" + ticketId + " userId: " + userId);
-
               $( this ).dialog( "close" );
 
               window.location.href = "seat/paySeat?selectSeat="

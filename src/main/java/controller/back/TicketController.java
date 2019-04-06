@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import service.CinemaService;
 import service.HallService;
 import service.MovieService;
+import service.SeatService;
 import service.TicketService;
 import util.LoginUtil;
 
@@ -33,6 +34,8 @@ public class TicketController {
     private TicketService ticketService;
     @Autowired
     private HallService hallService;
+    @Autowired
+    private SeatService seatService;
 
     @RequestMapping("/toAddTicket")
     public ModelAndView toAddTicket(HttpSession session) {
@@ -65,6 +68,12 @@ public class TicketController {
         if (null == modelAndView.getViewName()) {
             modelAndView.setViewName("back/ticket/listTicket");
         }
+        List<SeatInfo> selledSeatList = seatService.getSelledSeat(id);
+        if (selledSeatList.size() > 0){
+            modelAndView.addObject("message", "删除失败，该场电影已有用户购买！");
+            return queryTicket(modelAndView);
+        }
+
         if (1 == ticketService.delTicket(id)) {
             modelAndView.addObject("message", "删除成功");
         } else {
@@ -84,6 +93,9 @@ public class TicketController {
         int hallid = ticketDto.getHallid();
         HallDto hallDto = hallService.getHall(hallid);
         modelAndView.addObject("hallDto", hallDto);
+
+        List<SeatInfo> selledSeatList = seatService.getSelledSeat(id);
+        modelAndView.addObject("selledSeat", selledSeatList.size());
 
         return getMovCinList(modelAndView);
     }

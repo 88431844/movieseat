@@ -505,9 +505,9 @@
           btn_down_class: 'btn-danger'
       });
       $('#spinner4').ace_spinner({
-          value: 20,
+          value: 10,
           min: 10,
-          max: 20,
+          max: 18,
           step: 2,
           on_sides: true,
           icon_up: 'ace-icon fa fa-plus smaller-75',
