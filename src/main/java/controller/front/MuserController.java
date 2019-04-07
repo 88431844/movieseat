@@ -76,6 +76,9 @@ public class MuserController {
 
     }
 
-
+    @RequestMapping("/toUserCenter")
+    public String toUserCenter(){
+        return "front/user/userCenter";
+    }
 
 }

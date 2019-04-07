@@ -106,7 +106,6 @@ public class TicketController {
         if (null == modelAndView.getViewName()) {
             modelAndView.setViewName("back/ticket/listTicket");
         }
-        System.out.println("--- selledSeat : " + selledSeat);
         if (ticketDto.getTicketsum() < selledSeat){
             modelAndView.addObject("message", "修改失败，已买票数大于修改票数！");
             return queryTicket(modelAndView);
