@@ -12,8 +12,9 @@
 
                         }
                         else {
+
                             out.print("<li><a href=>欢迎:"+nickName+"</a></li>");
-                            out.print("<li><a href=\"user/toUserCenter\">用户中心</a></li>");
+                            out.print("<li><a href=\"user/toUserCenter?userId="+session.getAttribute("userId")+"\">用户中心</a></li>");
                             out.print("<li><a href=\"user/userLogout\">登出</a></li>");
                         }
                     %>

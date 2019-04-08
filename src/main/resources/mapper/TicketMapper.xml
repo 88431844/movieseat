@@ -222,4 +222,36 @@
     from ticket as t,movieinfo as m,cinema as c,hall as h
     where t.movieid = m.id and t.cinemaid = c.id and t.hallid = h.id and t.movieid = #{movieId} and day = #{day}
   </select>
+
+
+
+  <select id="getTicketByUserId" resultType="dto.UserTicketDto">
+    select
+    t.id as ticketId,
+
+    t.cinemaid as cinemaid,
+    c.name as cinemaName,
+    c.addr as cinemaAddr,
+
+    t.hallid as hallId,
+    h.hallname as hallName,
+
+    t.movieid as movieId,
+    m.name as movieName,
+
+    t.day as 'day',
+    t.time as 'time',
+
+    s.row as seatRow,
+    s.col as seatCol
+
+    from ticket as t,movieinfo as m,cinema as c,hall as h,seat as s
+    where t.movieid = m.id
+    and t.cinemaid = c.id
+    and t.hallid = h.id
+    and t.movieid = m.id
+    and s.ticketid = t.id
+    order by s.id desc
+  </select>
+
 </mapper>

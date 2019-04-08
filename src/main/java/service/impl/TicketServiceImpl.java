@@ -3,6 +3,7 @@ package service.impl;
 import dao.TicketMapper;
 import dto.MovieTicket;
 import dto.TicketDto;
+import dto.UserTicketDto;
 import entity.Ticket;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -83,5 +84,10 @@ public class TicketServiceImpl implements TicketService {
             }
         }
         return movieTicketList;
+    }
+
+    @Override
+    public List<UserTicketDto> getTicketByUserId(int userId) {
+        return ticketMapper.getTicketByUserId(userId);
     }
 }

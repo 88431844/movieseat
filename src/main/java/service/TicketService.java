@@ -2,6 +2,7 @@ package service;
 
 import dto.MovieTicket;
 import dto.TicketDto;
+import dto.UserTicketDto;
 import entity.Ticket;
 
 import java.util.List;
@@ -22,4 +23,6 @@ public interface TicketService {
     int editTicket(TicketDto ticketDto);
 
     List<MovieTicket> getTicketByDay(String movieId, String day);
+
+  List<UserTicketDto> getTicketByUserId(int userId);
 }

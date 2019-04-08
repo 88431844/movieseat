@@ -1,29 +1,32 @@
 package dao;
 
-import dto.MovieTicket;
 import dto.TicketDto;
+import dto.UserTicketDto;
 import entity.Ticket;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface TicketMapper {
-    int deleteByPrimaryKey(Integer id);
 
-    int insert(Ticket record);
+  int deleteByPrimaryKey(Integer id);
 
-    int insertSelective(Ticket record);
+  int insert(Ticket record);
 
-    Ticket selectByPrimaryKey(Integer id);
+  int insertSelective(Ticket record);
 
-    int updateByPrimaryKeySelective(Ticket record);
+  Ticket selectByPrimaryKey(Integer id);
 
-    int updateByPrimaryKey(Ticket record);
+  int updateByPrimaryKeySelective(Ticket record);
 
-    List<TicketDto> listTicket();
+  int updateByPrimaryKey(Ticket record);
 
-    int haveTicket(TicketDto ticketDto);
+  List<TicketDto> listTicket();
 
-    TicketDto getTicket(@Param("id") int id);
+  int haveTicket(TicketDto ticketDto);
 
-    List<TicketDto> getTicketByDay(@Param("movieId") String movieId, @Param("day") String day);
+  TicketDto getTicket(@Param("id") int id);
+
+  List<TicketDto> getTicketByDay(@Param("movieId") String movieId, @Param("day") String day);
+
+  List<UserTicketDto> getTicketByUserId(@Param("userId") int userId);
 }

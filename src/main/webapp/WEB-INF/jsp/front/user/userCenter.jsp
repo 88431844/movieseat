@@ -128,20 +128,30 @@
                                 <tr>
 
                                     <th width="20%">影院名称</th>
-                                    <th width="15%">影院电话</th>
-                                    <th width="40%">影院地址</th>
-                                    <th width="25%">操作</th>
+                                    <th width="15%">影院地址</th>
+                                    <th width="10%">影厅</th>
+                                    <th width="20%">影片名称</th>
+                                    <th width="5%">日期</th>
+                                    <th width="5%">时间</th>
+                                    <th width="5%">排</th>
+                                    <th width="5%">座</th>
+                                    <th width="15%">操作</th>
                                 </tr>
                                 </thead>
 
                                 <tbody>
 
-                                <c:forEach items="${cinemaList}" var="cinemaList">
+                                <c:forEach items="${userTicketDtoList}" var="userTicketDtoList">
                                     <tr>
 
-                                        <td><span>${cinemaList.name}</span></td>
-                                        <td><span>${cinemaList.phone}</span></td>
-                                        <td><span>${cinemaList.addr}</span></td>
+                                        <td><span>${userTicketDtoList.cinemaName}</span></td>
+                                        <td><span>${userTicketDtoList.cinemaAddr}</span></td>
+                                        <td><span>${userTicketDtoList.hallName}</span></td>
+                                        <td><span>${userTicketDtoList.movieName}</span></td>
+                                        <td><span>${userTicketDtoList.day}</span></td>
+                                        <td><span>${userTicketDtoList.time}</span></td>
+                                        <td><span>${userTicketDtoList.seatRow}</span></td>
+                                        <td><span>${userTicketDtoList.seatCol}</span></td>
                                         <td>
                                             <div class="">
                                                 <button class="green" onclick="toEdit(${cinemaList.id})">
