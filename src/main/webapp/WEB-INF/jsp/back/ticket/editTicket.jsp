@@ -177,7 +177,15 @@
                                 <label class="col-sm-3 control-label no-padding-right"> 票价 </label>
 
                                 <div class="col-sm-9">
-                                    <input type="text" name="price" value="${ticketDto.price}" placeholder="票价" class=""/> 单位（元）
+                                    <input type="text" name="price"
+                                           <%
+                                               Integer adminUserRole = (Integer)session.getAttribute("adminUserRole");
+                                               if (1 == adminUserRole){
+                                                 out.print("readonly='readonly'");
+                                               }
+                                           %>
+
+                                           value="${ticketDto.price}" placeholder="票价" class=""/> 单位（元）
                                 </div>
                             </div>
                             <div class="form-group">

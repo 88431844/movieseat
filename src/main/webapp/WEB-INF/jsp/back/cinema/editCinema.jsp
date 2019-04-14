@@ -57,6 +57,12 @@
     <![endif]-->
     <script>
         function edit() {
+          var adminUserRole = "${sessionScope.get("adminUserRole")}";
+          var adminUserRoleStr = adminUserRole.toString();
+          if (null != adminUserRoleStr && !"".endsWith(adminUserRoleStr) && "1".endsWith(adminUserRoleStr)) {
+            alert("员工禁止删除操作！");
+            return;
+          }
             var form = document.getElementById('cinema');
             form.submit();
         }
