@@ -6,10 +6,15 @@
         } catch (e) {
         }
     </script>
+    <script>
+      function info() {
+        alert("功能暂未开放，敬请期待！")
+      }
+    </script>
     <ul class="nav nav-list">
 
         <li class="">
-            <a href="backMovie/listMovie">
+            <a href="user/toUserCenter?userId=${sessionScope.get("userId")}">
                 <i class="menu-icon fa fa-film"></i>
                 <span class="menu-text"> 影单管理 </span>
             </a>
@@ -20,7 +25,7 @@
 
 
         <li class="">
-            <a href="ticket/listTicket">
+            <a href="user/toUserCenter?userId=${sessionScope.get("userId")}" onclick="info()">
                 <i class="menu-icon glyphicon glyphicon-book"></i>
                 <span class="menu-text"> 积分管理 </span>
             </a>
@@ -29,7 +34,7 @@
         </li>
 
         <li class="">
-            <a href="ticket/listTicket">
+            <a href="user/toUserCenter?userId=${sessionScope.get("userId")}" onclick="info()">
                 <i class="menu-icon glyphicon glyphicon-book"></i>
                 <span class="menu-text"> 会员卡管理 </span>
             </a>
@@ -38,7 +43,7 @@
         </li>
 
         <li class="">
-            <a href="ticket/listTicket">
+            <a href="user/toUserCenter?userId=${sessionScope.get("userId")}" onclick="info()">
                 <i class="menu-icon glyphicon glyphicon-book"></i>
                 <span class="menu-text"> 订单管理 </span>
             </a>

@@ -106,7 +106,7 @@
                     <span>用户中心</span>
                 </li>
                 <li>
-                    <button onclick="toAdd()">添加影院</button>
+
                 </li>
             </ul><!-- /.breadcrumb -->
         </div>
@@ -130,12 +130,12 @@
                                     <th width="20%">影院名称</th>
                                     <th width="15%">影院地址</th>
                                     <th width="10%">影厅</th>
-                                    <th width="20%">影片名称</th>
-                                    <th width="5%">日期</th>
+                                    <th width="15%">影片名称</th>
+                                    <th width="10%">日期</th>
                                     <th width="5%">时间</th>
                                     <th width="5%">排</th>
                                     <th width="5%">座</th>
-                                    <th width="15%">操作</th>
+
                                 </tr>
                                 </thead>
 
@@ -152,19 +152,7 @@
                                         <td><span>${userTicketDtoList.time}</span></td>
                                         <td><span>${userTicketDtoList.seatRow}</span></td>
                                         <td><span>${userTicketDtoList.seatCol}</span></td>
-                                        <td>
-                                            <div class="">
-                                                <button class="green" onclick="toEdit(${cinemaList.id})">
-                                                    <i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
-                                                    编辑影院
-                                                </button>
 
-                                                <button class="red" onclick="del(${cinemaList.id})">
-                                                    <i class="ace-icon fa fa-trash-o bigger-120"></i>
-                                                    删除影院
-                                                </button>
-                                            </div>
-                                        </td>
                                     </tr>
                                 </c:forEach>
                                 </tbody>
@@ -222,7 +210,7 @@
           bAutoWidth: true,
           "aoColumns": [
             {"bSortable": false},
-            null, null,
+            null, null,null,null,null,null,
             {"bSortable": false}
           ],
           "aaSorting": [],
