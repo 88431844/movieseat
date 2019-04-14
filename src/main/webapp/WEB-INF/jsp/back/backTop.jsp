@@ -1,3 +1,4 @@
+<%@ page import="org.springframework.util.StringUtils" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <div id="navbar" class="navbar navbar-default">
@@ -35,7 +36,20 @@
                     <a data-toggle="dropdown" href="admin/adminLogin" class="dropdown-toggle">
                         <img class="nav-user-photo" src="static/assets/avatars/user.jpg" alt="Jason's Photo"/>
                         <span class="user-info">
-									<small>欢迎</small>
+									<small>
+                                        欢迎
+                                        <%
+                                            Integer role = (Integer)session.getAttribute("adminUserRole");
+                                            if (!StringUtils.isEmpty(role)){
+                                              if (1 == role){
+                                                out.print(",员工");
+                                              }
+                                              else {
+                                                  out.print(",经理");
+                                              }
+                                            }
+                                        %>
+                                    </small>
                             <%
                                 out.print(session.getAttribute("adminUserName"));
                             %>

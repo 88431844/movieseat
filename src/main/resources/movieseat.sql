@@ -90,7 +90,7 @@ CREATE TABLE `madmin` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) DEFAULT NULL COMMENT '管理员账号',
   `password` varchar(255) DEFAULT NULL COMMENT '管理员密码',
-  `role` int(255) DEFAULT NULL COMMENT '0=admin；1=经理；2=员工',
+  `role` int(255) DEFAULT NULL COMMENT '0=经理；1=员工',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 

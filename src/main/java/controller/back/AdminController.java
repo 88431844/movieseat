@@ -49,6 +49,7 @@ public class AdminController {
         Madmin admin = adminService.adminLogin(adminLoginDto);
         if (null != admin && admin.getUsername() != null){
             session.setAttribute("adminUserName", admin.getUsername());
+            session.setAttribute("adminUserRole",admin.getRole());
         }
         else {
             modelAndView.setViewName("back/adminLogin");
