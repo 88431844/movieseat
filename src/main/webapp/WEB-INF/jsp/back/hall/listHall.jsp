@@ -50,6 +50,12 @@
     <![endif]-->
     <script>
       function del(id) {
+        var adminUserRole = "${sessionScope.get("adminUserRole")}";
+        var adminUserRoleStr = adminUserRole.toString();
+        if (null != adminUserRoleStr && !"".endsWith(adminUserRoleStr) && "1".endsWith(adminUserRoleStr)) {
+          alert("员工禁止删除操作！");
+          return;
+        }
         if (confirm('您确定删除吗？')) {
           window.location.href = "hall/delHall?id=" + id;
         }
