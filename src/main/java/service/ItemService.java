@@ -1,8 +1,6 @@
 package service;
 
-import dto.CinemaDto;
 import dto.ItemInfoDto;
-import entity.Cinema;
 import entity.ItemInfo;
 
 import java.util.List;

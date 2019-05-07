@@ -1,6 +1,10 @@
 package dao;
 
+import dto.ItemInfoDto;
 import entity.ItemInfo;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface ItemInfoMapper {
     int deleteByPrimaryKey(Integer id);
@@ -14,4 +18,8 @@ public interface ItemInfoMapper {
     int updateByPrimaryKeySelective(ItemInfo record);
 
     int updateByPrimaryKey(ItemInfo record);
+
+    int have(@Param("name") String name);
+
+    List<ItemInfoDto> list();
 }

@@ -77,7 +77,7 @@ CREATE TABLE `iteminfo` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL COMMENT '物品名称',
   `img` varchar(255) DEFAULT NULL COMMENT '物品图片',
-  `desc` varchar(255) DEFAULT NULL COMMENT '物品描述',
+  `itemdesc` varchar(255) DEFAULT NULL COMMENT '物品描述',
   `cost` int(10) DEFAULT NULL COMMENT '消耗积分',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;

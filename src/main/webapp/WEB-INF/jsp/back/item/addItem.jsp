@@ -115,10 +115,10 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label no-padding-right" for="desc"> 物品描述 </label>
+                                <label class="col-sm-3 control-label no-padding-right" for="itemdesc"> 物品描述 </label>
 
                                 <div class="col-sm-9">
-                                    <textarea class="autosize-transition" id="desc" name="desc"
+                                    <textarea class="autosize-transition" id="itemdesc" name="itemdesc"
                                               cols="80"></textarea>
                                 </div>
                             </div>

@@ -7,7 +7,7 @@ public class ItemInfo {
 
     private String img;
 
-    private String desc;
+    private String itemdesc;
 
     private Integer cost;
 
@@ -35,12 +35,12 @@ public class ItemInfo {
         this.img = img == null ? null : img.trim();
     }
 
-    public String getDesc() {
-        return desc;
+    public String getItemdesc() {
+        return itemdesc;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc == null ? null : desc.trim();
+    public void setItemdesc(String itemdesc) {
+        this.itemdesc = itemdesc == null ? null : itemdesc.trim();
     }
 
     public Integer getCost() {

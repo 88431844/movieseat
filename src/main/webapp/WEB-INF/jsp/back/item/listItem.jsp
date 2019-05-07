@@ -146,7 +146,7 @@
 
                                     <td><span>${itemList.name}</span></td>
                                     <td><span>${itemList.cost}</span></td>
-                                    <td><span>${itemList.desc}</span></td>
+                                    <td><span>${itemList.itemdesc}</span></td>
 
                                     <td>
                                         <div class="">
@@ -218,7 +218,7 @@
                     bAutoWidth: true,
                     "aoColumns": [
                         {"bSortable": false},
-                        null, null, null, null, null, null, null, null,
+                        null, null,
                         {"bSortable": false}
                     ],
                     "aaSorting": [],

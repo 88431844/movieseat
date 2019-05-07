@@ -30,26 +30,28 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     public List<ItemInfoDto> list() {
-        return null;
+        return itemInfoMapper.list();
     }
 
     @Override
     public int have(String name) {
-        return 0;
+        return itemInfoMapper.have(name);
     }
 
     @Override
     public int del(int id) {
-        return 0;
+        return itemInfoMapper.deleteByPrimaryKey(id);
     }
 
     @Override
     public ItemInfo get(int id) {
-        return null;
+        return itemInfoMapper.selectByPrimaryKey(id);
     }
 
     @Override
     public int edit(ItemInfoDto itemInfoDto) {
-        return 0;
+        ItemInfo itemInfo = new ItemInfo();
+        BeanUtils.copyProperties(itemInfoDto, itemInfo);
+        return itemInfoMapper.updateByPrimaryKeySelective(itemInfo);
     }
 }

@@ -134,7 +134,7 @@
 
                                 <div class="col-sm-9">
                                     <textarea class="autosize-transition" id="synopsis" cols="80"
-                                              name="synopsis">${itemInfo.desc}</textarea>
+                                              name="synopsis">${itemInfo.itemdesc}</textarea>
                                 </div>
                             </div>
 

@@ -57,33 +57,12 @@
         </li>
 
         <li class="">
-            <a href="#" class="dropdown-toggle">
-                <i class="menu-icon fa fa-credit-card"></i>
-                <span class="menu-text">商城套餐管理 </span>
-                <b class="arrow fa fa-angle-down"></b>
+            <a href="item/listItem">
+                <i class="menu-icon glyphicon glyphicon-book"></i>
+                <span class="menu-text"> 商城管理 </span>
             </a>
 
             <b class="arrow"></b>
-
-            <ul class="submenu">
-                <li class="">
-                    <a href="shop/listShop">
-                        <i class="menu-icon fa fa-caret-right"></i>
-                        查询商城套餐
-                    </a>
-
-                    <b class="arrow"></b>
-                </li>
-                <li class="">
-                    <a href="shop/toAddShop">
-                        <i class="menu-icon fa fa-caret-right"></i>
-                        添加商城套餐
-                    </a>
-
-                    <b class="arrow"></b>
-                </li>
-            </ul>
-
         </li>
 
     </ul><!-- /.nav-list -->
