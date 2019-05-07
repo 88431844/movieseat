@@ -44,7 +44,7 @@ public class ItemController {
             itemService.add(itemInfoDto);
             modelAndView.addObject("message", "添加成功");
         } else {
-            modelAndView.addObject("message", "添加失败，影院名词重复");
+            modelAndView.addObject("message", "添加失败，名称重复");
         }
 
         return queryItem(modelAndView);
