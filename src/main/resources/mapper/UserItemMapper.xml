@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.UserItemMapper">
+    <resultMap id="BaseResultMap" type="entity.UserItem">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="userid" jdbcType="INTEGER" property="userid"/>
+        <result column="itemid" jdbcType="INTEGER" property="itemid"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, userid, itemid
+  </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from useritem
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from useritem
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" parameterType="entity.UserItem">
+    insert into useritem (id, userid, itemid
+      )
+    values (#{id,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{itemid,jdbcType=INTEGER}
+      )
+  </insert>
+    <insert id="insertSelective" parameterType="entity.UserItem">
+        insert into useritem
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="userid != null">
+                userid,
+            </if>
+            <if test="itemid != null">
+                itemid,
+            </if>
+            createtime
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="userid != null">
+                #{userid,jdbcType=INTEGER},
+            </if>
+            <if test="itemid != null">
+                #{itemid,jdbcType=INTEGER},
+            </if>
+            now()
+        </trim>
+
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="entity.UserItem">
+        update useritem
+        <set>
+            <if test="userid != null">
+                userid = #{userid,jdbcType=INTEGER},
+            </if>
+            <if test="itemid != null">
+                itemid = #{itemid,jdbcType=INTEGER},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="entity.UserItem">
+    update useritem
+    set userid = #{userid,jdbcType=INTEGER},
+      itemid = #{itemid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+    <select id="getUserOrder" parameterType="java.lang.Integer" resultType="dto.ItemInfoDto">
+    select
+    u.id as userItemId,
+    i.name as name,
+    i.cost as cost,
+    i.itemdesc as itemdesc,
+    u.createtime as createtime
+    from useritem as u,iteminfo as i
+    where u.itemid = i.id and u.userid = #{userId} order by u.createtime desc
+  </select>
+</mapper>

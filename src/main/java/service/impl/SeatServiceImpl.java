@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import service.SeatService;
 import service.TicketService;
+import service.UserService;
 
 @Service
 public class SeatServiceImpl implements SeatService {
@@ -20,6 +21,8 @@ public class SeatServiceImpl implements SeatService {
   private TicketService ticketService;
   @Autowired
   private SeatMapper seatMapper;
+  @Autowired
+  private UserService userService;
 
   @Override
   public String paySeat(String selectSeat, int ticketId, int userId) {
@@ -29,6 +32,7 @@ public class SeatServiceImpl implements SeatService {
     List<Seat> seatList = new ArrayList<>();
     TicketDto ticketDto = ticketService.getTicket(ticketId);
     int buyTicketSum = selectedSeats.length;
+    int integral = (int) (ticketDto.getPrice() * buyTicketSum);
     int totalTicketSum = ticketDto.getTicketsum();
     int sellTicketSum = seatMapper.getSellTicketSum(ticketId);
     int leftTicket = totalTicketSum - sellTicketSum;
@@ -46,6 +50,8 @@ public class SeatServiceImpl implements SeatService {
         seatList.add(seat);
       }
       this.insertList(seatList);
+      //更新用户积分
+      userService.updateUserIntegral(userId, integral);
       return ret;
     }
     else {

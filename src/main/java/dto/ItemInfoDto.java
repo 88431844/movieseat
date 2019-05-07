@@ -2,6 +2,7 @@ package dto;
 
 public class ItemInfoDto {
     private Integer id;
+    private Integer userItemId;
 
     private String name;
     private String oldName;
@@ -11,6 +12,8 @@ public class ItemInfoDto {
     private String itemdesc;
 
     private Integer cost;
+
+    private String createtime;
 
     public Integer getId() {
         return id;
@@ -58,5 +61,21 @@ public class ItemInfoDto {
 
     public void setOldName(String oldName) {
         this.oldName = oldName;
+    }
+
+    public Integer getUserItemId() {
+        return userItemId;
+    }
+
+    public void setUserItemId(Integer userItemId) {
+        this.userItemId = userItemId;
+    }
+
+    public String getCreatetime() {
+        return createtime;
+    }
+
+    public void setCreatetime(String createtime) {
+        this.createtime = createtime;
     }
 }

@@ -23,16 +23,22 @@
         </li>
 
 
-
         <li class="">
-            <a href="user/toUserCenter?userId=${sessionScope.get("userId")}" onclick="info()">
+            <a href="shop/listShop">
                 <i class="menu-icon glyphicon glyphicon-book"></i>
-                <span class="menu-text"> 积分管理 </span>
+                <span class="menu-text"> 积分商城 </span>
             </a>
 
             <b class="arrow"></b>
         </li>
+        <li class="">
+            <a href="shop/listOrder">
+                <i class="menu-icon glyphicon glyphicon-book"></i>
+                <span class="menu-text"> 订单管理 </span>
+            </a>
 
+            <b class="arrow"></b>
+        </li>
         <li class="">
             <a href="user/toUserCenter?userId=${sessionScope.get("userId")}" onclick="info()">
                 <i class="menu-icon glyphicon glyphicon-book"></i>
@@ -42,14 +48,6 @@
             <b class="arrow"></b>
         </li>
 
-        <li class="">
-            <a href="user/toUserCenter?userId=${sessionScope.get("userId")}" onclick="info()">
-                <i class="menu-icon glyphicon glyphicon-book"></i>
-                <span class="menu-text"> 订单管理 </span>
-            </a>
-
-            <b class="arrow"></b>
-        </li>
 
     </ul><!-- /.nav-list -->
     <script type="text/javascript">

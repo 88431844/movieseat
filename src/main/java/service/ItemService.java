@@ -19,4 +19,8 @@ public interface ItemService {
     ItemInfo get(int id);
 
     int edit(ItemInfoDto itemInfoDto);
+
+    void addUserItem(int userId, int id);
+
+    List<ItemInfoDto> getUserOrder(int userId);
 }

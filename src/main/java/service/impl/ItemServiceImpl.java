@@ -1,8 +1,10 @@
 package service.impl;
 
 import dao.ItemInfoMapper;
+import dao.UserItemMapper;
 import dto.ItemInfoDto;
 import entity.ItemInfo;
+import entity.UserItem;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +17,8 @@ public class ItemServiceImpl implements ItemService {
 
     @Autowired
     private ItemInfoMapper itemInfoMapper;
+    @Autowired
+    private UserItemMapper userItemMapper;
 
     @Override
     public int add(ItemInfoDto itemInfoDto) {
@@ -53,5 +57,18 @@ public class ItemServiceImpl implements ItemService {
         ItemInfo itemInfo = new ItemInfo();
         BeanUtils.copyProperties(itemInfoDto, itemInfo);
         return itemInfoMapper.updateByPrimaryKeySelective(itemInfo);
+    }
+
+    @Override
+    public void addUserItem(int userId, int id) {
+        UserItem userItem = new UserItem();
+        userItem.setItemid(id);
+        userItem.setUserid(userId);
+        userItemMapper.insertSelective(userItem);
+    }
+
+    @Override
+    public List<ItemInfoDto> getUserOrder(int userId) {
+        return userItemMapper.getUserOrder(userId);
     }
 }
