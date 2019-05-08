@@ -130,11 +130,11 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="col-sm-3 control-label no-padding-right" for="synopsis"> 会员卡描述 </label>
+                                <label class="col-sm-3 control-label no-padding-right" for="carddesc"> 会员卡描述 </label>
 
                                 <div class="col-sm-9">
-                                    <textarea class="autosize-transition" id="synopsis" cols="80"
-                                              name="synopsis">${cardInfo.carddesc}</textarea>
+                                    <textarea class="autosize-transition" id="carddesc" cols="80"
+                                              name="carddesc">${cardInfo.carddesc}</textarea>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -142,12 +142,12 @@
 
                                 <div class="col-sm-9">
                                     <select name="discount" id="discount">
-                                        <option value="${cardInfo.discount}">*(${cardInfo.discount}*10)</option>
-                                        <option value="0.9">9</option>
-                                        <option value="0.8">8</option>
-                                        <option value="0.7">7</option>
-                                        <option value="0.6">6</option>
-                                        <option value="0.5">5</option>
+                                        <option value="${cardInfo.discount}">*${cardInfo.discount}</option>
+                                        <option value="9">9</option>
+                                        <option value="8">8</option>
+                                        <option value="7">7</option>
+                                        <option value="6">6</option>
+                                        <option value="5">5</option>
                                     </select>
                                 </div>
                             </div>

@@ -65,6 +65,15 @@
             <b class="arrow"></b>
         </li>
 
+        <li class="">
+            <a href="card/listCard">
+                <i class="menu-icon glyphicon glyphicon-book"></i>
+                <span class="menu-text"> 会员卡管理 </span>
+            </a>
+
+            <b class="arrow"></b>
+        </li>
+
     </ul><!-- /.nav-list -->
     <script type="text/javascript">
         try {

@@ -11,11 +11,10 @@ public class Muser {
 
     private String phone;
 
-    private Integer cardtype;
+    private Integer cardid;
 
     private Integer integral;
 
-    private Integer money;
 
     public Integer getId() {
         return id;
@@ -57,13 +56,6 @@ public class Muser {
         this.phone = phone;
     }
 
-    public Integer getCardtype() {
-        return cardtype;
-    }
-
-    public void setCardtype(Integer cardtype) {
-        this.cardtype = cardtype;
-    }
 
     public Integer getIntegral() {
         return integral;
@@ -73,11 +65,11 @@ public class Muser {
         this.integral = integral;
     }
 
-    public Integer getMoney() {
-        return money;
+    public Integer getCardid() {
+        return cardid;
     }
 
-    public void setMoney(Integer money) {
-        this.money = money;
+    public void setCardid(Integer cardid) {
+        this.cardid = cardid;
     }
 }

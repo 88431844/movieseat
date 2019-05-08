@@ -98,7 +98,7 @@
                     <div class="col-xs-12">
                         <!-- PAGE CONTENT BEGINS -->
                         <form class="form-horizontal" role="form" action="card/addCard"
-                              enctype="multipart/form-data" method="post" id="cardInfo">
+                              method="post" id="cardInfo">
                             <!-- #section:elements.form -->
                             <div class="form-group">
                                 <label class="col-sm-3 control-label no-padding-right"> 会员卡名称 </label>
@@ -127,11 +127,11 @@
 
                                 <div class="col-sm-9">
                                     <select name="discount" id="discount">
-                                        <option value="0.9">9</option>
-                                        <option value="0.8">8</option>
-                                        <option value="0.7">7</option>
-                                        <option value="0.6">6</option>
-                                        <option value="0.5">5</option>
+                                        <option value="9">9</option>
+                                        <option value="8">8</option>
+                                        <option value="7">7</option>
+                                        <option value="6">6</option>
+                                        <option value="5">5</option>
                                     </select>
                                 </div>
                             </div>

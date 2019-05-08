@@ -7,12 +7,11 @@
         <result column="password" jdbcType="VARCHAR" property="password"/>
         <result column="nickname" jdbcType="VARCHAR" property="nickname"/>
         <result column="phone" jdbcType="VARCHAR" property="phone"/>
-        <result column="cardtype" jdbcType="INTEGER" property="cardtype"/>
+        <result column="cardid" jdbcType="INTEGER" property="cardid"/>
         <result column="integral" jdbcType="INTEGER" property="integral"/>
-        <result column="money" jdbcType="INTEGER" property="money"/>
     </resultMap>
     <sql id="Base_Column_List">
-    id, username, password, nickname, phone, cardtype, integral, money
+    id, username, password, nickname, phone, cardid, integral
   </sql>
     <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
         select
@@ -26,11 +25,11 @@
   </delete>
     <insert id="insert" parameterType="entity.Muser">
     insert into muser (id, username, password, 
-      nickname, phone, cardtype, 
-      integral, money)
+      nickname, phone, cardid,
+      integral)
     values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{nickname,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{cardtype,jdbcType=INTEGER},
-      #{integral,jdbcType=INTEGER}, #{money,jdbcType=INTEGER})
+      #{nickname,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{cardid,jdbcType=INTEGER},
+      #{integral,jdbcType=INTEGER})
   </insert>
     <insert id="insertSelective" parameterType="entity.Muser">
         insert into muser
@@ -50,15 +49,13 @@
             <if test="phone != null">
                 phone,
             </if>
-            <if test="cardtype != null">
-                cardtype,
+            <if test="cardid != null">
+                cardid,
             </if>
             <if test="integral != null">
                 integral,
             </if>
-            <if test="money != null">
-                money,
-            </if>
+
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -76,15 +73,13 @@
             <if test="phone != null">
                 #{phone,jdbcType=VARCHAR},
             </if>
-            <if test="cardtype != null">
-                #{cardtype,jdbcType=INTEGER},
+            <if test="cardid != null">
+                #{cardid,jdbcType=INTEGER},
             </if>
             <if test="integral != null">
                 #{integral,jdbcType=INTEGER},
             </if>
-            <if test="money != null">
-                #{money,jdbcType=INTEGER},
-            </if>
+
         </trim>
     </insert>
     <update id="updateByPrimaryKeySelective" parameterType="entity.Muser">
@@ -102,15 +97,13 @@
             <if test="phone != null">
                 phone = #{phone,jdbcType=VARCHAR},
             </if>
-            <if test="cardtype != null">
-                cardtype = #{cardtype,jdbcType=INTEGER},
+            <if test="cardid != null">
+                cardid = #{cardid,jdbcType=INTEGER},
             </if>
             <if test="integral != null">
                 integral = #{integral,jdbcType=INTEGER},
             </if>
-            <if test="money != null">
-                money = #{money,jdbcType=INTEGER},
-            </if>
+
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
@@ -120,9 +113,8 @@
       password = #{password,jdbcType=VARCHAR},
       nickname = #{nickname,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=VARCHAR},
-      cardtype = #{cardtype,jdbcType=INTEGER},
-      integral = #{integral,jdbcType=INTEGER},
-      money = #{money,jdbcType=INTEGER}
+      cardid = #{cardid,jdbcType=INTEGER},
+      integral = #{integral,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 

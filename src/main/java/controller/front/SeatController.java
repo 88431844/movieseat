@@ -1,6 +1,7 @@
 
 package controller.front;
 
+import dto.CardInfoDto;
 import dto.HallDto;
 import dto.SeatInfo;
 import dto.TicketDto;
@@ -10,11 +11,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import service.HallService;
-import service.MovieService;
-import service.SeatService;
-import service.TicketService;
+import service.*;
 import util.SeatUtil;
+
+import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/seat")
@@ -28,9 +28,11 @@ public class SeatController {
   private HallService hallService;
   @Autowired
   private SeatService seatService;
+  @Autowired
+  private CardService cardService;
 
   @RequestMapping("/getSeat")
-  public ModelAndView seat(@RequestParam("ticketId") int ticketId) {
+  public ModelAndView seat(HttpSession session, @RequestParam("ticketId") int ticketId) {
     ModelAndView modelAndView = new ModelAndView();
 
     TicketDto ticketDto = ticketService.getTicket(ticketId);
@@ -48,6 +50,10 @@ public class SeatController {
 
     List<SeatInfo> selledSeatList = seatService.getSelledSeat(ticketId);
     modelAndView.addObject("selledSeatList",selledSeatList);
+
+    int userId = (int) session.getAttribute("userId");
+    CardInfoDto cardInfoDto = cardService.getCardInfoByUserId(userId);
+    modelAndView.addObject("cardInfoDto", cardInfoDto);
 
     return modelAndView;
   }

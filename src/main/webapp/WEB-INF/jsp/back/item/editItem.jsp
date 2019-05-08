@@ -124,17 +124,17 @@
                                 <label class="col-sm-3 control-label no-padding-right"> 消耗积分 </label>
 
                                 <div class="col-sm-9">
-                                    <input type="text" name="director" value="${itemInfo.cost}" placeholder="消耗积分"
+                                    <input type="text" name="cost" value="${itemInfo.cost}" placeholder="消耗积分"
                                            class="col-xs-10 col-sm-5"/>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="col-sm-3 control-label no-padding-right" for="synopsis"> 物品描述 </label>
+                                <label class="col-sm-3 control-label no-padding-right" for="itemdesc"> 物品描述 </label>
 
                                 <div class="col-sm-9">
-                                    <textarea class="autosize-transition" id="synopsis" cols="80"
-                                              name="synopsis">${itemInfo.itemdesc}</textarea>
+                                    <textarea class="autosize-transition" id="itemdesc" cols="80"
+                                              name="itemdesc">${itemInfo.itemdesc}</textarea>
                                 </div>
                             </div>
 

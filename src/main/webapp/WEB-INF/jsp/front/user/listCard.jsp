@@ -1,3 +1,4 @@
+<%@ page import="dto.CardInfoDto" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
@@ -95,11 +96,25 @@
             <ul class="breadcrumb">
                 <li>
                     <i class="ace-icon fa fa-home home-icon"></i>
-                    <span>我持有的会员卡：<span id="name">${cardInfoDto.name}</span></span>
-                </li>
-                <li>
+                    <span>我持有的会员卡-->
+                        <span id="name">
+                            <%--${cardInfoDto.name}--%>
+                            <%
+                                CardInfoDto cardInfoDto = (CardInfoDto) request.getAttribute("cardInfoDto");
+                                if (null == cardInfoDto) {
+                                    out.print("无会员卡");
+                                } else {
+                                    if (null == cardInfoDto.getName()) {
+                                        out.print("无会员卡");
+                                    } else {
+                                        out.print("会员卡名称：<" + cardInfoDto.getName() + "> 会员卡描述： " + cardInfoDto.getCarddesc());
+                                    }
+                                }
 
+                            %>
+                        </span></span>
                 </li>
+
             </ul><!-- /.breadcrumb -->
         </div>
 
@@ -200,7 +215,7 @@
                     bAutoWidth: true,
                     "aoColumns": [
                         {"bSortable": false},
-                        null, null,
+                        null, null, null,
                         {"bSortable": false}
                     ],
                     "aaSorting": [],

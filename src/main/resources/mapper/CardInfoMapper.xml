@@ -91,7 +91,7 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
 
-  <select id="have" parameterType="java.lang.Integer">
+    <select id="have" resultType="java.lang.Integer">
     select
     count(1)
     from cardinfo
@@ -107,9 +107,13 @@
 
   <select id="getCardInfoByUserId" resultType="dto.CardInfoDto">
     select
-    <include refid="Base_Column_List" />
-    from cardinfo ,muser u
-    where u.cardid = id and u.id = #{userId}
+    c.id as id,
+    c.name as name,
+    c.price as price,
+    c.carddesc as carddesc,
+    c.discount as discount
+    from cardinfo c,muser u
+    where u.cardid = c.id and u.id = #{userId}
   </select>
 
   <update id="buyCard" >
