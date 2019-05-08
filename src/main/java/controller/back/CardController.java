@@ -112,10 +112,11 @@ public class CardController {
   }
 
   @RequestMapping("/buyCard")
-  public ModelAndView buyCard(HttpSession session) {
+  public ModelAndView buyCard(@RequestParam("id") int id,HttpSession session) {
     ModelAndView modelAndView = new ModelAndView();
     int userId = (int)session.getAttribute("userId");
-    //TODO
+    cardService.buyCard(id,userId);
+    modelAndView.addObject("message", "购买成功");
     return queryUserCard(modelAndView,userId);
   }
 
@@ -126,10 +127,12 @@ public class CardController {
   }
 
   private ModelAndView queryUserCard(ModelAndView modelAndView,int userId) {
+    //查询会员卡列表
     List<CardInfoDto> cardInfoDtoList = cardService.list();
     if (0 == cardInfoDtoList.size()) {
       modelAndView.addObject("message", "查询列表为空");
     }
+    //查询用户购买的会员卡信息
     CardInfoDto cardInfoDto = cardService.getCardInfoByUserId(userId);
     modelAndView.addObject("cardInfoDto",cardInfoDto);
     modelAndView.addObject("cardInfoDtoList", cardInfoDtoList);

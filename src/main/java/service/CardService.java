@@ -21,4 +21,6 @@ public interface CardService {
   int edit(CardInfoDto cardInfoDto);
 
   CardInfoDto getCardInfoByUserId(int userId);
+
+  void buyCard(int id, int userId);
 }

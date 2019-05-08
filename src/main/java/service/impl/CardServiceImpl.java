@@ -60,4 +60,9 @@ public class CardServiceImpl implements CardService {
   public CardInfoDto getCardInfoByUserId(int userId) {
     return cardInfoMapper.getCardInfoByUserId(userId);
   }
+
+  @Override
+  public void buyCard(int id, int userId) {
+    cardInfoMapper.buyCard(id,userId);
+  }
 }
