@@ -23,4 +23,6 @@ public interface CardInfoMapper {
     List<CardInfoDto> list();
 
     CardInfoDto getCardInfoByUserId(@Param("userId") int userId);
+
+    void buyCard(@Param("id") int id,@Param("userId")  int userId);
 }
