@@ -40,9 +40,9 @@
             <b class="arrow"></b>
         </li>
         <li class="">
-            <a href="user/toUserCenter?userId=${sessionScope.get("userId")}" onclick="info()">
+            <a href="card/userCardList?userId=${sessionScope.get("userId")}">
                 <i class="menu-icon glyphicon glyphicon-book"></i>
-                <span class="menu-text"> 会员卡管理 </span>
+                <span class="menu-text"> 我的会员卡 </span>
             </a>
 
             <b class="arrow"></b>

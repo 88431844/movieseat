@@ -145,9 +145,8 @@ CREATE TABLE `muser` (
   `password` varchar(255) DEFAULT NULL COMMENT '用户密码',
   `nickname` varchar(255) DEFAULT NULL COMMENT '用户昵称',
   `phone` varchar(255) DEFAULT NULL COMMENT '手机号码',
-  `cardtype` int(255) DEFAULT '0' COMMENT '0=铜卡；1=银卡；2=金卡',
+  `cardid` int(11) COMMENT '会员卡id',
   `integral` int(255) DEFAULT NULL COMMENT '用户积分',
-  `money` int(255) DEFAULT NULL COMMENT '用户钱包；单位（元）',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
@@ -218,3 +217,16 @@ CREATE TABLE `useritem` (
 -- ----------------------------
 INSERT INTO `useritem` VALUES ('3', '1', '3', '2019-05-08 00:45:57');
 INSERT INTO `useritem` VALUES ('4', '1', '4', '2019-05-08 00:46:04');
+
+-- ----------------------------
+-- Table structure for cardinfo
+-- ----------------------------
+DROP TABLE IF EXISTS `cardinfo`;
+CREATE TABLE `cardinfo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL COMMENT '会员卡名称',
+  `price` double(11,0) DEFAULT NULL COMMENT '会员卡价格',
+  `carddesc` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL COMMENT '会员卡描述',
+  `discount` int(11) DEFAULT NULL COMMENT '会员卡折扣',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
