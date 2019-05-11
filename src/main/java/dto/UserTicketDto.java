@@ -19,6 +19,7 @@ public class UserTicketDto {
   private String time;
 
 
+  private int seatId;
   private int seatRow;
   private int seatCol;
 
@@ -116,5 +117,13 @@ public class UserTicketDto {
 
   public void setSeatCol(int seatCol) {
     this.seatCol = seatCol;
+  }
+
+  public int getSeatId() {
+    return seatId;
+  }
+
+  public void setSeatId(int seatId) {
+    this.seatId = seatId;
   }
 }

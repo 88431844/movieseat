@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import service.MovieService;
+import service.SeatService;
 import service.TicketService;
 import service.UserService;
 import sun.swing.StringUIClientPropertyKey;
@@ -28,6 +29,8 @@ public class MuserController {
   private UserService userService;
   @Autowired
   private TicketService ticketService;
+  @Autowired
+  private SeatService seatService;
 
   @RequestMapping("/toRegisterUser")
   public String toRegisterUser() {
@@ -87,12 +90,22 @@ public class MuserController {
   @RequestMapping("/toUserCenter")
   public ModelAndView toUserCenter(@RequestParam("userId") int userId) {
     ModelAndView modelAndView = new ModelAndView();
+    return initUserTicket(modelAndView,userId);
+  }
+
+  @RequestMapping("/delUserTicket")
+  public ModelAndView delUserTicket(@RequestParam("seatId") int seatId,HttpSession session) {
+    ModelAndView modelAndView = new ModelAndView();
+    int userId = (int)session.getAttribute("userId");
+    seatService.delSeatById(seatId);
+    modelAndView.addObject("message","退票成功！");
+
+    return initUserTicket(modelAndView,userId);
+  }
+  private ModelAndView initUserTicket(ModelAndView modelAndView,int userId){
     List<UserTicketDto> userTicketDtoList = ticketService.getTicketByUserId(userId);
     modelAndView.setViewName("front/user/userCenter");
     modelAndView.addObject("userTicketDtoList", userTicketDtoList);
-
     return modelAndView;
   }
-
-
 }

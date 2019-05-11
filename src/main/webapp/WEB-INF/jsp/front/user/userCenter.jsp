@@ -49,18 +49,10 @@
     <script src="static/assets/js/respond.min.js"></script>
     <![endif]-->
     <script>
-      function del(id) {
-        if (confirm('您确定删除吗？')) {
-          window.location.href = "cinema/delCinema?id=" + id;
+      function delUserTicket(id) {
+        if (confirm('您确定退票吗？')) {
+          window.location.href = "user/delUserTicket?seatId=" + id;
         }
-      }
-
-      function toEdit(id) {
-        window.location.href = "cinema/toEditCinema?id=" + id;
-      }
-
-      function toAdd() {
-        window.location.href = "cinema/toAddCinema";
       }
 
       function myAlert() {
@@ -128,14 +120,14 @@
                                 <tr>
 
                                     <th width="20%">影院名称</th>
-                                    <th width="15%">影院地址</th>
+                                    <th width="10%">影院地址</th>
                                     <th width="10%">影厅</th>
                                     <th width="15%">影片名称</th>
                                     <th width="10%">日期</th>
                                     <th width="5%">时间</th>
                                     <th width="5%">排</th>
                                     <th width="5%">座</th>
-
+                                    <th width="10%">操作</th>
                                 </tr>
                                 </thead>
 
@@ -152,7 +144,14 @@
                                         <td><span>${userTicketDtoList.time}</span></td>
                                         <td><span>${userTicketDtoList.seatRow}</span></td>
                                         <td><span>${userTicketDtoList.seatCol}</span></td>
-
+                                        <td>
+                                            <div class="">
+                                                <button class="red" onclick="delUserTicket(${userTicketDtoList.seatId})">
+                                                    <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                                                    退票
+                                                </button>
+                                            </div>
+                                        </td>
                                     </tr>
                                 </c:forEach>
                                 </tbody>
@@ -210,7 +209,7 @@
           bAutoWidth: true,
           "aoColumns": [
             {"bSortable": false},
-            null, null,null,null,null,null,
+            null, null,null,null,null,null,null,
             {"bSortable": false}
           ],
           "aaSorting": [],

@@ -82,6 +82,11 @@ public class SeatServiceImpl implements SeatService {
     return seatInfoList;
   }
 
+  @Override
+  public void delSeatById(int seatId) {
+    seatMapper.deleteByPrimaryKey(seatId);
+  }
+
   private void insertList(List<Seat> seatList) {
     for (Seat seat : seatList){
       seatMapper.insertSelective(seat);

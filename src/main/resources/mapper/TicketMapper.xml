@@ -228,7 +228,7 @@
   <select id="getTicketByUserId" resultType="dto.UserTicketDto">
     select
     t.id as ticketId,
-
+    s.id as seatId,
     t.cinemaid as cinemaid,
     c.name as cinemaName,
     c.addr as cinemaAddr,
