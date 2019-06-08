@@ -97,9 +97,14 @@ public class MuserController {
   public ModelAndView delUserTicket(@RequestParam("seatId") int seatId,HttpSession session) {
     ModelAndView modelAndView = new ModelAndView();
     int userId = (int)session.getAttribute("userId");
-    seatService.delSeatById(seatId);
-    modelAndView.addObject("message","退票成功！");
 
+    //首先查询当前电影票是否已经过期，如果过期，则不让退票，否则可以退
+    if (!seatService.haveDateOut(seatId)){
+      modelAndView.addObject("message","退票失败！影票已经过期！");
+    }else{
+      seatService.delSeatById(seatId);
+      modelAndView.addObject("message","退票成功！");
+    }
     return initUserTicket(modelAndView,userId);
   }
   private ModelAndView initUserTicket(ModelAndView modelAndView,int userId){

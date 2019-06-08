@@ -11,4 +11,6 @@ public interface SeatService {
   List<SeatInfo> getSelledSeat(int ticketId);
 
   void delSeatById(int seatId);
+
+  boolean haveDateOut(int seatId);
 }

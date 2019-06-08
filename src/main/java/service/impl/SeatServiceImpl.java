@@ -5,6 +5,9 @@ import dao.SeatMapper;
 import dto.SeatInfo;
 import dto.TicketDto;
 import entity.Seat;
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -85,6 +88,26 @@ public class SeatServiceImpl implements SeatService {
   @Override
   public void delSeatById(int seatId) {
     seatMapper.deleteByPrimaryKey(seatId);
+  }
+
+  @Override
+  public boolean haveDateOut(int seatId) {
+    Seat seat = seatMapper.selectByPrimaryKey(seatId);
+    TicketDto ticketDto = ticketService.getTicket(seat.getTicketid());
+    String day = ticketDto.getDay();
+    String time = ticketDto.getTime();
+    String movieTime = day + " " + time;
+
+    DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+    LocalDateTime movieDate = LocalDateTime.parse(movieTime,df);
+
+//    LocalDateTime movieDate = LocalDateTime.parse(movieTime);
+    LocalDateTime now = LocalDateTime.now();
+    Duration duration = Duration.between(now,movieDate);
+    //相差大于2小时，则不让退票
+    long min = duration.toHours();
+    return min > 120;
+
   }
 
   private void insertList(List<Seat> seatList) {
