@@ -238,6 +238,7 @@
 
     t.movieid as movieId,
     m.name as movieName,
+    t.price as moviePrice,
 
     t.day as 'day',
     t.time as 'time',

@@ -10,7 +10,7 @@ public interface SeatService {
 
   List<SeatInfo> getSelledSeat(int ticketId);
 
-  void delSeatById(int seatId);
+  void delSeatById(int seatId,int userId);
 
   boolean haveDateOut(int seatId);
 }

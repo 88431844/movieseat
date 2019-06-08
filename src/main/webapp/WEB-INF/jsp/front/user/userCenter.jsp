@@ -119,10 +119,11 @@
                                 <thead>
                                 <tr>
 
-                                    <th width="20%">影院名称</th>
+                                    <th width="15%">影院名称</th>
                                     <th width="10%">影院地址</th>
                                     <th width="10%">影厅</th>
                                     <th width="15%">影片名称</th>
+                                    <th width="5%">票价</th>
                                     <th width="10%">日期</th>
                                     <th width="5%">时间</th>
                                     <th width="5%">排</th>
@@ -140,6 +141,7 @@
                                         <td><span>${userTicketDtoList.cinemaAddr}</span></td>
                                         <td><span>${userTicketDtoList.hallName}</span></td>
                                         <td><span>${userTicketDtoList.movieName}</span></td>
+                                        <td><span>${userTicketDtoList.moviePrice}</span></td>
                                         <td><span>${userTicketDtoList.day}</span></td>
                                         <td><span>${userTicketDtoList.time}</span></td>
                                         <td><span>${userTicketDtoList.seatRow}</span></td>
@@ -209,7 +211,7 @@
           bAutoWidth: true,
           "aoColumns": [
             {"bSortable": false},
-            null, null,null,null,null,null,null,
+            null, null,null,null,null,null,null,null,
             {"bSortable": false}
           ],
           "aaSorting": [],

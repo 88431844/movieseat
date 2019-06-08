@@ -82,4 +82,15 @@ public class UserServiceImpl implements UserService {
     public void delOrder(int id) {
         userItemMapper.deleteByPrimaryKey(id);
     }
+
+    @Override
+    public void subIntegral(int userId, int ticketPrice) {
+        Muser muser = muserMapper.selectByPrimaryKey(userId);
+        int newIntegral = muser.getIntegral() - ticketPrice;
+        if (newIntegral < 0){
+            newIntegral = 0;
+        }
+        muser.setIntegral(newIntegral);
+        muserMapper.updateByPrimaryKeySelective(muser);
+    }
 }

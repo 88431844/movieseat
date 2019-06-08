@@ -14,6 +14,7 @@ public class UserTicketDto {
 
   private int movieId;
   private String movieName;
+  private Double moviePrice;
 
   private String day;
   private String time;
@@ -125,5 +126,13 @@ public class UserTicketDto {
 
   public void setSeatId(int seatId) {
     this.seatId = seatId;
+  }
+
+  public Double getMoviePrice() {
+    return moviePrice;
+  }
+
+  public void setMoviePrice(Double moviePrice) {
+    this.moviePrice = moviePrice;
   }
 }

@@ -102,7 +102,7 @@ public class MuserController {
     if (!seatService.haveDateOut(seatId)){
       modelAndView.addObject("message","退票失败！影票已经过期！");
     }else{
-      seatService.delSeatById(seatId);
+      seatService.delSeatById(seatId,userId);
       modelAndView.addObject("message","退票成功！");
     }
     return initUserTicket(modelAndView,userId);

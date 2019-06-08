@@ -22,4 +22,6 @@ public interface UserService {
     List<ItemInfoDto> getUserOrder(int userId);
 
     void delOrder(int id);
+
+  void subIntegral(int userId, int ticketPrice);
 }

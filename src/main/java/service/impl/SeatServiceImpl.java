@@ -86,7 +86,10 @@ public class SeatServiceImpl implements SeatService {
   }
 
   @Override
-  public void delSeatById(int seatId) {
+  public void delSeatById(int seatId,int userId) {
+    int ticketId = seatMapper.selectByPrimaryKey(seatId).getTicketid();
+    int ticketPrice = Integer.parseInt(String.valueOf(ticketService.getTicket(ticketId).getPrice()).replace(".0",""));
+    userService.subIntegral(userId,ticketPrice);
     seatMapper.deleteByPrimaryKey(seatId);
   }
 
@@ -105,7 +108,7 @@ public class SeatServiceImpl implements SeatService {
     LocalDateTime now = LocalDateTime.now();
     Duration duration = Duration.between(now,movieDate);
     //相差大于2小时，则不让退票
-    long min = duration.toHours();
+    long min = duration.toMinutes();
     return min > 120;
 
   }
